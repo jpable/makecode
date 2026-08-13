@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【4月】新年度が始まったよ！いろいろなことにチャレンジしてみよう！</title>
+  <meta name="description" content="新年度の学校生活に生かせる、micro:bitのプログラム集" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mode-easy"
+
+data-title-easy="【4月】新年度が始まったよ！いろいろなことにチャレンジしてみよう！"
+data-title-normal="【4月】新年度が始まったよ！色々なことにチャレンジしてみよう！"
+
+data-lead-easy="新年度の学校生活に生かせる、micro:bitのプログラム集"
+data-lead-normal="新年度の学校生活に生かせる、micro:bitのプログラム集"
+
+>
+
+  <div id="header"></div>
+
+  <div id="nav"></div>
+
+  <main id="main" class="wrap">
+    <section id="section-1" aria-labelledby="section-1-h">
+      <h2 id="section-1-h">
+        <span aria-hidden="true">🥢</span>
+        <span class="text-easy" id="sample1-title">三角食べナビ</span>
+        <span class="text-normal">三角食べナビ</span>
+        <span class="meta">— 生活（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">
+          このプログラムでは、micro:bitを使って、きゅうしょくの三角食べで食べるものをシ・サ・フの3しゅランダムひょうじして、食べたものを消していけるナビです。<br><br>
+          <span aria-hidden="true">◆</span>シ・サ・フ・ス・ユ・クの意味<br>
+          <span role="list">
+          ・シ＝主食<br>
+          ・サ＝しゅさい<br>
+          ・フ＝ふくさい<br>
+          ・ス＝しるもの<br>
+          ・ユ＝ぎゅうにゅう<br>
+          ・ク＝くだもの
+          </span>
+        </span>
+        <span class="text-normal">
+          このプログラムでは、micro:bitを使って、給食の三角食べで食べるものをシ・サ・フの3種ランダム表示して、食べたものを消していけるナビです。<br><br>
+          <span aria-hidden="true">◆</span>シ・サ・フ・ス・ユ・クの意味<br>
+          ・シ＝主食<br>
+          ・サ＝主菜<br>
+          ・フ＝副菜<br>
+          ・ス＝汁物<br>
+          ・ユ＝牛乳<br>
+          ・ク＝果物
+        </span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-1-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょにちゅうせんアニメのあと、シ・サ・フをランダムひょうじ</span>
+              <span class="text-normal">最初に抽選アニメのあと、シ・サ・フをランダム表示</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンでちゅうせんアニメのあと、シ・サ・フをランダムひょうじ</span>
+              <span class="text-normal">Aボタンで抽選アニメのあと、シ・サ・フをランダム表示</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンでシ→サ→フのじゅんに切りかえひょうじ</span>
+              <span class="text-normal">Bボタンでシ→サ→フの順に切り替え表示</span>
+            </li>
+            <li>
+              <span class="text-easy">A+Bボタンでひょうじされているものを「食べた」チェックとして外す</span>
+              <span class="text-normal">A+Bボタンで表示されているものを「食べた」チェックとして外す</span>  
+            </li>
+            <li>
+              <span class="text-easy">全部食べたら「うれしい顔」をひょうじ</span>
+              <span class="text-normal">全部食べたら「嬉しい顔」を表示</span>  
+            </li>
+          </ol>
+          <img id="section-1-gif" src="img/202604_01.png" alt="micro:bit で三角食べナビを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-1-gif', 'img/202604_01.gif', 'img/202604_01.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">三角食べのいしきづけ</span>
+              <span class="text-normal">三角食べの意識付け</span>
+            </li>
+            <li>
+              <span class="text-easy">ランダムひょうじと切りかえそうさの学習</span>
+              <span class="text-normal">ランダム表示と切り替え操作の学習</span>
+            </li>
+            <li>
+              <span class="text-easy">食べたものをチェックしていくじょうたいかんり</span>
+              <span class="text-normal">食べたものをチェックしていく状態管理</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">シ・サ・フ・ス・ユ・クの6しゅすべてにアップデートするルール作り</span>
+              <span class="text-normal">シ・サ・フ・ス・ユ・クの6種すべてにアップデートするルール作り</span>
+            </li>
+            <li>
+              <span class="text-easy">ス・ユ・クを入れるタイミングを決めるじゅんばんルール作り</span>
+              <span class="text-normal">ス・ユ・クを入れるタイミングを決める順番ルール作り</span>
+            </li>
+            <li>
+              <span class="text-easy">ちゅうせんアニメやチェックのしるしのひょうじへんこう</span>
+              <span class="text-normal">抽選アニメやチェックの印の表示変更</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        <a class="btn" href="samples/三角食べナビ.hex" download aria-labelledby="sample1-title sample1-btn">
+          <span id="sample1-btn">サンプルコードをダウンロード</span>
+        </a>
+      </p>
+    </section>
+
+    <section id="section-2" aria-labelledby="section-2-h">
+      <h2 id="section-2-h">
+        <span aria-hidden="true">😊</span>
+        <span class="text-easy" id="sample2-title">かんじょうひょうげんツール</span>
+        <span class="text-normal">感情表現ツール</span>
+        <span class="meta">— 特別支援（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、今の気持ちを4しゅるいの顔アイコンでえらんで見せられるかんじょうひょうげんツールです。<br><br>
+          <span aria-hidden="true">◆</span>ひょうじされる気持ち<br>
+          <span role="list">
+          ・うれしい顔＝うれしい気持ちのひょうじ<br>
+          ・おこった顔＝おこっている気持ちのひょうじ<br>
+          ・悲しい顔＝悲しい気持ちのひょうじ<br>
+          ・びっくり顔＝おどろいたりワクワクしたりする気持ちのひょうじ<br>
+          </span>
+        </span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、今の気持ちを4種類の顔アイコンで選んで見せられる感情表現ツールです。<br><br>
+          <span aria-hidden="true">◆</span>表示される気持ち<br>
+          <span role="list">
+          ・嬉しい顔＝嬉しい気持ちの表示<br>
+          ・怒った顔＝怒っている気持ちの表示<br>
+          ・悲しい顔＝悲しい気持ちの表示<br>
+          ・びっくり顔＝驚いたりワクワクしたりする気持ちの表示<br>
+          </span>
+        </span>
+      <div class="grid" role="group" aria-labelledby="section-2-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">Bボタンで顔のひょうじを次へ切りかえる</span>
+              <span class="text-normal">Bボタンで顔の表示を次へ切り替える</span>
+            </li>
+            <li>
+              <span class="text-easy">びっくり顔まで行ったら次はうれしい顔にもどる（くり返し）</span>
+              <span class="text-normal">びっくり顔まで行ったら次は嬉しい顔に戻る（繰り返し）</span>  
+            </li>
+            <li>
+              <span class="text-easy">ひょうじした顔を見せて今の気持ちをつたえる</span>
+              <span class="text-normal">表示した顔を見せて今の気持ちを伝える</span>  
+            </li>
+          </ol>
+          <img id="section-2-gif" src="img/202604_02.png" alt="micro:bit で感情表現ツールを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-2-gif', 'img/202604_02.gif', 'img/202604_02.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">言葉にしにくい気持ちを顔でつたえるたいけん</span>
+              <span class="text-normal">言葉にしにくい気持ちを顔で伝える体験</span>
+            </li>
+            <li>
+              <span class="text-easy">ボタンをおすたびにひょうじがかわる仕組みのりかい</span>
+              <span class="text-normal">ボタンを押すたびに表示が変わる仕組みの理解</span>
+            </li>
+            <li>
+              <span class="text-easy">気持ちを見て自分や友だちの様子に気づくきっかけ作り</span>
+              <span class="text-normal">気持ちを見て自分や友だちの様子に気づくきっかけ作り</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">気持ちに合わせた一言メッセージを自分で決めてみる</span>
+              <span class="text-normal">気持ちに合わせた一言メッセージを自分で決めてみる</span>
+            </li>
+            <li>
+              <span class="text-easy">朝の会や帰りの会でみんなの気持ちをたしかめる使い方</span>
+              <span class="text-normal">朝の会や帰りの会でみんなの気持ちをたしかめる使い方</span>
+            </li>
+            <li>
+              <span class="text-easy">4しゅるいの顔をべつの顔に入れかえて自分用のセットを作ってみる</span>
+              <span class="text-normal">4種類の顔を別の顔に入れ替えて自分用のセットを作ってみる</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        <a class="btn" href="samples/かんじょうひょうげんツール.hex" download aria-labelledby="sample2-title sample2-btn">
+          <span id="sample2-btn">サンプルコードをダウンロード</span>
+        </a>
+      </p>
+    </section>
+
+    <section id="section-3" aria-labelledby="section-3-h">
+      <h2 id="section-3-h">
+        <span aria-hidden="true">🦘</span>        
+        <span class="text-easy">ジャンプの強さをはかってみよう</span>
+        <span class="text-normal">ジャンプの強さを測ってみよう</span>
+        <span class="meta">— 体育（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムは、micro:bitの「かそくどセンサー」を使って、ジャンプしたときのいちばん大きい動きの強さをはかり、きろくすることができるジャンプけいそくツールです。</span>
+        <span class="text-normal">このプログラムは、micro:bitの「加速度センサー」を使って、ジャンプしたときのいちばん大きい動きの強さをはかり、記録することができるジャンプ計測ツールです。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-3-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょは「B」と「→」をこうごにひょうじ</span>
+              <span class="text-normal">最初は「B」と「→」を交互に表示</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンでそくていスタート（さいだいちをリセット）</span>
+              <span class="text-normal">Bボタンで測定スタート（最大値をリセット）</span>  
+            </li>
+            <li>
+              <span class="text-easy">スタートの合図として「ト」「ベ」のカタカナをひょうじ</span>
+              <span class="text-normal">スタートの合図として「ト」「ベ」のカタカナを表示</span>  
+            </li>
+            <li>
+              <span class="text-easy">「トベ」が出たらジャンプして動きの強さを出す</span>
+              <span class="text-normal">「トベ」が出たらジャンプして動きの強さを出す</span>  
+            </li>
+            <li>
+              <span class="text-easy">もう一度Bボタンでそくていストップ、さいだいちの数字をひょうじ</span>
+              <span class="text-normal">もう一度Bボタンで測定ストップ、最大値の数字を表示</span>  
+            </li>
+          </ol>
+          <img id="section-3-gif" src="img/202604_03.png" alt="micro:bit でジャンプけいそくツールを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-3-gif', 'img/202604_03.gif', 'img/202604_03.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">ジャンプの動きをかそくどセンサーによってすうちで表すたいけん</span>
+              <span class="text-normal">ジャンプの動きを加速度センサーによって数値で表す体験</span>
+            </li>
+            <li>
+              <span class="text-easy">いちばん大きい数だけをのこす仕組みのりかい</span>
+              <span class="text-normal">いちばん大きい数だけを残す仕組みの理解</span>
+            </li>
+            <li>
+              <span class="text-easy">ジャンプのしかたをかえてくらべる活動作り</span>
+              <span class="text-normal">ジャンプのしかたを変えて比べる活動作り</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">カウントダウンひょうじをついかしてみる</span>
+              <span class="text-normal">カウントダウン表示を追加してみる</span>
+            </li>
+            <li>
+              <span class="text-easy">ジャンプ回数を決めるルール作り</span>
+              <span class="text-normal">ジャンプ回数を決めるルール作り</span>
+            </li>
+            <li>
+              <span class="text-easy">クラスでさいこうきろくをくらべるランキング作り</span>
+              <span class="text-normal">クラスで最高記録を比べるランキング作り</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/ジャンプの強さをはかってみよう.hex" download aria-label="サンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-4" aria-labelledby="section-4-h">
+      <h2 id="section-4-h">
+        <span aria-hidden="true">🔆</span>   
+        <span class="text-easy">教室明るさちょうさマップ</span>
+        <span class="text-normal">教室明るさ調査マップ</span>
+        <span class="meta">— 理科（小学3年生〜小学6年生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの「ヒカリセンサー」を使って、教室の場所ごとの明るさを調べる活動を行うことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの「ヒカリセンサー」を使って、教室の場所ごとの明るさを調べる活動を行うことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-4-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょは「B」と「→」をこうごにひょうじ</span>
+              <span class="text-normal">最初は「B」と「→」を交互に表示</span>
+            </li>
+            <li>
+              <span class="text-easy">調べたい場所に立ってBボタンをおす</span>
+              <span class="text-normal">調べたい場所に立ってBボタンを押す</span>  
+            </li>
+            <li>
+              <span class="text-easy">ひょうじされた明るさの数字をメモする</span>
+              <span class="text-normal">表示された明るさの数字をメモする</span>  
+            </li>
+            <li>
+              <span class="text-easy">数字のあとに出る「アカルイ／クライ」をメモする</span>
+              <span class="text-normal">数字のあとに出る「アカルイ／クライ」をメモする</span>  
+            </li>
+            <li>
+              <span class="text-easy">べつの場所にいどうして2〜4をくり返す</span>
+              <span class="text-normal">別の場所に移動して2〜4を繰り返す</span>  
+            </li>
+            <li>
+              <span class="text-easy">集めたメモを見て教室の明るさマップをつくる</span>
+              <span class="text-normal">集めたメモを見て教室の明るさマップを作る</span>  
+            </li>
+          </ol>
+          <img id="section-4-gif" src="img/202604_04.png" alt="教室明るさ調査マップで遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-4-gif', 'img/202604_04.gif', 'img/202604_04.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">明るさを数字でくらべるたいけん</span>
+              <span class="text-normal">明るさを数字で比べる体験</span>
+            </li>
+            <li>
+              <span class="text-easy">場所による光のちがいへの気づき</span>
+              <span class="text-normal">場所による光の違いへの気づき</span>
+            </li>
+            <li>
+              <span class="text-easy">調べたけっかをまとめてつたえる活動</span>
+              <span class="text-normal">調べた結果をまとめて伝える活動</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">まどぎわや黒板前など場所の分け方のくふう</span>
+              <span class="text-normal">窓際や黒板前など場所の分け方の工夫</span>
+            </li>
+            <li>
+              <span class="text-easy">アカルイ／クライのきじゅんのすうちを見直す</span>
+              <span class="text-normal">アカルイ／クライの基準の数値を見直す</span>
+            </li>
+            <li>
+              <span class="text-easy">はんのけっかを合わせた教室全体マップづくり</span>
+              <span class="text-normal">班の結果を合わせた教室全体マップづくり</span>
+            </li>            
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/教室明るさ調査マップ.hex" download aria-label="サンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-5" aria-labelledby="section-5-h">
+      <h2 id="section-5-h">
+        <span aria-hidden="true">❌</span>   
+        <span class="text-easy">かけ算○×クイズ</span>
+        <span class="text-normal">かけ算○×クイズ</span>
+        <span class="meta">— 算数（小学3年生〜小学6年生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、かけ算の式が正しいかどうかを○×で答えるクイズ学習を行うことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、かけ算の式が正しいかどうかを○×で答えるクイズ学習を行うことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-5-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょは「B」と「→」をこうごにひょうじ</span>
+              <span class="text-normal">最初は「B」と「→」を交互に表示</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンで問題をひょうじ</span>
+              <span class="text-normal">Bボタンで問題を表示</span>  
+            </li>
+            <li>
+              <span class="text-easy">ひょうじされた式を見て正しいかどうか考える</span>
+              <span class="text-normal">表示された式を見て正しいかどうか考える</span>  
+            </li>
+            <li>
+              <span class="text-easy">Aボタンで○と×の切りかえそうさ</span>
+              <span class="text-normal">Aボタンで○と×の切り替え操作</span>  
+            </li>
+            <li>
+              <span class="text-easy">Bボタンで答えを決定</span>
+              <span class="text-normal">Bボタンで答えを決定</span>  
+            </li>
+            <li>
+              <span class="text-easy">せいかいならうれしい顔、ふせいかいならかなしい顔をひょうじ</span>
+              <span class="text-normal">正解なら嬉しい顔、不正解なら悲しい顔を表示</span>  
+            </li>
+             <li>
+              <span class="text-easy">ひょうじ後に開始画面へ自動でもどる</span>
+              <span class="text-normal">表示後に開始画面へ自動で戻る</span>  
+            </li>
+          </ol>
+          <img id="section-5-gif" src="img/202604_05.png" alt="micro:bitでかけ算○×クイズを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-5-gif', 'img/202604_05.gif', 'img/202604_05.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">かけ算の答えをたしかめるはんぷく練習</span>
+              <span class="text-normal">かけ算の答えを確かめる反復練習</span>
+            </li>
+            <li>
+              <span class="text-easy">正しいかどうかをはんだんする仕組みのりかい</span>
+              <span class="text-normal">正しいかどうかを判断する仕組みの理解</span>
+            </li>
+            <li>
+              <span class="text-easy">自分の考えをすぐにたしかめる学習</span>
+              <span class="text-normal">自分の考えをすぐに確かめる学習</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">たし算やひき算の○×クイズへの作りかえ</span>
+              <span class="text-normal">たし算やひき算の○×クイズへの作りかえ</span>
+            </li>
+            <li>
+              <span class="text-easy">正しくない式の作り方のルールへんこう</span>
+              <span class="text-normal">正しくない式の作り方のルール変更</span>
+            </li>
+            <li>
+              <span class="text-easy">れんぞくで何問せいかいできたかのきろくづくり</span>
+              <span class="text-normal">連続で何問正解できたかの記録づくり</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/かけ算○×クイズ.hex" download aria-label="サンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+
+  <p class="foot">本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/common.js"></script>
+
+</body>
+</html>

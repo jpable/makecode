@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【8月】夏休みにやってみよう！micro:bit自由研究＆ゲームとくしゅう</title>
+  <meta name="description" content="夏休みの自由研究やイベントに使えるmicro:bitプログラム集パート2です。" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body
+  class="mode-easy"
+  data-title-easy="【8月】夏休みにやってみよう！micro:bit自由研究＆ゲームとくしゅう"
+  data-title-normal="【8月】夏休みにやってみよう！micro:bit自由研究＆ゲーム特集"
+  data-lead-easy="夏休みの自由研究やイベントに使えるmicro:bitプログラム集パート2です。"
+  data-lead-normal="夏休みの自由研究やイベントに使えるmicro:bitプログラム集パート2です。"
+>
+  <div id="header"></div>
+  <div id="nav"></div>
+  <main id="main" class="wrap">
+<section id="section-1" aria-labelledby="section-1-h">
+
+  <h2 id="section-1-h">
+    <span aria-hidden="true">🗺</span>
+    <span class="text-easy" id="sample1-title">
+      地図記号3たくクイズ
+    </span>
+    <span class="text-normal">
+      地図記号3択クイズ
+    </span>
+    <span class="meta">
+      — 社会（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、交番、保健所、小中学校の地図記号を見分ける3たくクイズを楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、交番、保健所、小中学校の地図記号を見分ける3択クイズを楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-1-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしをこうごにひょうじ</span>
+          <span class="text-normal">最初にBと右向き矢印を交互に表示</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでクイズの開始</span>
+          <span class="text-normal">Bボタンでクイズの開始</span>
+        </li>
+        <li>
+          <span class="text-easy">画面に交番、保健所、小中学校のどれか1つの地図記号をひょうじ</span>
+          <span class="text-normal">画面に交番、保健所、小中学校のどれか1つの地図記号を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">交番の地図記号だと思ったらAボタンをおす</span>
+          <span class="text-normal">交番の地図記号だと思ったらAボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">保健所の地図記号だと思ったらBボタンをおす</span>
+          <span class="text-normal">保健所の地図記号だと思ったらBボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">小中学校の地図記号だと思ったらA+Bボタンを同時におす</span>
+          <span class="text-normal">小中学校の地図記号だと思ったらA+Bボタンを同時に押す</span>
+        </li>
+        <li>
+          <span class="text-easy">せいかいすると○をひょうじ、とくてんがついかされる</span>
+          <span class="text-normal">正解すると○を表示、得点が追加される</span>
+        </li>
+        <li>
+          <span class="text-easy">まちがえると×をひょうじ、ライフがげんしょうする</span>
+          <span class="text-normal">間違えると×を表示、ライフが減少する</span>
+        </li>
+        <li>
+          <span class="text-easy">5問答えるかライフがなくなるとゲームしゅうりょう</span>
+          <span class="text-normal">5問答えるかライフがなくなるとゲーム終了</span>
+        </li>
+        <li>
+          <span class="text-easy">さいごにせいかい数とけっかのひょうじょうをひょうじ</span>
+          <span class="text-normal">最後に正解数と結果の表情を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">3秒後にさいしょのひょうじへもどる</span>
+          <span class="text-normal">3秒後に最初の表示へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-1-gif"
+        src="img/202608_01.png"
+        alt="地図記号3択クイズをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-1-gif',
+          'img/202608_01.gif',
+          'img/202608_01.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">地図記号の形と意味をむすびつける学習</span>
+          <span class="text-normal">地図記号の形と意味を結びつける学習</span>
+        </li>
+        <li>
+          <span class="text-easy">地図を見るときにひつような記号の読み取り練習</span>
+          <span class="text-normal">地図を見るときに必要な記号の読み取り練習</span>
+        </li>
+        <li>
+          <span class="text-easy">答えによってとくてんやライフがかわるクイズのたいけん</span>
+          <span class="text-normal">答えによって得点やライフが変わるクイズの体験</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ほかの地図記号をついかしてみる</span>
+          <span class="text-normal">ほかの地図記号を追加してみる</span>
+        </li>
+        <li>
+          <span class="text-easy">問題数を10問にふやすルール作り</span>
+          <span class="text-normal">問題数を10問に増やすルール作り</span>
+        </li>
+        <li>
+          <span class="text-easy">ちいきの地図から同じ地図記号をさがす活動</span>
+          <span class="text-normal">地域の地図から同じ地図記号を探す活動</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-地図記号3たくクイズ.hex"
+      download
+      aria-labelledby="
+        sample1-title
+        sample1-btn
+      "
+    >
+      <span id="sample1-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-2" aria-labelledby="section-2-h">
+
+  <h2 id="section-2-h">
+    <span aria-hidden="true">🎆</span>
+    <span class="text-easy" id="sample2-title">
+      花火パワーれんだチャレンジ
+    </span>
+    <span class="text-normal">
+      花火パワー連打チャレンジ
+    </span>
+    <span class="meta">
+      — 総合（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、花火大会をイメージしながら、AボタンとBボタンをこうごにおして花火パワーをためるゲームを楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、花火大会をイメージしながら、AボタンとBボタンを交互に押して花火パワーをためるゲームを楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-2-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしをこうごにひょうじ</span>
+          <span class="text-normal">最初にBと右向き矢印を交互に表示</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでゲームの開始</span>
+          <span class="text-normal">Bボタンでゲームの開始</span>
+        </li>
+        <li>
+          <span class="text-easy">3、2、1のカウントダウンのあと、5秒間のパワーためタイムの開始</span>
+          <span class="text-normal">3、2、1のカウントダウンのあと、5秒間のパワーためタイムの開始</span>
+        </li>
+        <li>
+          <span class="text-easy">AボタンとBボタンをこうごにおす</span>
+          <span class="text-normal">AボタンとBボタンを交互に押す</span>
+        </li>
+        <li>
+          <span class="text-easy">こうごに正しくおすたびに花火パワーが1つふえる</span>
+          <span class="text-normal">交互に正しく押すたびに花火パワーが1つ増える</span>
+        </li>
+        <li>
+          <span class="text-easy">同じボタンをつづけておしてもパワーはふえない仕組み</span>
+          <span class="text-normal">同じボタンを続けて押してもパワーは増えない仕組み</span>
+        </li>
+        <li>
+          <span class="text-easy">たまったパワーの数だけLEDの点がふえていく</span>
+          <span class="text-normal">たまったパワーの数だけLEDの点が増えていく</span>
+        </li>
+        <li>
+          <span class="text-easy">5秒たつと、たまったパワーのすうちをひょうじする</span>
+          <span class="text-normal">5秒たつと、たまったパワーの数値を表示する</span>
+        </li>
+        <li>
+          <span class="text-easy">パワーが20いじょうなら大きな花火、10いじょうなら中くらいの花火、9いかなら小さな花火をひょうじ</span>
+          <span class="text-normal">パワーが20以上なら大きな花火、10以上なら中くらいの花火、9以下なら小さな花火を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">花火を打ち上げたあと、さいしょのひょうじへもどる</span>
+          <span class="text-normal">花火を打ち上げたあと、最初の表示へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-2-gif"
+        src="img/202608_02.png"
+        alt="花火パワー連打チャレンジをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-2-gif',
+          'img/202608_02.gif',
+          'img/202608_02.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">AボタンとBボタンをこうごにおすリズムそうさのたいけん</span>
+          <span class="text-normal">AボタンとBボタンを交互に押すリズム操作の体験</span>
+        </li>
+        <li>
+          <span class="text-easy">時間内にどれだけ多く入力できるかを考える活動</span>
+          <span class="text-normal">時間内にどれだけ多く入力できるかを考える活動</span>
+        </li>
+        <li>
+          <span class="text-easy">とくてんに合わせて花火の大きさがかわるゲームせっけいの学習</span>
+          <span class="text-normal">得点に合わせて花火の大きさが変わるゲーム設計の学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">パワーをためる時間を3秒や10秒にかえてみる</span>
+          <span class="text-normal">パワーをためる時間を3秒や10秒に変えてみる</span>
+        </li>
+        <li>
+          <span class="text-easy">花火の大きさがかわる点数のじょうけんをかえてみる</span>
+          <span class="text-normal">花火の大きさが変わる点数の条件を変えてみる</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちとパワーのきろくをくらべる花火大会ランキング作り</span>
+          <span class="text-normal">友だちとパワーの記録を比べる花火大会ランキング作り</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-花火パワーれんだチャレンジ.hex"
+      download
+      aria-labelledby="
+        sample2-title
+        sample2-btn
+      "
+    >
+      <span id="sample2-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-3" aria-labelledby="section-3-h">
+
+  <h2 id="section-3-h">
+    <span aria-hidden="true">🕰</span>
+    <span class="text-easy" id="sample3-title">
+      ふり子ゆれ回数メーター
+    </span>
+    <span class="text-normal">
+      振り子揺れ回数メーター
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitのかそくどセンサーを使って、ふりこのゆれた回数を数え、ひもの長さやゆれ方のちがいを調べる自由研究ができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの加速度センサーを使って、ふりこのゆれた回数を数え、ひもの長さやゆれ方のちがいを調べる自由研究ができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-3-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしをこうごにひょうじ</span>
+          <span class="text-normal">最初にBと右向き矢印を交互に表示</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンではかる時間を10秒、20秒、30秒に切りかえる</span>
+          <span class="text-normal">Aボタンで測る時間を10秒、20秒、30秒に切り替える</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでそくていの開始</span>
+          <span class="text-normal">Bボタンで測定の開始</span>
+        </li>
+        <li>
+          <span class="text-easy">3、2、1のカウントダウンのあと、ふりこのゆれ回数をそくてい</span>
+          <span class="text-normal">3、2、1のカウントダウンのあと、ふりこのゆれ回数を測定</span>
+        </li>
+        <li>
+          <span class="text-easy">micro:bitをひもにつけて左右にゆらすと、左から右へ大きく動いた回数をカウント</span>
+          <span class="text-normal">micro:bitをひもにつけて左右にゆらすと、左から右へ大きく動いた回数をカウント</span>
+        </li>
+        <li>
+          <span class="text-easy">カウントされるたびに、LEDのひょうじが下から少しずつふえていく</span>
+          <span class="text-normal">カウントされるたびに、LEDの表示が下から少しずつ増えていく</span>
+        </li>
+        <li>
+          <span class="text-easy">決めた時間が終わると、ゆれた回数をひょうじ</span>
+          <span class="text-normal">決めた時間が終わると、ゆれた回数を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかを3秒ひょうじしたあと、さいしょのひょうじへもどる</span>
+          <span class="text-normal">結果を3秒表示したあと、最初の表示へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-3-gif"
+        src="img/202608_03.png"
+        alt="振り子揺れ回数メーターをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-3-gif',
+          'img/202608_03.gif',
+          'img/202608_03.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">かそくどセンサーで左右のゆれを調べるたいけん</span>
+          <span class="text-normal">加速度センサーで左右のゆれを調べる体験</span>
+        </li>
+        <li>
+          <span class="text-easy">ふりこの長さやゆらし方による回数のちがいのかんさつ</span>
+          <span class="text-normal">ふりこの長さやゆらし方による回数のちがいの観察</span>
+        </li>
+        <li>
+          <span class="text-easy">時間をそろえて回数をくらべる自由研究の進め方</span>
+          <span class="text-normal">時間をそろえて回数を比べる自由研究の進め方</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ひもの長さを10cm、20cm、30cmにかえたひかく</span>
+          <span class="text-normal">ひもの長さを10cm、20cm、30cmに変えた比較</span>
+        </li>
+        <li>
+          <span class="text-easy">同じ長さで3回ずつはかってへいきんをきろくする</span>
+          <span class="text-normal">同じ長さで3回ずつ測って平均を記録する</span>
+        </li>
+        <li>
+          <span class="text-easy">ゆれを数える角度のじょうけんをかえてはんのうのちがいを調べてみる</span>
+          <span class="text-normal">ゆれを数える角度の条件を変えて反応のちがいを調べてみる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-ふり子ゆれ回数メーター.hex"
+      download
+      aria-labelledby="
+        sample3-title
+        sample3-btn
+      "
+    >
+      <span id="sample3-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-4" aria-labelledby="section-4-h">
+
+  <h2 id="section-4-h">
+    <span aria-hidden="true">🌺</span>
+    <span class="text-easy" id="sample4-title">
+      ボタンで花をさかせよう
+    </span>
+    <span class="text-normal">
+      ボタンで花を咲かせよう
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、Aボタンをおすたびに、たねから花までが少しずつ育ち、まんかいになる様子を楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、Aボタンを押すたびに、種から花までが少しずつ育ち、満開になる様子を楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-4-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると、画面の中央にLED1つで表したたねをひょうじする</span>
+          <span class="text-normal">起動すると、画面の中央にLED1つで表した種を表示する</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすたびに、たね、め、つぼみ、まんかいのじゅんに花がせいちょうする</span>
+          <span class="text-normal">Aボタンを押すたびに、種、芽、つぼみ、満開の順に花が成長する</span>
+        </li>
+        <li>
+          <span class="text-easy">まんかいになると、カタカナの「サ」「イ」「タ」をじゅんばんにひょうじしておいわい</span>
+          <span class="text-normal">満開になると、カタカナの「サ」「イ」「タ」を順番に表示してお祝い</span>
+        </li>
+        <li>
+          <span class="text-easy">「サイタ」のひょうじが終わると、まんかいの花にもどる</span>
+          <span class="text-normal">「サイタ」の表示が終わると、満開の花にもどる</span>
+        </li>
+        <li>
+          <span class="text-easy">まんかいのときにAボタンをおすと、もう一度「サイタ」のひょうじを楽しめる</span>
+          <span class="text-normal">満開のときにAボタンを押すと、もう一度「サイタ」の表示を楽しめる</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、たねのじょうたいにもどってやり直しができる</span>
+          <span class="text-normal">Bボタンを押すと、たねの状態に戻ってやり直しができる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-4-gif"
+        src="img/202608_04.png"
+        alt="ボタンで花を咲かせようをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-4-gif',
+          'img/202608_04.gif',
+          'img/202608_04.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ボタンをおした回数と絵のへんかのかんけいをむすびつける</span>
+          <span class="text-normal">ボタンを押した回数と絵の変化の関係を理解する</span>
+        </li>
+        <li>
+          <span class="text-easy">たね、め、つぼみ、花へと育つ植物のせいちょうのりかい</span>
+          <span class="text-normal">種、芽、つぼみ、花へと育つ植物の成長の理解</span>
+        </li>
+        <li>
+          <span class="text-easy">じょうけんによってひょうじを切りかえるプログラムの仕組みの学習</span>
+          <span class="text-normal">条件によって表示を切り替えるプログラムの仕組みの学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">葉やくきなどをくわえたせいちょうだんかいのついか</span>
+          <span class="text-normal">葉や茎などを加えた成長段階の追加</span>
+        </li>
+        <li>
+          <span class="text-easy">自分で考えた花の形へのデザインへんこう</span>
+          <span class="text-normal">自分で考えた花の形へのデザイン変更</span>
+        </li>
+        <li>
+          <span class="text-easy">まんかいになったときの音や光のついか</span>
+          <span class="text-normal">満開になったときの音や光の追加</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-ボタンで花をさかせよう.hex"
+      download
+      aria-labelledby="
+        sample4-title
+        sample4-btn
+      "
+    >
+      <span id="sample4-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-5" aria-labelledby="section-5-h">
+
+  <h2 id="section-5-h">
+    <span aria-hidden="true">🐟</span>
+    <span class="text-easy" id="sample5-title">
+      すいそうのもをふせごう！明るさちょうさたい
+    </span>
+    <span class="text-normal">
+      水槽の藻をふせごう！明るさ調査隊
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitの明るさセンサーを使って、すいそうをおく場所の明るさを3だんかいで調べます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの明るさセンサーを使って、水槽を置く場所の明るさを3段階で調べます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-5-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">すいそうをおきたい場所にmiro:bitをおくと、明るさが自動でそくていされる</span>
+          <span class="text-normal">水槽を置きたい場所にmicro:bitを置くと、明るさが自動で測定される</span>
+        </li>
+        <li>
+          <span class="text-easy">明るさが180いじょうのときは、すべてのLEDが光る「明るすぎる」のひょうじ</span>
+          <span class="text-normal">明るさが180以上のときは、すべてのLEDが光る「明るすぎる」の表示</span>
+        </li>
+        <li>
+          <span class="text-easy">明るさが70いじょう180みまんのときは、中央の9こが光る「ちょうどよい」のひょうじ</span>
+          <span class="text-normal">明るさが70以上180未満のときは、中央の9個が光る「ちょうどよい」の表示</span>
+        </li>
+        <li>
+          <span class="text-easy">明るさが70みまんのときは、中央の1こが光る「暗い」のひょうじ</span>
+          <span class="text-normal">明るさが70未満のときは、中央の1個が光る「暗い」の表示</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、そくていした明るさを数字で表す</span>
+          <span class="text-normal">Bボタンを押すと、測定した明るさを数字で表す</span>
+        </li>
+        <li>
+          <span class="text-easy">数字のあとに「アカルイ」「ヨイ」「クライ」のはんていけっかがひょうじされる</span>
+          <span class="text-normal">数字のあとに「アカルイ」「ヨイ」「クライ」の判定結果が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">はんていが終わったあと、3だんかいのLEDひょうじへ切りかわる</span>
+          <span class="text-normal">判定が終わったあと、3段階のLED表示へ切り替わる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-5-gif"
+        src="img/202608_05.png"
+        alt="水槽の藻をふせごう！明るさ調査隊をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-5-gif',
+          'img/202608_05.gif',
+          'img/202608_05.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">明るさセンサーを使った光の強さのちょうさ</span>
+          <span class="text-normal">明るさセンサーを使った光の強さの調査</span>
+        </li>
+        <li>
+          <span class="text-easy">そくていした数字と3だんかいのはんていけっかのむすびつき</span>
+          <span class="text-normal">測定した数字と3段階の判定結果の結び付き</span>
+        </li>
+        <li>
+          <span class="text-easy">すいそうの生き物やもの育ち方を考えたおき場所のけんとう</span>
+          <span class="text-normal">水槽の生き物や藻の育ち方を考えた置き場所の検討</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">70と180の数字をかえたはんていきじゅんの調整</span>
+          <span class="text-normal">70と180の数字を変えた判定基準の調整</span>
+        </li>
+        <li>
+          <span class="text-easy">朝、昼、夕方にはかった明るさのきろくとひかく</span>
+          <span class="text-normal">朝、昼、夕方に測った明るさの記録と比較</span>
+        </li>
+        <li>
+          <span class="text-easy">教室のいろいろな場所で行う明るさマップのさくせい</span>
+          <span class="text-normal">教室のいろいろな場所で行う明るさマップの作成</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-すいそうのもをふせごう！明るさちょうさたい.hex"
+      download
+      aria-labelledby="
+        sample5-title
+        sample5-btn
+      "
+    >
+      <span id="sample5-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-6" aria-labelledby="section-6-h">
+
+  <h2 id="section-6-h">
+    <span aria-hidden="true">🔢</span>
+    <span class="text-easy" id="sample6-title">
+      足し算フラッシュゲーム
+    </span>
+    <span class="text-normal">
+      足し算フラッシュゲーム
+    </span>
+    <span class="meta">
+      — 算数（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、短い時間でひょうじされる2つの数字をおぼえ、足し算の答えを入力するゲームを楽しみます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、短い時間で表示される2つの数字を覚え、足し算の答えを入力するゲームを楽しみます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-6-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしをこうごにひょうじ</span>
+          <span class="text-normal">最初にBと右向き矢印を交互に表示</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおしてゲーム開始</span>
+          <span class="text-normal">Bボタンを押してゲーム開始</span>
+        </li>
+        <li>
+          <span class="text-easy">1つ目の数字、「＋」、2つ目の数字、「＝」をじゅんばんにひょうじ</span>
+          <span class="text-normal">1つ目の数字、「＋」、2つ目の数字、「＝」を順番に表示</span>
+        </li>
+        <li>
+          <span class="text-easy">ひょうじされた2つの数字を使って足し算する</span>
+          <span class="text-normal">表示された2つの数字を使って足し算する</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすと答えが1ずつ小さくなる</span>
+          <span class="text-normal">Aボタンを押すと答えが1ずつ小さくなる</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと答えが1ずつ大きくなる</span>
+          <span class="text-normal">Bボタンを押すと答えが1ずつ大きくなる</span>
+        </li>
+        <li>
+          <span class="text-easy">AボタンとBボタンの同時おしで答えを決定する</span>
+          <span class="text-normal">AボタンとBボタンの同時押しで答えを決定する</span>
+        </li>
+        <li>
+          <span class="text-easy">せいかいしたときは「〇」をひょうじして次の問題へ切りかわる</span>
+          <span class="text-normal">正解したときは「〇」を表示して次の問題へ切り替わる</span>
+        </li>
+        <li>
+          <span class="text-easy">まちがえたときは「×」と「セイカイ」をじゅんばんにひょうじする</span>
+          <span class="text-normal">間違えたときは「×」と「セイカイ」を順番に表示する</span>
+        </li>
+        <li>
+          <span class="text-easy">「セイカイ」のあとにここまでせいかいした問題数がひょうじされる</span>
+          <span class="text-normal">「セイカイ」のあとにここまで正解した問題数が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">開始画面へもどる</span>
+          <span class="text-normal">開始画面へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-6-gif"
+        src="img/202608_06.png"
+        alt="足し算フラッシュゲームをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-6-gif',
+          'img/202608_06.gif',
+          'img/202608_06.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">短い時間で数字をおぼえるきおく力と集中力のいくせい</span>
+          <span class="text-normal">短い時間で数字を覚える記憶力と集中力の育成</span>
+        </li>
+        <li>
+          <span class="text-easy">1けたの数どうしを足す計算の練習</span>
+          <span class="text-normal">1桁の数どうしを足す計算の練習</span>
+        </li>
+        <li>
+          <span class="text-easy">せいかいをつづけながらきろくをのばすちょうせん</span>
+          <span class="text-normal">正解を続けながら記録を伸ばす挑戦</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">数字をひょうじする時間をさらに短くしたなんい度の調整</span>
+          <span class="text-normal">数字を表示する時間をさらに短くした難易度の調整</span>
+        </li>
+        <li>
+          <span class="text-easy">答えとしてえらべる数字のはんいをかえたルール作り</span>
+          <span class="text-normal">答えとして選べる数字の範囲を変えたルール作り</span>
+        </li>
+        <li>
+          <span class="text-easy">引き算やかけ算を使ったフラッシュゲームへのへんこう</span>
+          <span class="text-normal">引き算やかけ算を使ったフラッシュゲームへの変更</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-足し算フラッシュゲーム.hex"
+      download
+      aria-labelledby="
+        sample6-title
+        sample6-btn
+      "
+    >
+      <span id="sample6-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-7" aria-labelledby="section-7-h">
+
+  <h2 id="section-7-h">
+    <span aria-hidden="true">🐼</span>
+    <span class="text-easy" id="sample7-title">
+      パンダとためよう！夏休みスタンプ
+    </span>
+    <span class="text-normal">
+      パンダとためよう！夏休みスタンプ
+    </span>
+    <span class="meta">
+      — 総合学習（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、夏休みの活動を行うたびにスタンプをため、もくひょうの10こを目指すきろくを楽しみます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、夏休みの活動を行うたびにスタンプをため、目標の10個を目指す記録を楽しみます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-7-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにパンダの顔がひょうじされる</span>
+          <span class="text-normal">最初にパンダの顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすたびに1つずつスタンプがふえる</span>
+          <span class="text-normal">Aボタンを押すたびに1つずつスタンプが増える</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおしたあとに「スタンプ」とげんざいの数がひょうじされる</span>
+          <span class="text-normal">Aボタンを押したあとに「スタンプ」と現在の数が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">スタンプ数のひょうじが終わったあとにパンダの顔にもどる</span>
+          <span class="text-normal">スタンプ数の表示が終わったあとにパンダの顔に戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと「イマ」とげんざいのスタンプ数がひょうじされる</span>
+          <span class="text-normal">Bボタンを押すと「イマ」と現在のスタンプ数が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">スタンプ数のかくにんが終わったあとにパンダの顔にもどる</span>
+          <span class="text-normal">スタンプ数の確認が終わったあとにパンダの顔に戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">スタンプが10こになると「ゴール」とハートがひょうじされる</span>
+          <span class="text-normal">スタンプが10個になると「ゴール」とハートが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ゴールのひょうじが終わったあとにえがおのパンダがひょうじされる</span>
+          <span class="text-normal">ゴールの表示が終わったあとに笑顔のパンダが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">AボタンとBボタンの同時おしでスタンプ数がリセットされる</span>
+          <span class="text-normal">AボタンとBボタンの同時押しでスタンプ数がリセットされる</span>
+        </li>
+        <li>
+          <span class="text-easy">リセットしたあとにさいしょのパンダの顔がひょうじされる</span>
+          <span class="text-normal">リセットしたあとに最初のパンダの顔が表示される</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-7-gif"
+        src="img/202608_07.png"
+        alt="パンダとためよう！夏休みスタンプをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-7-gif',
+          'img/202608_07.gif',
+          'img/202608_07.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ボタンそうさと数のふえ方をむすびつけるカウンターの仕組みのりかい</span>
+          <span class="text-normal">ボタン操作と数の増え方を結び付けるカウンターの仕組みの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">夏休みの学習やてつだいをつづけるしゅうかんづくり</span>
+          <span class="text-normal">夏休みの学習や手伝いを続ける習慣づくり</span>
+        </li>
+        <li>
+          <span class="text-easy">もくひょうに向かって取り組むたっせい感のたいけん</span>
+          <span class="text-normal">目標に向かって取り組む達成感の体験</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">もくひょう数を20こなどにかえるもくひょうせってい</span>
+          <span class="text-normal">目標数を20個などに変える目標設定</span>
+        </li>
+        <li>
+          <span class="text-easy">活動に合わせたパンダのひょうじょうやLEDデザインのへんこう</span>
+          <span class="text-normal">活動に合わせたパンダの表情やLEDデザインの変更</span>
+        </li>
+        <li>
+          <span class="text-easy">活動のしゅるいごとに数を分けてきろくするふくすうカウンターへのはってん</span>
+          <span class="text-normal">活動の種類ごとに数を分けて記録する複数カウンターへの発展</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-パンダとためよう！夏休みスタンプ.hex"
+      download
+      aria-labelledby="
+        sample7-title
+        sample7-btn
+      "
+    >
+      <span id="sample7-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-8" aria-labelledby="section-8-h">
+
+  <h2 id="section-8-h">
+    <span aria-hidden="true">⚾</span>
+    <span class="text-easy" id="sample8-title">
+      スイングひきょりはんていゲーム
+    </span>
+    <span class="text-normal">
+      スイング飛距離判定ゲーム
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitのかそくどセンサーを使って、本体をふった強さをボールのひきょりにおきかえ、アウト、ヒット、ホームランをはんていするゲームを楽しみます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの加速度センサーを使って、本体を振った強さをボールの飛距離に置き換え、アウト、ヒット、ホームランを判定するゲームを楽しみます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-8-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしをこうごにひょうじ</span>
+          <span class="text-normal">最初にBと右向き矢印を交互に表示</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおしたときに、一番下の中央に1このLEDのボールがひょうじされる</span>
+          <span class="text-normal">Bボタンを押したときに、一番下の中央に1個のLEDのボールが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールのひょうじ後にmicro:bitを野球のバットのようにふる</span>
+          <span class="text-normal">ボールの表示後にmicro:bitを野球のバットのように振る</span>
+        </li>
+        <li>
+          <span class="text-easy">ふった強さに合わせて、ボールが下から上へ進むアニメーションがひょうじされる</span>
+          <span class="text-normal">振った強さに合わせて、ボールが下から上へ進むアニメーションが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールが1だん進むごとに20メートルとしてひきょりが計算される</span>
+          <span class="text-normal">ボールが1段進むごとに20メートルとして飛距離が計算される</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールが1だん進んだ20メートルのときは「アウト」のひょうじ</span>
+          <span class="text-normal">ボールが1段進んだ20メートルのときは「アウト」を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールが2だんまたは3だん進んだ40メートルまたは60メートルのときは「ヒット」をひょうじ</span>
+          <span class="text-normal">ボールが2段または3段進んだ40メートルまたは60メートルのときは「ヒット」の表示</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールが4だんいじょう進んだ80メートルいじょうのときは「ホームラン」と花火をひょうじ</span>
+          <span class="text-normal">ボールが4段以上進んだ80メートル以上のときは「ホームラン」と花火を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールのアニメーション後にひきょりの数字がひょうじされる</span>
+          <span class="text-normal">ボールのアニメーション後に飛距離の数字が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">はんていが終わったあとに自動で開始画面にもどる</span>
+          <span class="text-normal">判定が終わったあとに自動で開始画面に戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-8-gif"
+        src="img/202608_08.png"
+        alt="スイング飛距離判定ゲームをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-8-gif',
+          'img/202608_08.gif',
+          'img/202608_08.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">かそくどセンサーでふる動きの強さを調べるたいけん</span>
+          <span class="text-normal">加速度センサーで振る動きの強さを調べる体験</span>
+        </li>
+        <li>
+          <span class="text-easy">LED1だんを20メートルとしてひきょりへおきかえる考え方を学ぶ</span>
+          <span class="text-normal">LED1段を20メートルとして飛距離へ置き換える考え方を学ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールが進んだだん数によってけっかを分けるじょうけん分けのりかい</span>
+          <span class="text-normal">ボールが進んだ段数によって結果を分ける条件分けの理解</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ボールが進みやすくなるようにふる強さのきじゅんを調整する</span>
+          <span class="text-normal">ボールが進みやすくなるように振る強さの基準を調整する</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールが左右にも動くへんか球のアニメーションを作ってみる</span>
+          <span class="text-normal">ボールが左右にも動く変化球のアニメーションを作ってみる</span>
+        </li>
+        <li>
+          <span class="text-easy">ホームランの回数をきろくするとくてんきのうのついか</span>
+          <span class="text-normal">ホームランの回数を記録する得点機能の追加</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-スイングひきょりはんていゲーム.hex"
+      download
+      aria-labelledby="
+        sample8-title
+        sample8-btn
+      "
+    >
+      <span id="sample8-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+
+  <p class="foot">
+    本情報の内容 (添付文書、リンク先などを含む) は、
+    作成日時点でのものであり、
+    予告なく変更される場合があります。
+  </p>
+  </main>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+</body>
+</html>

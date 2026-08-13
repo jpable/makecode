@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【7月】micro:bitで楽しむ！夏休み自由研究＆夏イベントとくしゅう</title>
+  <meta name="description" content="夏休みの自由研究やイベントに使えるmicro:bitプログラム集です。" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body
+  class="mode-easy"
+  data-title-easy="【7月】micro:bitで楽しむ！夏休み自由研究＆夏イベントとくしゅう"
+  data-title-normal="【7月】micro:bitで楽しむ！夏休み自由研究＆夏イベント特集"
+  data-lead-easy="夏休みの自由研究やイベントに使えるmicro:bitプログラム集です。"
+  data-lead-normal="夏休みの自由研究やイベントに使えるmicro:bitプログラム集です。"
+>
+  <div id="header"></div>
+  <div id="nav"></div>
+  <main id="main" class="wrap">
+<section id="section-1" aria-labelledby="section-1-h">
+
+  <h2 id="section-1-h">
+    <span aria-hidden="true">🌎</span>
+    <span class="text-easy" id="sample1-title">
+      地球の公転モデル
+    </span>
+    <span class="text-normal">
+      地球の公転モデル
+    </span>
+    <span class="meta">
+      — 理科（小学6年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、中央の太陽のまわりを地球が回る様子をLEDで表す学習ができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、中央の太陽のまわりを地球が回る様子をLEDで表す学習ができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-1-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">中央のLEDが太陽を表す</span>
+          <span class="text-normal">中央のLEDが太陽を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">太陽のまわりにひょうじされるLEDが地球を表す</span>
+          <span class="text-normal">太陽のまわりに表示されるLEDが地球を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のLEDが1秒ごとにいちをかえながら太陽のまわりを回る</span>
+          <span class="text-normal">地球のLEDが1秒ごとに位置を変えながら太陽のまわりを回る</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のいちが12回かわると、地球が太陽のまわりを1しゅうしたことを表す</span>
+          <span class="text-normal">地球の位置が12回変わると、地球が太陽のまわりを1周したことを表す</span>
+        </li>
+        <li>
+          <span class="text-easy">1つのいちを1か月として見ると、12か月で1年になる</span>
+          <span class="text-normal">1つの位置を1か月として見ると、12か月で1年になる</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDのいちを見ながら、地球の公転の動きをかんさつする</span>
+          <span class="text-normal">LEDの位置を見ながら、地球の公転の動きを観察する</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-1-gif"
+        src="img/202607_01.png"
+        alt="地球の公転モデルをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-1-gif',
+          'img/202607_01.gif',
+          'img/202607_01.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">地球が太陽のまわりを回る公転のイメージを作る</span>
+          <span class="text-normal">地球が太陽のまわりを回る公転のイメージを作る</span>
+        </li>
+        <li>
+          <span class="text-easy">12か月と1年のつながりをLEDの動きでたしかめる</span>
+          <span class="text-normal">12か月と1年のつながりをLEDの動きで確かめる</span>
+        </li>
+        <li>
+          <span class="text-easy">角度を少しずつかえながらいちを計算するプログラムのしくみをりかいする</span>
+          <span class="text-normal">角度を少しずつ変えながら位置を計算するプログラムの仕組みを理解する</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">地球が動く速さをかえて見やすさを調整する</span>
+          <span class="text-normal">地球が動く速さを変えて見やすさを調整する</span>
+        </li>
+        <li>
+          <span class="text-easy">月の動きもついかして、太陽、地球、月のモデルにかいぞうする</span>
+          <span class="text-normal">月の動きも追加して、太陽、地球、月のモデルに改造する</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のいちときせつの関係を考え、春夏秋冬のひょうげんにはってんさせる</span>
+          <span class="text-normal">地球の位置と季節の関係を考え、春夏秋冬の表現に発展させる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-地球の公転モデル.hex"
+      download
+      aria-labelledby="
+        sample1-title
+        sample1-btn
+      "
+    >
+      <span id="sample1-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-2" aria-labelledby="section-2-h">
+
+  <h2 id="section-2-h">
+    <span aria-hidden="true">🔦</span>
+    <span class="text-easy" id="sample2-title">
+      ホタルキャッチ
+    </span>
+    <span class="text-normal">
+      ホタルキャッチ
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、夏の夜にホタルを集めるように、AボタンとBボタンで光をキャッチし、暗い虫をよけながらとくてんをねらうゲームができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、夏の夜にホタルを集めるように、AボタンとBボタンで光をキャッチし、暗い虫をよけながら得点をねらうゲームができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-2-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">最初にBと右向き矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでゲームの開始</span>
+          <span class="text-normal">Bボタンでゲームの開始</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで下の点を左へ動かし、Bボタンで下の点を右へ動かす</span>
+          <span class="text-normal">Aボタンで下の点を左へ動かし、Bボタンで下の点を右へ動かす</span>
+        </li>
+        <li>
+          <span class="text-easy">画面右上の3つのLEDがライフを表す</span>
+          <span class="text-normal">画面右上の3つのLEDがライフを表す</span>
+        </li>
+        <li>
+          <span class="text-easy">上から落ちてくる明るい点を下の点で受け止めると1点ついか</span>
+          <span class="text-normal">上から落ちてくる明るい点を下の点で受け止めると1点追加</span>
+        </li>
+        <li>
+          <span class="text-easy">上から落ちてくる暗い点を受け止めるとライフが1つへる</span>
+          <span class="text-normal">上から落ちてくる暗い点を受け止めるとライフが1つ減る</span>
+        </li>
+        <li>
+          <span class="text-easy">暗い点に当たってもばつじるしは出ず、ライフだけがへってゲームぞっこう</span>
+          <span class="text-normal">暗い点に当たってもばつ印は出ず、ライフだけが減ってゲーム続行</span>
+        </li>
+        <li>
+          <span class="text-easy">とくてんがふえるほど、落ちてくる速さが少しずつ速くなる</span>
+          <span class="text-normal">得点が増えるほど、落ちてくる速さが少しずつ速くなる</span>
+        </li>
+        <li>
+          <span class="text-easy">ライフがなくなるとゲームしゅうりょう</span>
+          <span class="text-normal">ライフがなくなるとゲーム終了</span>
+        </li>
+        <li>
+          <span class="text-easy">さいごにとくてんとけっかのひょうじょうをひょうじ</span>
+          <span class="text-normal">最後に得点と結果の表情を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">3秒後にさいしょのひょうじへもどる</span>
+          <span class="text-normal">3秒後に最初の表示へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-2-gif"
+        src="img/202607_02.png"
+        alt="ホタルキャッチをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-2-gif',
+          'img/202607_02.gif',
+          'img/202607_02.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">AボタンとBボタンで左右に動かすそうさをたいけんする</span>
+          <span class="text-normal">AボタンとBボタンで左右に動かす操作を体験する</span>
+        </li>
+        <li>
+          <span class="text-easy">明るい点を集め、暗い点をよけるはんだん力をつける</span>
+          <span class="text-normal">明るい点を集め、暗い点をよける判断力をつける</span>
+        </li>
+        <li>
+          <span class="text-easy">とくてん、ライフ、速さをいしきしたゲームせっけいの学習</span>
+          <span class="text-normal">得点、ライフ、速さを意識したゲーム設計の学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">暗い点の出るわりあいをさらにふやす上級ルール</span>
+          <span class="text-normal">暗い点の出る割合をさらに増やす上級ルール</span>
+        </li>
+        <li>
+          <span class="text-easy">ライフの数をふやしたりへらしたりして、むずかしさを調整する</span>
+          <span class="text-normal">ライフの数を増やしたり減らしたりして、難しさを調整する</span>
+        </li>
+        <li>
+          <span class="text-easy">とくてんごとのひょうじょうやランキングひょうじのついか</span>
+          <span class="text-normal">得点ごとの表情やランキング表示の追加</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-ホタルキャッチ.hex"
+      download
+      aria-labelledby="
+        sample2-title
+        sample2-btn
+      "
+    >
+      <span id="sample2-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-3" aria-labelledby="section-3-h">
+
+  <h2 id="section-3-h">
+    <span aria-hidden="true">🪲</span>
+    <span class="text-easy" id="sample3-title">
+      カブクワすもう3本勝負
+    </span>
+    <span class="text-normal">
+      カブクワ相撲3本勝負
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、カブトムシとクワガタがおし合うように、AボタンとBボタンで3本先取の勝負を楽しめます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、カブトムシとクワガタが押し合うように、AボタンとBボタンで3本先取の勝負を楽しめます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-3-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">最初にBと右向き矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでゲームの開始</span>
+          <span class="text-normal">Bボタンでゲームの開始</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲーム開始時は中央のLEDのみひょうじされる</span>
+          <span class="text-normal">ゲーム開始時は中央のLEDのみ表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンでカブトムシがおし、LEDが右へ動く</span>
+          <span class="text-normal">Aボタンでカブトムシが押し、LEDが右へ動く</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでクワガタがおし、LEDが左へ動く</span>
+          <span class="text-normal">Bボタンでクワガタが押し、LEDが左へ動く</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDが右はしまで動くとカブトムシの1本勝ち</span>
+          <span class="text-normal">LEDが右端まで動くとカブトムシの1本勝ち</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDが左はしまで動くとクワガタの1本勝ち</span>
+          <span class="text-normal">LEDが左端まで動くとクワガタの1本勝ち</span>
+        </li>
+        <li>
+          <span class="text-easy">1本勝つたびに、勝った虫のとくてんがLEDで下から１つずつつみ上がってひょうじされる</span>
+          <span class="text-normal">1本勝つたびに、勝った虫の得点がLEDで下から１つずつ積み上がって表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">1本勝負がついたら、LEDが一度中央へもどる</span>
+          <span class="text-normal">1本勝負がついたら、LEDが一度中央へ戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">みぎがわのLED3つがカブトムシ、ひだりがわのLED3つがクワガタの勝ち数のひょうじ</span>
+          <span class="text-normal">右側のLED3つがカブトムシ、左側のLED3つがクワガタの勝ち数の表示</span>
+        </li>
+        <li>
+          <span class="text-easy">先に3本取った虫の勝ちになり、勝った虫の絵とニコニコ顔がひょうじされる</span>
+          <span class="text-normal">先に3本取った虫の勝ちになり、勝った虫の絵とニコニコ顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">3秒後にさいしょのひょうじへもどる</span>
+          <span class="text-normal">3秒後に最初の表示へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-3-gif"
+        src="img/202607_03.png"
+        alt="カブクワ相撲3本勝負をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-3-gif',
+          'img/202607_03.gif',
+          'img/202607_03.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">AボタンとBボタンを使った2人たいせんのたいけん</span>
+          <span class="text-normal">AボタンとBボタンを使った2人対戦の体験</span>
+        </li>
+        <li>
+          <span class="text-easy">3本先取の勝ち数をLEDのつみ上がりでりかいする</span>
+          <span class="text-normal">3本先取の勝ち数をLEDの積み上がりで理解する</span>
+        </li>
+        <li>
+          <span class="text-easy">1本ごとに中央から始まる勝負の流れをりかいする</span>
+          <span class="text-normal">1本ごとに中央から始まる勝負の流れを理解する</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">5本先取にルールをかえる</span>
+          <span class="text-normal">5本先取にルールを変える</span>
+        </li>
+        <li>
+          <span class="text-easy">おすたびに動くマスの数をランダムにする</span>
+          <span class="text-normal">押すたびに動くマスの数をランダムにする</span>
+        </li>
+        <li>
+          <span class="text-easy">虫のドット絵を自分でデザインしてみる</span>
+          <span class="text-normal">虫のドット絵を自分でデザインしてみる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-カブクワすもう3本勝負.hex"
+      download
+      aria-labelledby="
+        sample3-title
+        sample3-btn
+      "
+    >
+      <span id="sample3-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-4" aria-labelledby="section-4-h">
+
+  <h2 id="section-4-h">
+    <span aria-hidden="true">🦋	</span>
+    <span class="text-easy" id="sample4-title">
+      カブクワこん虫ひょうほん
+    </span>
+    <span class="text-normal">
+      カブクワ昆虫標本
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、カブトムシ、クワガタ、チョウの形をボタンで切りかえながら、こんちゅうひょうほんのように楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、カブトムシ、クワガタ、チョウの形をボタンで切り替えながら、昆虫標本のように楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-4-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにカブトムシの形をLEDでひょうじ</span>
+          <span class="text-normal">最初にカブトムシの形をLEDで表示</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで次のこんちゅうへ進む</span>
+          <span class="text-normal">Aボタンで次の昆虫へ進む</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンで前のこんちゅうへもどる</span>
+          <span class="text-normal">Bボタンで前の昆虫へ戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">ひょうじされるこんちゅうは、カブトムシ、クワガタ、チョウの3しゅるい</span>
+          <span class="text-normal">表示される昆虫は、カブトムシ、クワガタ、チョウの3種類</span>
+        </li>
+        <li>
+          <span class="text-easy">チョウのときにAボタンをおすと、カブトムシへもどる</span>
+          <span class="text-normal">チョウのときにAボタンを押すと、カブトムシへ戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">カブトムシのときにBボタンをおすと、チョウへもどる</span>
+          <span class="text-normal">カブトムシのときにBボタンを押すと、チョウへ戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">気に入ったこんちゅうの形を見ながら、ひょうほんカードづくりをしてみよう</span>
+          <span class="text-normal">気に入った昆虫の形を見ながら、標本カードづくりをしてみよう</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-4-gif"
+        src="img/202607_04.png"
+        alt="カブクワ昆虫標本をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-4-gif',
+          'img/202607_04.gif',
+          'img/202607_04.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">こんちゅうの形のちがいをLEDで表すほうほうを学ぶ</span>
+          <span class="text-normal">昆虫の形のちがいをLEDで表す方法を学ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">ボタンそうさでひょうじをじゅんばんに切りかえるしくみをりかいする</span>
+          <span class="text-normal">ボタン操作で表示を順番に切り替えるしくみを理解する</span>
+        </li>
+        <li>
+          <span class="text-easy">夏のこんちゅうかんさつやひょうほんづくりの活動につなげる</span>
+          <span class="text-normal">夏の昆虫観察や標本づくりの活動につなげる</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">トンボやバッタなど新しいこんちゅうをついかしてみる</span>
+          <span class="text-normal">トンボやバッタなど新しい昆虫を追加してみる</span>
+        </li>
+        <li>
+          <span class="text-easy">こんちゅうの名前をひょうじするくふう</span>
+          <span class="text-normal">昆虫の名前を表示する工夫</span>
+        </li>
+        <li>
+          <span class="text-easy">ずかんを見ながらLEDの形を作りかえてみる</span>
+          <span class="text-normal">図鑑を見ながらLEDの形を作り変えてみる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-カブクワこん虫ひょうほん.hex"
+      download
+      aria-labelledby="
+        sample4-title
+        sample4-btn
+      "
+    >
+      <span id="sample4-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-5" aria-labelledby="section-5-h">
+
+  <h2 id="section-5-h">
+    <span aria-hidden="true">🎆</span>
+    <span class="text-easy" id="sample5-title">
+      花火うちあげチャレンジ
+    </span>
+    <span class="text-normal">
+      花火うちあげチャレンジ
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、花火大会をイメージしながら、AボタンとBボタンで打ち上げ場所を動かし、A+Bボタンで花火を打ち上げるゲームを楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、花火大会をイメージしながら、AボタンとBボタンで打ち上げ場所を動かし、A+Bボタンで花火を打ち上げるゲームを楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-5-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょにBと右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">最初にBと右向き矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでゲームの開始</span>
+          <span class="text-normal">Bボタンでゲームの開始</span>
+        </li>
+        <li>
+          <span class="text-easy">画面上のくらいLEDが花火を打ち上げたいもくひょうのいち、画面下の明るいLEDが打ち上げ場所を表す</span>
+          <span class="text-normal">画面上の暗いLEDが花火を打ち上げたい目標の位置、画面下の明るいLEDが打ち上げ場所を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで打ち上げ場所を左へ動かし、Bボタンで右へ動かす</span>
+          <span class="text-normal">Aボタンで打ち上げ場所を左へ動かし、Bボタンで右へ動かす</span>
+        </li>
+        <li>
+          <span class="text-easy">左はしや右はしをこえると、反対がわへいどうする</span>
+          <span class="text-normal">左端や右端を越えると、反対側へ移動する</span>
+        </li>
+        <li>
+          <span class="text-easy">もくひょうの真下に打ち上げ場所を合わせたら、A+Bボタンの同時おしで花火を打ち上げる</span>
+          <span class="text-normal">目標の真下に打ち上げ場所を合わせたら、A+Bボタンの同時押しで花火を打ち上げる</span>
+        </li>
+        <li>
+          <span class="text-easy">もくひょうと同じ列に打ち上がると、大きな花火がひょうじされてとくてんがついかされる</span>
+          <span class="text-normal">目標と同じ列に打ち上がると、大きな花火が表示されて得点が追加される</span>
+        </li>
+        <li>
+          <span class="text-easy">もくひょうとずれた列に打ち上がると、小さな花火がひょうじされる</span>
+          <span class="text-normal">目標とずれた列に打ち上がると、小さな花火が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">花火は全部で5発打ち上げる</span>
+          <span class="text-normal">花火は全部で5発打ち上げる</span>
+        </li>
+        <li>
+          <span class="text-easy">5発終わると、とくてんとけっかのひょうじょうがひょうじされる</span>
+          <span class="text-normal">5発終わると、得点と結果の表情が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかを3秒ひょうじしたあと、さいしょのひょうじへもどる</span>
+          <span class="text-normal">結果を3秒表示したあと、最初の表示へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-5-gif"
+        src="img/202607_05.png"
+        alt="花火うちあげチャレンジをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-5-gif',
+          'img/202607_05.gif',
+          'img/202607_05.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">左右のいちを見てねらいを合わせる</span>
+          <span class="text-normal">左右の位置を見てねらいを合わせる</span>
+        </li>
+        <li>
+          <span class="text-easy">もくひょうと打ち上げ場所のいちかんけいを考える</span>
+          <span class="text-normal">目標と打ち上げ場所の位置関係を考える</span>
+        </li>
+        <li>
+          <span class="text-easy">夏の行事をテーマにしたゲーム作りの学習</span>
+          <span class="text-normal">夏の行事をテーマにしたゲーム作りの学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">打ち上げられる花火の数をかえてみる</span>
+          <span class="text-normal">打ち上げられる花火の数を変えてみる</span>
+        </li>
+        <li>
+          <span class="text-easy">せいこうしたときの花火の形を自分でデザインする</span>
+          <span class="text-normal">成功したときの花火の形を自分でデザインする</span>
+        </li>
+        <li>
+          <span class="text-easy">もくひょうのいちを見せる時間を短くしてルールをむずかしくする</span>
+          <span class="text-normal">目標の位置を見せる時間を短くしてルールを難しくする</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-花火うちあげチャレンジ.hex"
+      download
+      aria-labelledby="
+        sample5-title
+        sample5-btn
+      "
+    >
+      <span id="sample5-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-6" aria-labelledby="section-6-h">
+
+  <h2 id="section-6-h">
+    <span aria-hidden="true">🌙</span>
+    <span class="text-easy" id="sample6-title">
+      時計がた公転月チェッカー
+    </span>
+    <span class="text-normal">
+      時計型公転月チェッカー
+    </span>
+    <span class="meta">
+      — 理科（小学6年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、時計のような配置で太陽のまわりを地球が回る公転モデルを見ながら、今の月をかくにんする学習ができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、時計のような配置で太陽のまわりを地球が回る公転モデルを見ながら、今の月を確認する学習ができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-6-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">中央のLEDが太陽、まわりを動くLEDが地球を表す</span>
+          <span class="text-normal">中央のLEDが太陽、まわりを動くLEDが地球を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のいちは時計のようなならびで、真上が12月、真下が6月を表す</span>
+          <span class="text-normal">地球の位置は時計のような並びで、真上が12月、真下が6月を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のLEDが1秒ごとに次の月のいちへ動く</span>
+          <span class="text-normal">地球のLEDが1秒ごとに次の月の位置へ動く</span>
+        </li>
+        <li>
+          <span class="text-easy">12回いちがかわると、地球が太陽のまわりを1しゅうしたことを表す</span>
+          <span class="text-normal">12回位置が変わると、地球が太陽のまわりを1周したことを表す</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで地球の動きを一時ていしし、もう一度Aボタンでさいかいする</span>
+          <span class="text-normal">Aボタンで地球の動きを一時停止し、もう一度Aボタンで再開する</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでげんざいの月が「1ガツ」「2ガツ」のように数字とカタカナのドット絵でひょうじされる</span>
+          <span class="text-normal">Bボタンで現在の月が「1ガツ」「2ガツ」のように数字とカタカナのドット絵で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">月のひょうじが終わると、公転モデルの画面へもどる</span>
+          <span class="text-normal">月の表示が終わると、公転モデルの画面へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-6-gif"
+        src="img/202607_06.png"
+        alt="時計型公転月チェッカーをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-6-gif',
+          'img/202607_06.gif',
+          'img/202607_06.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">地球が太陽のまわりを回る公転のイメージをつかむ</span>
+          <span class="text-normal">地球が太陽のまわりを回る公転のイメージをつかむ</span>
+        </li>
+        <li>
+          <span class="text-easy">時計のいちと12か月をむすびつけて考える</span>
+          <span class="text-normal">時計の位置と12か月を結びつけて考える</span>
+        </li>
+        <li>
+          <span class="text-easy">一時ていしきのうを使ってモデルをかんさつする</span>
+          <span class="text-normal">一時停止機能を使ってモデルを観察する</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">地球が動く速さをかえてかんさつしやすくする</span>
+          <span class="text-normal">地球が動く速さを変えて観察しやすくする</span>
+        </li>
+        <li>
+          <span class="text-easy">真上を1月にするなど、月の配置をかえてみる</span>
+          <span class="text-normal">真上を1月にするなど、月の配置を変えてみる</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のいちときせつやせいざのかんけいを調べてみる</span>
+          <span class="text-normal">地球の位置と季節や星座の関係を調べてみる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-時計がた公転月チェッカー.hex"
+      download
+      aria-labelledby="
+        sample6-title
+        sample6-btn
+      "
+    >
+      <span id="sample6-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-7" aria-labelledby="section-7-h">
+
+  <h2 id="section-7-h">
+    <span aria-hidden="true">☀️</span>
+    <span class="text-easy" id="sample7-title">
+      時計がた公転きせつチェッカー
+    </span>
+    <span class="text-normal">
+      時計型公転季節チェッカー
+    </span>
+    <span class="meta">
+      — 理科（小学6年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、時計のような配置で太陽のまわりを地球が回る公転モデルを見ながら、きせつの目安をかくにんする学習ができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、時計のような配置で太陽のまわりを地球が回る公転モデルを見ながら、季節の目安を確認する学習ができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-7-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">中央のLEDが太陽、まわりを動くLEDが地球を表す</span>
+          <span class="text-normal">中央のLEDが太陽、まわりを動くLEDが地球を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のいちは時計のようなならびで、真上が12月、真下が6月を表す</span>
+          <span class="text-normal">地球の位置は時計のような並びで、真上が12月、真下が6月を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のLEDが1秒ごとに次の月のいちへ動く</span>
+          <span class="text-normal">地球のLEDが1秒ごとに次の月の位置へ動く</span>
+        </li>
+        <li>
+          <span class="text-easy">12回いちがかわると、地球が太陽のまわりを1しゅうしたことを表す</span>
+          <span class="text-normal">12回位置が変わると、地球が太陽のまわりを1周したことを表す</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで地球の動きを一時ていしし、もう一度Aボタンでさいかいする</span>
+          <span class="text-normal">Aボタンで地球の動きを一時停止し、もう一度Aボタンで再開する</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすとげんざいの月に合ったきせつがカタカナのドット絵で表示される</span>
+          <span class="text-normal">Bボタンを押すと現在の月に合った季節がカタカナのドット絵で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">3月から5月は「ハル」、6月から8月は「ナツ」、9月から11月は「アキ」、12月から2月は「フユ」をひょうじ</span>
+          <span class="text-normal">3月から5月は「ハル」、6月から8月は「ナツ」、9月から11月は「アキ」、12月から2月は「フユ」を表示</span>
+        </li>
+        <li>
+          <span class="text-easy">きせつのひょうじが終わると、公転モデルの画面へもどる</span>
+          <span class="text-normal">季節の表示が終わると、公転モデルの画面へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-7-gif"
+        src="img/202607_07.png"
+        alt="時計型公転季節チェッカーをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-7-gif',
+          'img/202607_07.gif',
+          'img/202607_07.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">地球が太陽のまわりを回る公転のイメージをつかむ</span>
+          <span class="text-normal">地球が太陽のまわりを回る公転のイメージをつかむ</span>
+        </li>
+        <li>
+          <span class="text-easy">12か月ときせつのつながりをLEDの動きを見ながら考える</span>
+          <span class="text-normal">12か月と季節のつながりをLEDの動きを見ながら考える</span>
+        </li>
+        <li>
+          <span class="text-easy">一時ていしきのうを使ってモデルかんさつし、きせつとのかんけいをかくにんする</span>
+          <span class="text-normal">一時停止機能を使ってモデルを観察し、季節との関係を確認する</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">地球が動く速さをかえてかんさつしやすくする</span>
+          <span class="text-normal">地球が動く速さを変えて観察しやすくする</span>
+        </li>
+        <li>
+          <span class="text-easy">きせつの分け方を調べて、どの月がどのきせつに入るか話し合う</span>
+          <span class="text-normal">季節の分け方を調べて、どの月がどの季節に入るか話し合う</span>
+        </li>
+        <li>
+          <span class="text-easy">地球のいちときせつやせいざのかんけいをしらべてみる</span>
+          <span class="text-normal">地球の位置と季節や星座の関係を調べてみる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-時計がた公転きせつチェッカー.hex"
+      download
+      aria-labelledby="
+        sample7-title
+        sample7-btn
+      "
+    >
+      <span id="sample7-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+
+  <p class="foot">
+    本情報の内容 (添付文書、リンク先などを含む) は、
+    作成日時点でのものであり、
+    予告なく変更される場合があります。
+  </p>
+  </main>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+</body>
+</html>

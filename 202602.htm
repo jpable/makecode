@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【2月】雪と豆！加速度センサーで遊ぼう！</title>
+  <meta name="description" content="micro:bitの加速度センサーを使った色々なプログラムの作り方" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mode-easy">
+  <header class="wrap" role="banner">
+    <div class="fixed-top wrap">
+      <div class="mode-switch">
+        <fieldset>
+          <legend>表示モード</legend>
+          <div class="options">
+            <input type="radio" name="mode" id="mode-easy" value="easy">
+            <label for="mode-easy">小3までの漢字</label>
+            <input type="radio" name="mode" id="mode-normal" value="normal">
+            <label for="mode-normal">全学年の漢字</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="brand" aria-label="サイト名">
+      <div>
+        <h1>
+          <span class="text-easy">【2月】雪と豆！かそくどセンサーで遊ぼう！</span>
+          <span class="text-normal">【2月】雪と豆！加速度センサーで遊ぼう！</span>
+        </h1>
+        <p class="lead">
+          <span class="text-easy">micro:bitのかそくどセンサーを使って、豆まきや雪をテーマにしたゲームを作ってみよう</span>
+          <span class="text-normal">micro:bitの加速度センサーを使って、豆まきや雪をテーマにしたゲームを作ってみよう</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap" aria-label="ページ内ナビ">
+    <ul class="toc">
+      <li>
+        <span class="text-easy"><a href="#section-1">左右にゆらして動かしてみよう</a></span>
+        <span class="text-normal"><a href="#section-1">左右に揺らして動かしてみよう</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-2">豆まきでおにたいじ</a></span>
+        <span class="text-normal"><a href="#section-2">豆まきで鬼退治</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-3">雪かべめいろゲーム</a></span>
+        <span class="text-normal"><a href="#section-3">雪壁迷路ゲーム</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-4">おに豆シューティングゲーム</a></span>
+        <span class="text-normal"><a href="#section-4">鬼豆シューティングゲーム</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-5">ふって雪消しゲーム</a></span>
+        <span class="text-normal"><a href="#section-5">振って雪消しゲーム</a></span>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="section-1" aria-labelledby="section-1-h">
+      <h2 id="section-1-h">
+        <span class="text-easy">↔️左右にゆらして動かしてみよう</span>
+        <span class="text-normal">↔️左右に揺らして動かしてみよう</span>
+        <span class="meta">— プログラミング（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの「かそくどセンサー」を使って、左右にゆらすことでキャラクターをそうさします。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの「加速度センサー」を使って、左右に揺らすことでキャラクターを操作します。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-1-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">micro:bitを左にかたむけると、キャラクターが左へいどうする</span>
+              <span class="text-normal">micro:bitを左に傾けると、キャラクターが左へ移動する</span>
+            </li>
+            <li>
+              <span class="text-easy">micro:bitを右にかたむけると、キャラクターが右へいどうする</span>
+              <span class="text-normal">micro:bitを右に傾けると、キャラクターが右へ移動する</span>  
+            </li>
+          </ol>
+          <img id="section-1-gif" src="img/202602_01.png" alt="micro:bit で温度へんかLEDグラフを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-1-gif', 'img/202602_01.gif', 'img/202602_01.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">かそくどセンサーのデータで、左右の動きを読み取るたいけん</span>
+              <span class="text-normal">加速度センサーのデータで、左右の動きを読み取る体験</span>
+            </li>
+            <li>
+              <span class="text-easy">LED画面で、動きがかわる様子を見るたいけん</span>
+              <span class="text-normal">LED画面で、動きが変わる様子を見る体験</span>
+            </li>
+            <li>
+              <span class="text-easy">しきいちをかえて、動きやすさをくらべる学習</span>
+              <span class="text-normal">しきい値を変えて、動きやすさを比べる学習</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">前後のかたむきでも、上下に動くようにする</span>
+              <span class="text-normal">前後の傾きでも、上下に動くようにする</span>
+            </li>
+            <li>
+              <span class="text-easy">かたむきが大きいほど、動く速さがかわる仕組み作り</span>
+              <span class="text-normal">傾きが大きいほど、動く速さが変わる仕組み作り</span>
+            </li>
+            <li>
+              <span class="text-easy">止まるマスを作り、当たると止まるルールついか</span>
+              <span class="text-normal">止まるマスを作り、当たると止まるルール追加</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/左右にゆらして動かしてみよう.hex" download aria-label="左右にゆらして動かしてみようのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-2" aria-labelledby="section-2-h">
+      <h2 id="section-2-h">
+        <span class="text-easy">👹豆まきでおにたいじ</span>
+        <span class="text-normal">👹豆まきで鬼退治</span>
+        <span class="meta">— 生活（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの「かそくどセンサー」を使って、せつぶんのおにたいじをイメージしたゲームを行うことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの「加速度センサー」を使って、節分の鬼退治をイメージしたゲームを行うことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-2-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょに「B」という文字がスクロールでひょうじされる</span>
+              <span class="text-normal">最初に「B」という文字がスクロールで表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンをおすと、ゲームがスタートする</span>
+              <span class="text-normal">Bボタンを押すと、ゲームがスタートする</span>  
+            </li>
+            <li>
+              <span class="text-easy">スタートすると、3、2、1の数字がじゅんばんにひょうじされる</span>
+              <span class="text-normal">スタートすると、3、2、1の数字が順番に表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">カウントダウンのあと、おにの顔がひょうじされて、3秒間の豆まきタイムが始まる</span>
+              <span class="text-normal">カウントダウンのあと、鬼の顔が表示されて、3秒間の豆まきタイムが始まる</span>  
+            </li>
+            <li>
+              <span class="text-easy">豆をまくようにmicro:bitを右手で持ち、軽くふると、おにの顔がいっしゅんやられた顔になり、そのあとふつうの顔にもどる</span>
+              <span class="text-normal">豆をまくようにmicro:bitを右手で持ち、軽く振ると、鬼の顔が一瞬やられた顔になり、そのあと普通の顔に戻る</span>  
+            </li>
+            <li>
+              <span class="text-easy">3秒の間は数字はひょうじされず、おにの顔だけがかわる</span>
+              <span class="text-normal">3秒の間は数字は表示されず、鬼の顔だけが変わる</span>  
+            </li>
+            <li>
+              <span class="text-easy">3秒たつと、ふった回数が数字でひょうじされ、そのあと回数に合わせたおにのひょうじょうがひょうじされる</span>
+              <span class="text-normal">3秒経つと、振った回数が数字で表示され、そのあと回数に合わせた鬼の表情が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy"> 5回いじょうのときはやられたおにの顔、3回いじょう5回みまんのときはしょんぼりおにの顔、3回みまんのときはまだ強いおにの顔がひょうじされる</span>
+              <span class="text-normal">5回以上のときはやられた鬼の顔、3回以上5回未満のときはしょんぼり鬼の顔、3回未満のときはまだ強い鬼の顔が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">3秒たつと、画面にもう一度「B」がひょうじされ、またBボタンで何回でもくり返し遊べる</span>
+              <span class="text-normal">3秒経つと、画面にもう一度「B」が表示され、またBボタンで何回でも繰り返し遊べる</span>  
+            </li>
+          </ol>
+          <img id="section-2-gif" src="img/202602_02.png" alt="micro:bit で豆まきでオニたいじゲームを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-2-gif', 'img/202602_02.gif', 'img/202602_02.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">かそくどセンサーで体の動きの大きさがカウントされるたいけん</span>
+              <span class="text-normal">加速度センサーで体の動きの大きさがカウントされる体験</span>
+            </li>
+            <li>
+              <span class="text-easy">せつぶんの行事とICTをむすびつけて考える学習</span>
+              <span class="text-normal">節分の行事とICTを結びつけて考える学習</span>
+            </li>
+            <li>
+              <span class="text-easy">回数や時間をいしきしながら体を動かす活動</span>
+              <span class="text-normal">回数や時間を意識しながら体を動かす活動</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">カウントされる動きの大きさをかえて、軽いふりでもカウントされるように調整</span>
+              <span class="text-normal">カウントされる動きの大きさを変えて、軽い振りでもカウントされるように調整</span>
+            </li>
+            <li>
+              <span class="text-easy">友だちどうしで回数とおにのひょうじょうをくらべてランキング作り</span>
+              <span class="text-normal">友だち同士で回数と鬼の表情を比べてランキング作り</span>
+            </li>
+            <li>
+              <span class="text-easy">豆の回数に合わせて音やメッセージのひょうじをついかするアレンジ</span>
+              <span class="text-normal">豆の回数に合わせて音やメッセージの表示を追加するアレンジ</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/まめまきでオニたいじ.hex" download aria-label="豆まきでオニたいじゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-3" aria-labelledby="section-3-h">
+      <h2 id="section-3-h">
+        <span class="text-easy">❄️雪かべめいろゲーム</span>
+        <span class="text-normal">❄️雪壁迷路ゲーム</span>
+        <span class="meta">— 算数（中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの「かそくどセンサー」を使って、雪のかべのめいろをかたむきで進み、5秒いないにゴールを目指すゲームを行うことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの「加速度センサー」を使って、雪の壁の迷路を傾きで進み、5秒以内にゴールを目指すゲームを行うことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-3-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動すると、画面に「B」がひょうじされる</span>
+              <span class="text-normal">起動すると、画面に「B」が表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンをおすと、ゲームがスタートする</span>
+              <span class="text-normal">Bボタンを押すと、ゲームがスタートする</span>  
+            </li>
+            <li>
+              <span class="text-easy">かたむきで左右と上下へ動かして、自分のいちがいどうする</span>
+              <span class="text-normal">傾きで左右と上下へ動かして、自分の位置が移動する</span>  
+            </li>
+            <li>
+              <span class="text-easy">雪のかべに当たると、進めずに止まる仕組み</span>
+              <span class="text-normal">雪の壁に当たると、進めずに止まる仕組み</span>  
+            </li>
+            <li>
+              <span class="text-easy">どうしてもゴールできない時は、Aボタンで雪のかべが作り直される</span>
+              <span class="text-normal">どうしてもゴールできない時は、Aボタンで雪の壁が作り直される</span>  
+            </li>
+            <li>
+              <span class="text-easy">5秒いないにゴールへ入ると、えがおがひょうじされる</span>
+              <span class="text-normal">5秒以内にゴールへ入ると、笑顔が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">5秒いないにゴールできないと、悲しい顔がひょうじされる</span>
+              <span class="text-normal">5秒以内にゴールできないと、悲しい顔が表示される</span>  
+            </li>
+          </ol>
+          <img id="section-3-gif" src="img/202602_03.png" alt="micro:bit でまいすうチェッカーを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-3-gif', 'img/202602_03.gif', 'img/202602_03.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">かそくどセンサーで左右上下を動かすたいけん</span>
+              <span class="text-normal">加速度センサーで左右上下を動かす体験</span>
+            </li>
+            <li>
+              <span class="text-easy">5秒の時間いしきと道さがしの考え方</span>
+              <span class="text-normal">5秒の時間意識と道探しの考え方</span>
+            </li>
+            <li>
+              <span class="text-easy">毎回かわる雪のかべにちょうせんする気持ち</span>
+              <span class="text-normal">毎回変わる雪の壁に挑戦する気持ち</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">雪のかべの数をかえて、むずかしさ調整</span>
+              <span class="text-normal">雪の壁の数を変えて、難しさ調整</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンでかべをかえて、ゴールまでの道の見つけ方をくらべる</span>
+              <span class="text-normal">Aボタンで壁を替えて、ゴールまでの道の見つけ方を比べる</span>
+            </li>
+            <li>
+              <span class="text-easy">さいたんでゴールするさくせん作り</span>
+              <span class="text-normal">最短でゴールする作戦作り</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/雪かべめいろゲーム.hex" download aria-label="雪かべめいろゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-4" aria-labelledby="section-4-h">
+      <h2 id="section-4-h">
+        <span class="text-easy">🫘おに豆シューティングゲーム</span>
+        <span class="text-normal">🫘鬼豆シューティングゲーム</span>
+        <span class="meta">— 算数（中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムは、micro:bitを使って、上の行を左右に動くおにをねらい、豆を投げて8秒いないのとくてんを楽しむゲームです。</span>
+        <span class="text-normal">このプログラムは、micro:bitを使って、上の行を左右に動く鬼を狙い、豆を投げて8秒以内の得点を楽しむゲームです。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-4-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動すると、画面に「B」がひょうじされる</span>
+              <span class="text-normal">起動すると、画面に「B」が表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンをおすと、ゲームがスタートする</span>
+              <span class="text-normal">Bボタンを押すと、ゲームがスタートする</span>  
+            </li>
+            <li>
+              <span class="text-easy">Aボタンをおすと、自分が左へいどうする</span>
+              <span class="text-normal">Aボタンを押すと、自分が左へ移動する</span>  
+            </li>
+            <li>
+              <span class="text-easy">Bボタンをおすと、自分が右へいどうする</span>
+              <span class="text-normal">Bボタンを押すと、自分が右へ移動する</span>  
+            </li>
+            <li>
+              <span class="text-easy">A+Bをおすと、豆が投げられる</span>
+              <span class="text-normal">A+Bを押すと、豆が投げられる</span>  
+            </li>
+            <li>
+              <span class="text-easy">豆がおにに当たるたびに、点が1ふえる</span>
+              <span class="text-normal">豆が鬼に当たるたびに、点が1増える</span>  
+            </li>
+            <li>
+              <span class="text-easy">8秒たつと、とくてんとおにの顔がひょうじされる</span>
+              <span class="text-normal">8秒経つと、得点と鬼の顔が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">1点いかのときは、おこった顔がひょうじされる</span>
+              <span class="text-normal">1点以下のときは、怒った顔が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">2点のときは、ねている顔がひょうじされる</span>
+              <span class="text-normal">2点のときは、寝ている顔が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">3点いじょうのときは、やられ顔が表示される</span>
+              <span class="text-normal">3点以上のときは、やられ顔が表示される</span>  
+            </li>
+          </ol>
+          <img id="section-4-gif" src="img/202602_04.png" alt="おに豆シューティングゲームを遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-4-gif', 'img/202602_04.gif', 'img/202602_04.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">左右そうさとねらいのたいけん</span>
+              <span class="text-normal">左右操作と狙いの体験</span>
+            </li>
+            <li>
+              <span class="text-easy">時間と点の見方</span>
+              <span class="text-normal">時間と点の見方</span>
+            </li>
+            <li>
+              <span class="text-easy">くり返しの中のさくせん作り</span>
+              <span class="text-normal">繰り返しの中の作戦作り</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">おにの動く速さ調整</span>
+              <span class="text-normal">鬼の動く速さ調整</span>
+            </li>
+            <li>
+              <span class="text-easy">豆の速さ調整</span>
+              <span class="text-normal">豆の速さ調整</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/おに豆シューティングゲーム.hex" download aria-label="おに豆シューティングゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-5" aria-labelledby="section-5-h">
+      <h2 id="section-5-h">
+        <span class="text-easy">☃️ふって雪消しゲーム</span>
+        <span class="text-normal">☃️振って雪消しゲーム</span>
+        <span class="meta">— 理科（中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの「かそくどセンサー」を使って、上からふってくる雪が下でつもる前に、ふって雪を消すゲームを行うことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの「加速度センサー」を使って、上から降ってくる雪が下で積もる前に、振って雪を消すゲームを行うことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-5-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動すると、画面に「B」がひょうじされる</span>
+              <span class="text-normal">起動すると、画面に「B」が表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンをおすと、雪がふり始める</span>
+              <span class="text-normal">Bボタンを押すと、雪が降り始める</span>  
+            </li>
+            <li>
+              <span class="text-easy">上からランダムに1このLEDの雪がひょうじされる</span>
+              <span class="text-normal">上からランダムに1個のLEDの雪が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">そのままにすると、雪が下でつもっていく</span>
+              <span class="text-normal">そのままにすると、雪が下で積もっていく</span>  
+            </li>
+            <li>
+              <span class="text-easy">A+Bを1回おすと、ふってくる雪が2こにふえる。くり返しおすと、1こずつふえる</span>
+              <span class="text-normal">A+Bを1回押すと、降ってくる雪が2個に増える。繰り返し押すと、1個ずつ増える</span>  
+            </li>
+            <li>
+              <span class="text-easy">micro:bitをふると、つもった雪が消えて、ふってくる雪の数が1こにもどる</span>
+              <span class="text-normal">micro:bitを振ると、積もった雪が消えて、降ってくる雪の数が1個に戻る</span>  
+            </li>
+          </ol>
+          <img id="section-5-gif" src="img/202602_05.png" alt="micro:bit でおもちふくらみシミュレーターを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-5-gif', 'img/202602_05.gif', 'img/202602_05.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">かそくどセンサーでふる動きをけんちするたいけん</span>
+              <span class="text-normal">加速度センサーで振る動きを検知する体験</span>
+            </li>
+            <li>
+              <span class="text-easy">動きと画面のつながりたいけん</span>
+              <span class="text-normal">動きと画面のつながり体験</span>
+            </li>
+            <li>
+              <span class="text-easy">雪の数を自分でかえるくふう</span>
+              <span class="text-normal">雪の数を自分で変える工夫</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">雪の落ちる速さのへんこう</span>
+              <span class="text-normal">雪の落ちる速さの変更</span>
+            </li>
+            <li>
+              <span class="text-easy">雪をふやす数のルール作り</span>
+              <span class="text-normal">雪を増やす数のルール作り</span>
+            </li>
+            <li>
+              <span class="text-easy">つもった雪がさいじょうだんまで行った時のルール作り</span>
+              <span class="text-normal">積もった雪が最上段まで行った時のルール作り</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/ふって雪消しゲーム.hex" download aria-label="ふって雪消しゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+
+  <p class="foot">本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+  </main>
+
+  <footer class="wrap" role="contentinfo">
+    <p><a href="https://www.microsoft.com/ja-jp/enable/study/programming" aria-label="特別支援教育におけるプログラミング活用" target="_blank"> 特別支援教育におけるプログラミング活用 </a>にもどる</p>
+  </footer>
+
+<script>
+  const states = {}; // GIFごとの再生状態を保持
+
+  function toggleGif(id, gifSrc, stillSrc, button) {
+    const img = document.getElementById(id);
+    const isPlaying = states[id];
+
+    if (!isPlaying) {
+      // 再生開始
+      img.src = gifSrc;
+      button.textContent = "止める";
+      states[id] = true;
+    } else {
+      // 再生停止
+      img.src = stillSrc;
+      button.textContent = "見る";
+      states[id] = false;
+    }
+  }
+
+  // ===== 追加：表記モード（URL優先 / ラジオ） =====
+  const MODE_KEY = 'readingMode';
+  const radios = document.querySelectorAll('input[name="mode"]');
+
+  function readModeFromUrl() {
+    const url = new URL(location.href);
+    const m = url.searchParams.get('mode');
+    return (m === 'easy' || m === 'normal') ? m : null;
+  }
+
+  function readModeFromStorage() {
+    try {
+      const m = localStorage.getItem(MODE_KEY);
+      return (m === 'easy' || m === 'normal') ? m : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyMode(mode) {
+    document.body.classList.toggle('mode-normal', mode === 'normal');
+    document.body.classList.toggle('mode-easy', mode === 'easy');
+
+    radios.forEach(r => { r.checked = (r.value === mode); });
+
+    // 記事内リンクも引き継ぐ（data-basehrefがあるものだけ）
+    document.querySelectorAll('a[data-basehref]').forEach(a => {
+      const base = a.getAttribute('data-basehref');
+      a.href = `${base}?mode=${mode}`;
+    });
+
+    // URL更新（共有・ブックマーク・戻る整合）
+    const url = new URL(location.href);
+    url.searchParams.set('mode', mode);
+    history.replaceState(null, '', url);
+
+    // 保存（補助）
+    try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
+  }
+
+  // 初期化：URL → storage → easy
+  applyMode(readModeFromUrl() || readModeFromStorage() || 'easy');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => applyMode(radio.value));
+  });
+
+  // 上部タイトル固定
+  function syncFixedTopHeight(){
+    const fixed = document.querySelector('.fixed-top');
+    if (!fixed) return;
+    document.documentElement.style.setProperty('--fixed-top-h', fixed.offsetHeight + 'px');
+  }
+
+  window.addEventListener('load', syncFixedTopHeight);
+  window.addEventListener('resize', syncFixedTopHeight);
+  syncFixedTopHeight();
+
+</script>
+</body>
+</html>

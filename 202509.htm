@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【9月】健康習慣をつくる ICT 活用｜micro:bit教材集</title>
+  <meta name="description" content="micro:bit を使った、授業や家庭で実践できる「健康×ICT」教材集を紹介します。" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="wrap" role="banner">
+    <div class="fixed-top wrap">
+      <div class="mode-switch">
+        <fieldset>
+          <legend>表示モード</legend>
+          <div class="options">
+            <input type="radio" name="mode" id="mode-easy" value="easy">
+            <label for="mode-easy">小3までの漢字</label>
+            <input type="radio" name="mode" id="mode-normal" value="normal">
+            <label for="mode-normal">全学年の漢字</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="brand" aria-label="サイト名">
+      <div>
+        <h1>
+          <span class="text-easy">【9月】けんこうしゅうかんをつくる ICT 活用</span>
+          <span class="text-normal">【9月】健康習慣をつくる ICT 活用</span>
+        </h1>
+        <p class="lead">
+          <span class="text-easy">「けんこう×ICT」をテーマにした、学校や家庭で使える micro:bit（マイクロビット）プログラム</span>
+          <span class="text-normal">「健康×ICT」をテーマにした、学校や家庭で使える micro:bit（マイクロビット）プログラム</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap" aria-label="ページ内ナビ">
+    <ul class="toc">
+      <li>
+        <span class="text-easy"><a href="#section-1">体動アラームくん</a></span>
+        <span class="text-normal"><a href="#section-1">体動アラームくん</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-2">すいみんチェッカー</a></span>
+        <span class="text-normal"><a href="#section-2">睡眠チェッカー</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-3">水分ほきゅうアラームくん</a></span>
+        <span class="text-normal"><a href="#section-3">水分補給アラームくん</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-4">じゅぎょう＆きゅうけいタイマー</a></span>
+        <span class="text-normal"><a href="#section-4">授業＆休憩タイマー</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-5">目のエクササイズナビ</a></span>
+        <span class="text-normal"><a href="#section-5">目のエクササイズナビ</a></span>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="section-1" aria-labelledby="section-1-h">
+      <h2 id="section-1-h">
+        <span class="text-easy">🔔体動アラームくん</span>
+        <span class="text-normal">🔔体動アラームくん</span>
+        <span class="meta">— ほけん／生活（小学3年生～中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">micro:bit の「かそくどセンサー」を使って、「じっとしていたら動こう」と知らせてくれるアラームを作ります。</span>
+        <span class="text-normal">micro:bit の「加速度センサー」を使って、「じっとしていたら動こう」と知らせてくれるアラームを作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-1-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動すると、プログラムで決めた時間がひょうじされる（サンプルコードでは30分）</span>
+              <span class="text-normal">起動すると、プログラムで決めた時間が表示される（サンプルコードでは30分）</span>
+            </li>       
+            <li>
+               <span class="text-easy">micro:bit をポケットに入れたり、つくえの上におく</span>
+                <span class="text-normal">micro:bit をポケットに入れたり、机の上に置く</span>
+              </li>
+            <li>
+              <span class="text-easy">動かずに決めた時間がたつと、「Go」とひょうじされる</span>
+              <span class="text-normal">動かずに決めた時間が経つと、「Go」と表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">動くと にっこりした顔 がひょうじされて、カウントがリセットされる</span>
+              <span class="text-normal">動くと にっこりした顔 が表示されて、カウントがリセットされる</span>
+            </li>
+          </ol>
+            <img id="section-1-gif" src="img/202509_01.png" alt="マイクロビットで体動アラームくんを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+            <button class="btn" onclick="toggleGif('section-1-gif', 'img/202509_01.gif', 'img/202509_01.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">自分のしせいや、どれだけ動いたかに気づいて、けんこう行動をつづけられるようにする</span>
+              <span class="text-normal">自分の姿勢や、どれだけ動いたかに気づいて、健康行動を続けられるようにする</span>
+            </li>
+            <li>
+              <span class="text-easy">ICTを活用したじこかんりの仕組みを学ぶ</span>
+              <span class="text-normal">ICTを活用した自己管理の仕組みを学ぶ</span>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">学校や自分の家でためしてみよう</span>
+              <span class="text-normal">学校や自分の家で試してみよう</span>
+            </li>
+            <li>
+              <span class="text-easy">自分にちょうどいいお知らせの時間を決めて、プログラムをかえてみよう</span>
+              <span class="text-normal">自分に丁度いいお知らせの時間を決めて、プログラムを変えてみよう</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/体動アラームくん.hex" download aria-label="体動アラームくんのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-2" aria-labelledby="section-2-h">
+      <h2 id="section-2-h">
+        <span class="text-easy">🛏️すいみんチェッカー</span>
+        <span class="text-normal">🛏️睡眠チェッカー</span>
+        <span class="meta">— ほけん／生活（小学4年生～中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">micro:bit の「かそくどセンサー」を使って、ねがえりの回数や大きな動きをカウントし、すいみんの様子をチェックできる「すいみんチェッカー」を作ります。</span>
+        <span class="text-normal">micro:bit の「加速度センサー」を使って、寝返りの回数や大きな動きをカウントし、睡眠の様子をチェックできる「睡眠チェッカー」を作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-2-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">ねる前に micro:bit の B ボタンをおすと、カウントがリセットされて ねむった顔 がひょうじされる</span>
+              <span class="text-normal">寝る前に micro:bit の B ボタンを押すと、カウントがリセットされて 眠った顔 が表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">ねている間に大きな動きがあると、回数を自動でカウントする （3秒のロック時間あり）</span>
+              <span class="text-normal">寝ている間に大きな動きがあると、回数を自動でカウントする （3秒のロック時間あり）</span>
+            </li>
+            <li>
+              <span class="text-easy">朝、起きてBボタンをおすと、動いた回数がひょうじされる</span>
+              <span class="text-normal">朝、起きてBボタンを押すと、動いた回数が表示される</span>
+            </li>
+          </ol>
+            <img id="section-2-gif" src="img/202509_02.png" alt="マイクロビットで睡眠チェッカーのプログラムを実行している動画" width="320" height="240" style="display:block; margin-bottom:10px;">
+            <button class="btn" onclick="toggleGif('section-2-gif', 'img/202509_02.gif', 'img/202509_02.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">すいみんとけんこうのかかわりについて考えてみる</span>
+              <span class="text-normal">睡眠と健康の関わりについて考えてみる</span>
+            </li>
+            <li>
+              <span class="text-easy">ICT を使って生活のきろく・かいぜんに取り組む</span>
+              <span class="text-normal">ICT を使って生活の記録・改善に取り組む</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">何日かきろくを取って、よくねむれた日とそうでない日の理由を考えてみよう</span>
+              <span class="text-normal">何日か記録を取って、よく眠れた日とそうでない日の理由を考えてみよう</span>
+            </li>
+            <li>
+              <span class="text-easy">ねる前の行動とすいみんのかかわりを考えてみよう</span>
+              <span class="text-normal">寝る前の行動と睡眠の関わりを考えてみよう</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/すいみんチェッカー.hex" download aria-label="すいみんチェッカーのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-3" aria-labelledby="section-3-h">
+      <h2 id="section-3-h">
+        <span class="text-easy">💧水分ほきゅうアラームくん</span>
+        <span class="text-normal">💧水分補給アラームくん</span>
+        <span class="meta">— ほけん／生活（小学4年生～中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">micro:bit の「タイマーきのう」を使って、決まった時間ごとに水分ほきゅうをお知らせするアラームを作ります。</span>
+        <span class="text-normal">micro:bit の「タイマー機能」を使って、決まった時間ごとに水分補給をお知らせするアラームを作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-3-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動すると自動でタイマーがスタート</span>
+              <span class="text-normal">起動すると自動でタイマーがスタート</span>
+            </li>
+            <li>
+              <span class="text-easy">プログラムで決めた時間がたつと「W」がひょうじされて、水を飲むサインになる（サンプルコードでは30分）</span>
+              <span class="text-normal">プログラムで決めた時間が経つと「W」が表示されて、水を飲むサインになる（サンプルコードでは30分）</span>
+            </li>
+            <li>
+              <span class="text-easy">B ボタンをおすと にっこりした顔 がひょうじされて、タイマーがリセットされる（ふたたび30分のカウントを開始）</span>
+              <span class="text-normal">B ボタンを押すと にっこりした顔 が表示されて、タイマーがリセットされる（再び30分のカウントを開始）</span>
+            </li>
+          </ol>
+            <img id="section-3-gif" src="img/202509_03.png" alt="マイクロビットで水分ほきゅうアラームくんのプログラムを実行している動画" width="320" height="240" style="display:block; margin-bottom:10px;">
+            <button class="btn" onclick="toggleGif('section-3-gif', 'img/202509_03.gif', 'img/202509_03.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">定期てきな水分ほきゅうの大切さをいしきする</span>
+              <span class="text-normal">定期的な水分補給の大切さを意識する</span>
+            </li>
+            <li>
+              <span class="text-easy">ICT を活用したじこかんりの仕組みを学ぶ</span>
+              <span class="text-normal">ICT を活用した自己管理の仕組みを学ぶ</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">自分に合ったお知らせの時間を決めて、プログラムをかえてみよう</span>
+              <span class="text-normal">自分に合ったお知らせの時間を決めて、プログラムを変えてみよう</span>
+            </li>
+            <li>
+              <span class="text-easy">「水を飲んだら写真をとる」など、きろくをのこすほうほうを考えてみよう</span>
+              <span class="text-normal">「水を飲んだら写真をとる」など、記録を残す方法を考えてみよう</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/水分ほきゅうアラームくん.hex" download aria-label="水分ほきゅうアラームくんのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-4" aria-labelledby="section-4-h">
+      <h2 id="section-4-h">
+        <span class="text-easy">⏰じゅ業＆休けいタイマー</span>
+        <span class="text-normal">⏰授業＆休憩タイマー</span>
+        <span class="meta">— ほけん／生活（小学4年生～中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">micro:bit の「タイマーきのう」を使って、「じゅぎょうモード」と「きゅうけいモード」を切りかえるタイマーを作ります。</span>
+        <span class="text-normal">micro:bit の「タイマー機能」を使って、「授業モード」と「休憩モード」を切りかえるタイマーを作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-4-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">A ボタンをおすと「C」がひょうじされて、じゅぎょうモードスタート（タイマーリセット、サンプルコードは45分）</span>
+              <span class="text-normal">A ボタンを押すと「C」が表示されて、授業モードスタート（タイマーリセット、サンプルコードは45分）</span>
+            </li>
+            <li>
+              <span class="text-easy">B ボタンをおすと「B」がひょうじされて、きゅうけいモードスタート（タイマーリセット、サンプルコードは10分）</span>
+              <span class="text-normal">B ボタンを押すと「B」が表示されて、休憩モードスタート（タイマーリセット、サンプルコードは10分）</span>
+            </li>
+            <li>
+              <span class="text-easy">45分や10分がすぎると、自動で次のモードにかわる</span>
+              <span class="text-normal">45分や10分が過ぎると、自動で次のモードに変わる</span>
+            </li>
+          </ol>
+            <img id="section-4-gif" src="img/202509_04.png" alt="マイクロビットで授業＆休憩タイマーのプログラムを実行している動画" width="320" height="240" style="display:block; margin-bottom:10px;">
+            <button class="btn" onclick="toggleGif('section-4-gif', 'img/202509_04.gif', 'img/202509_04.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">時間を守ることの大切さを学ぶ</span>
+              <span class="text-normal">時間を守ることの大切さを学ぶ</span>
+            </li>
+            <li>
+              <span class="text-easy">ICT を活用したじこかんりの仕組みを学ぶ</span>
+              <span class="text-normal">ICT を活用した自己管理の仕組みを学ぶ</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">自分のじかんわりに合った時間にかえてみよう</span>
+              <span class="text-normal">自分の時間割に合った時間に変えてみよう</span>
+            </li>
+            <li>
+              <span class="text-easy">ボタンをおさなくても自動で動くモードを考えてみよう</span>
+              <span class="text-normal">ボタンを押さなくても自動で動くモードを考えてみよう</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/じゅ業＆休けいタイマー.hex" download aria-label="授業＆休憩タイマーのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-5" aria-labelledby="section-5-h">
+      <h2 id="section-5-h">
+        <span class="text-easy">👀目のエクササイズナビ</span>
+        <span class="text-normal">👀目のエクササイズナビ</span>
+        <span class="meta">— ほけん／生活（小学4年生～中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">micro:bitを使って、目のストレッチ運動ができるガイドを作ります。</span>
+        <span class="text-normal">micro:bitを使って、目のストレッチ運動ができるガイドを作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-5-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動するとすぐにやじるし（↑→↓←）が 3 秒ごとにくり返してひょうじされる</span>
+              <span class="text-normal">起動するとすぐに矢印（↑→↓←）が 3 秒ごとに繰り返して表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">画面のやじるしに合わせて目を動かす</span>
+              <span class="text-normal">画面の矢印に合わせて目を動かす</span>
+            </li>
+            <li>
+              <span class="text-easy">動かし終わったら B ボタンをおすと にっこりした顔 がひょうじされて、すぐにやじるしのひょうじにもどる</span>
+              <span class="text-normal">動かし終わったら B ボタンを押すと にっこりした顔 が表示されて、すぐに矢印の表示に戻る</span>
+            </li>
+          </ol>
+            <img id="section-5-gif" src="img/202509_05.png" alt="マイクロビットで目のエクササイズナビのプログラムを実行している動画" width="320" height="240" style="display:block; margin-bottom:10px;">
+            <button class="btn" onclick="toggleGif('section-5-gif', 'img/202509_05.gif', 'img/202509_05.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">目のきんにくをほぐすしゅうかんを作る</span>
+              <span class="text-normal">目の筋肉をほぐす習慣を作る</span>
+            </li>
+            <li>
+              <span class="text-easy">ICT を活用したじこかんりの仕組みを学ぶ</span>
+              <span class="text-normal">ICT を活用した自己管理の仕組みを学ぶ</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">やじるしをひょうじする速さや、方向パターンを変えて、より自分に合ったストレッチを考えてみよう</span>
+              <span class="text-normal">矢印を表示する速さや、方向パターンを変えて、より自分に合ったストレッチを考えてみよう</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/目のエクササイズナビ.hex" download aria-label="目のエクササイズナビのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <p class="foot">本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+  </main>
+
+  <footer class="wrap" role="contentinfo">
+    <p><a href="https://www.microsoft.com/ja-jp/enable/study/programming" aria-label="特別支援教育におけるプログラミング活用" target="_blank"> 特別支援教育におけるプログラミング活用 </a>にもどる</p>
+  </footer>
+
+<script>
+  const states = {}; // GIFごとの再生状態を保持
+
+  function toggleGif(id, gifSrc, stillSrc, button) {
+    const img = document.getElementById(id);
+    const isPlaying = states[id];
+
+    if (!isPlaying) {
+      // 再生開始
+      img.src = gifSrc;
+      button.textContent = "止める";
+      states[id] = true;
+    } else {
+      // 再生停止
+      img.src = stillSrc;
+      button.textContent = "見る";
+      states[id] = false;
+    }
+  }
+
+  // ===== 追加：表記モード（URL優先 / ラジオ） =====
+  const MODE_KEY = 'readingMode';
+  const radios = document.querySelectorAll('input[name="mode"]');
+
+  function readModeFromUrl() {
+    const url = new URL(location.href);
+    const m = url.searchParams.get('mode');
+    return (m === 'easy' || m === 'normal') ? m : null;
+  }
+
+  function readModeFromStorage() {
+    try {
+      const m = localStorage.getItem(MODE_KEY);
+      return (m === 'easy' || m === 'normal') ? m : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyMode(mode) {
+    document.body.classList.toggle('mode-normal', mode === 'normal');
+    document.body.classList.toggle('mode-easy', mode === 'easy');
+
+    radios.forEach(r => { r.checked = (r.value === mode); });
+
+    // 記事内リンクも引き継ぐ（data-basehrefがあるものだけ）
+    document.querySelectorAll('a[data-basehref]').forEach(a => {
+      const base = a.getAttribute('data-basehref');
+      a.href = `${base}?mode=${mode}`;
+    });
+
+    // URL更新（共有・ブックマーク・戻る整合）
+    const url = new URL(location.href);
+    url.searchParams.set('mode', mode);
+    history.replaceState(null, '', url);
+
+    // 保存（補助）
+    try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
+  }
+
+  // 初期化：URL → storage → easy
+  applyMode(readModeFromUrl() || readModeFromStorage() || 'easy');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => applyMode(radio.value));
+  });
+
+  // 上部タイトル固定
+  function syncFixedTopHeight(){
+    const fixed = document.querySelector('.fixed-top');
+    if (!fixed) return;
+    document.documentElement.style.setProperty('--fixed-top-h', fixed.offsetHeight + 'px');
+  }
+
+  window.addEventListener('load', syncFixedTopHeight);
+  window.addEventListener('resize', syncFixedTopHeight);
+  syncFixedTopHeight();
+
+</script>
+
+</body>
+</html>

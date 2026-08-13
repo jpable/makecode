@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【1月】新年！今年もより安全に楽しもう！</title>
+  <meta name="description" content="micro:bit を使った温度計やコンパスの作り方" />
+  <link rel="stylesheet" href="style.css">  
+</head>
+
+<body class="mode-easy">
+  <header class="wrap" role="banner">
+    <div class="fixed-top wrap">
+      <div class="mode-switch">
+        <fieldset>
+          <legend>表示モード</legend>
+          <div class="options">
+            <input type="radio" name="mode" id="mode-easy" value="easy" checked>
+            <label for="mode-easy">小3までの漢字</label>
+            <input type="radio" name="mode" id="mode-normal" value="normal">
+            <label for="mode-normal">全学年の漢字</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="brand" aria-label="サイト名">
+      <div>
+        <h1>
+          <span class="text-easy">【1月】新年！今年もより安全に楽しもう！</span>
+          <span class="text-normal">【1月】新年！今年もより安全に楽しもう！</span>
+        </h1>
+        <p class="lead">
+          <span class="text-easy">micro:bitを使って、温度や明るさのへんかがわかるLEDグラフや、お正月にちなんだゲームを作ってみよう</span>
+          <span class="text-normal">micro:bitを使って、温度や明るさの変化がわかるLEDグラフや、お正月にちなんだゲームを作ってみよう</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap" aria-label="ページ内ナビ">
+    <ul class="toc">
+      <li>
+        <span class="text-easy"><a href="#section-1">温度へんかLEDグラフ</a></span>
+        <span class="text-normal"><a href="#section-1">温度変化LEDグラフ</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-2">帰り道あんぜんあかり見まもり</a></span>
+        <span class="text-normal"><a href="#section-2">帰り道安全明かり見守り</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-3">気温で服のまいすうチェッカー</a></span>
+        <span class="text-normal"><a href="#section-3">気温で服の枚数チェッカー</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-4">真ん中にみかんをおこう！</a></span>
+        <span class="text-normal"><a href="#section-4">真ん中にみかんを置こう！</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-5">おもちふくらみシミュレーター</a></span>
+        <span class="text-normal"><a href="#section-5">お餅膨らみシミュレーター</a></span>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="section-1" aria-labelledby="section-1-h">
+      <h2 id="section-1-h">
+        <span class="text-easy">🌡️温度へんかLEDグラフ</span>
+        <span class="text-normal">🌡️温度変化LEDグラフ</span>
+        <span class="meta">— 理科（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの温度センサーを使って、温度のちがいをLEDの数で見えるようにします。起動したときの温度をきじゅんにして、あたたかくなったか、さむくなったかを調べます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの温度センサーを使って、温度の違いをLEDの数で見えるようにします。起動したときの温度を基準にして、暖かくなったか、寒くなったかを調べます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-1-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動してすぐ、右列の下から3つのLEDがてんとうする（きじゅんの温度）</span>
+              <span class="text-normal">起動してすぐ、右列の下から3つのLEDが点灯する（基準の温度）</span>
+            </li>
+            <li>
+              <span class="text-easy">2秒ごとに温度をはかり、右列に新しい数をひょうじする</span>
+              <span class="text-normal">2秒ごとに温度を計り、右列に新しい数を表示する</span>
+            </li>
+            <li>
+              <span class="text-easy">気温が1度上がるとLEDの数がひとつふえて、1度下がるとひとつ少なくなる</span>
+              <span class="text-normal">気温が1度上がるとLEDの数がひとつ増えて、1度下がるとひとつ少なくなる</span>
+            </li>
+            <li>
+              <span class="text-easy">前のひょうじを左へ1列ずつおし出す動きをする</span>
+              <span class="text-normal">前の表示を左へ1列ずつ押し出す動きをする</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンで、起動時の温度にもどしてやりなおし</span>
+              <span class="text-normal">Bボタンで、起動時の温度に戻してやり直し</span>  
+            </li>
+          </ol>
+          <img id="section-1-gif" src="img/202601_01.png" alt="micro:bit で温度へんかLEDグラフを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-1-gif', 'img/202601_01.gif', 'img/202601_01.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">温度のちがいと数のかんけいのりかい</span>
+              <span class="text-normal">温度の違いと数の関係の理解</span>
+            </li>
+            <li>
+              <span class="text-easy">2秒ごとのきろくのくりかえし</span>
+              <span class="text-normal">2秒ごとの記録の繰り返し</span>
+            </li>
+            <li>
+              <span class="text-easy">右が新しく左が古いならびの学び</span>
+              <span class="text-normal">右が新しく左が古い並びの学び</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">2秒を1秒や5秒へかえる工夫</span>
+              <span class="text-normal">2秒を1秒や5秒へ変える工夫</span>
+            </li>
+            <li>
+              <span class="text-easy">きじゅんの温度のLEDの数を、3つから2つや4つへかえてみる</span>
+              <span class="text-normal">基準の温度のLEDの数を、3つから2つや4つへ変えてみる</span>
+            </li>
+            <li>
+              <span class="text-easy">+3度いじょうや-3度いかのときの数の決まりを作ってみる</span>
+              <span class="text-normal">+3度以上や-3度以下のときの数の決まりを作ってみる</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/温度へんかLEDグラフ.hex" download aria-label="温度へんかLEDグラフのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-2" aria-labelledby="section-2-h">
+      <h2 id="section-2-h">
+        <span class="text-easy">💡帰り道あんぜんあかり見まもり</span>
+        <span class="text-normal">💡帰り道安全明かり見守り</span>
+        <span class="meta">— 生活（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの明るさセンサーを使って、帰り道の明るさをチェックすることができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの明るさセンサーを使って、帰り道の明るさをチェックすることができます。</span>
+      </p> 
+      <div class="grid" role="group" aria-labelledby="section-2-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">micro:bitをかばんやランドセルに入れて、LED面が外の方を向くように持つ</span>
+              <span class="text-normal">micro:bitをかばんやランドセルに入れて、LED面が外の方を向くように持つ</span>
+            </li>
+            <li>
+              <span class="text-easy">帰り道を歩いているとき、気になる場所でBボタンをおして明るさのマークを出す</span>
+              <span class="text-normal">帰り道を歩いているとき、気になる場所でBボタンを押して明るさのマークを出す</span>
+            </li>
+            <li>
+              <span class="text-easy">明るいときはにっこりした顔が出て、安全に歩けそうな道だとわかる</span>
+              <span class="text-normal">明るいときはにっこりした顔が出て、安全に歩けそうな道だとわかる</span>
+            </li>
+            <li>
+              <span class="text-easy">少し暗いときはむすっとした顔が出て、気をつけたい道だとわかる</span>
+              <span class="text-normal">少し暗いときはむすっとした顔が出て、気をつけたい道だとわかる</span>
+            </li>
+            <li>
+              <span class="text-easy">とても暗いときはドクロのマークが出るので、ちがう道を使ったり、安全に歩くよいやり方を話し合おう</span>
+              <span class="text-normal">とても暗いときはドクロのマークが出るので、違う道を使ったり、安全に歩く良いやり方を話し合おう</span>  
+            </li> 
+            <li>
+              <span class="text-easy">Aボタンをおすと、明るさが数字でひょうじされる</span>
+              <span class="text-normal">Aボタンを押すと、明るさが数字で表示される</span>
+            </li>
+          </ol>
+          <img id="section-2-gif" src="img/202601_02.png" alt="micro:bit で帰り道あんぜんあかり見まもりを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-2-gif', 'img/202601_02.gif', 'img/202601_02.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">冬の帰り道の明るさと安全とのつながりに気づく学習</span>
+              <span class="text-normal">冬の帰り道の明るさと安全とのつながりに気づく学習</span>
+            </li>
+            <li>
+              <span class="text-easy">明るさの数字やマークのようすから、自分の通学路を見つめなおす学習</span>
+              <span class="text-normal">明るさの数字やマークの様子から、自分の通学路を見つめ直す学習</span>
+            </li>
+            <li>
+              <span class="text-easy">友だちと意見を出し合って、帰り道の安全を高める学習</span>
+              <span class="text-normal">友達と意見を出し合って、帰り道の安全を高める学習</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">一日の中でいろいろな場所の明るさをはかって、地図や通学路カードにまとめる活動</span>
+              <span class="text-normal">一日の中で色々な場所の明るさを測って、地図や通学路カードにまとめる活動</span>
+            </li>
+            <li>
+              <span class="text-easy">冬だけでなく、春や秋にも同じ道で明るさをくらべる学習</span>
+              <span class="text-normal">冬だけでなく、春や秋にも同じ道で明るさを比べる学習</span>
+            </li>
+            <li>
+              <span class="text-easy">家の人といっしょに通学路を歩いて、より安全な帰り方を考える活動</span>
+              <span class="text-normal">家の人と一緒に通学路を歩いて、より安全な帰り方を考える活動</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/帰り道あんぜんあかり見まもり.hex" download aria-label="帰り道あんぜんあかり見まもりのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-3" aria-labelledby="section-3-h">
+      <h2 id="section-3-h">
+        <span class="text-easy">👚気温で服のまいすうチェッカー</span>
+        <span class="text-normal">👚気温で服の枚数チェッカー</span>
+        <span class="meta">— 生活（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの温度センサーを使って、気温に合わせて服を何まい着るとよさそうかをひょうじします。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの温度センサーを使って、気温に合わせて服を何枚着るとよさそうかを表示します。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-3-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">Aボタンをおすと、外の気温が数字でひょうじされる</span>
+              <span class="text-normal">Aボタンを押すと、外の気温が数字で表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンをおすと、気温に合わせて服のまいすうがひょうじされる</span>
+              <span class="text-normal">Bボタンを押すと、気温に合わせて服の枚数が表示される</span>
+            </li>
+            <li>
+              <span class="text-easy">ひょうじされた「1」「2」「3」の数字を見て、今日着る服のまいすうを決める</span>
+              <span class="text-normal">表示された「1」「2」「3」の数字を見て、今日着る服の枚数を決める</span>
+            </li>
+            <li>
+              <span class="text-easy">3まいと出たとき（～10℃）はとてもさむい日として、上着や中に着る服をふやす</span>
+              <span class="text-normal">3枚と出たとき（～10℃）はとても寒い日として、上着や中に着る服を増やす</span>
+            </li>
+            <li>
+              <span class="text-easy">2まいと出たとき（11℃～24℃）は中くらいの日として、着かたをかんがえる</span>
+              <span class="text-normal">2枚と出たとき（11℃～24℃）は中くらいの日として、着方を考える</span>
+            </li>
+            <li>
+              <span class="text-easy">1まいと出たとき（25℃～）はあたたかい日として、着すぎないようにする</span>
+              <span class="text-normal">1枚と出たとき（25℃～）は暖かい日として、着すぎないようにする</span>
+            </li>
+          </ol>
+          <img id="section-3-gif" src="img/202601_03.png" alt="micro:bit でまいすうチェッカーを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-3-gif', 'img/202601_03.gif', 'img/202601_03.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">気温と服の着かたとのつながりに気づく学習</span>
+              <span class="text-normal">気温と服の着方とのつながりに気づく学習</span>
+            </li>
+            <li>
+              <span class="text-easy">数字をもとにして一日の用意を自分で考える学習</span>
+              <span class="text-normal">数字をもとにして一日の用意を自分で考える学習</span>
+            </li>
+            <li>
+              <span class="text-easy">かんきょうに合わせて体をまもる工夫をする生活学習</span>
+              <span class="text-normal">環境に合わせて体を守る工夫をする生活学習</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">5℃や20℃などのきじゅんをクラスで話し合ってかえてみる活動</span>
+              <span class="text-normal">5℃や20℃などの基準をクラスで話し合って変えてみる活動</span>
+            </li>
+            <li>
+              <span class="text-easy">じっさいにその日に着た服と体のようすをノートにまとめて、自分に合うまいすうを見つける活動</span>
+              <span class="text-normal">実際にその日に着た服と体の様子をノートにまとめて、自分に合う枚数を見つける活動</span>
+            </li>
+            <li>
+              <span class="text-easy">気温だけでなく、風や雨のようすもいっしょにメモして、一日の用意カードを作る活動</span>
+              <span class="text-normal">気温だけでなく、風や雨の様子も一緒にメモして、一日の用意カードを作る活動</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/気温で服のまいすうチェッカー.hex" download aria-label="気温で服のまいすうチェッカーのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-4" aria-labelledby="section-4-h">
+      <h2 id="section-4-h">
+        <span class="text-easy">🍊真ん中にみかんをおこう！</span>
+        <span class="text-normal">🍊真ん中にみかんを置こう！</span>
+        <span class="meta">— 理科（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの「かそくどセンサー」を使って、かがみもちの上にみかんをのせるイメージのゲームを行うことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの「加速度センサー」を使って、鏡餅の上にみかんを乗せるイメージのゲームを行うことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-4-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">Bボタンをおしてゲームをスタートする</span>
+              <span class="text-normal">Bボタンを押してゲームをスタートする</span>
+            </li>
+            <li>
+              <span class="text-easy">LEDに出てくる下の形は、かがみもちの台だと思って見る</span>
+              <span class="text-normal">LEDに出てくる下の形は、鏡餅の台だと思って見る</span>
+            </li>
+            <li>
+              <span class="text-easy">スタートすると、いちばん上の行に「みかん」をあらわす1つのドットがてんめつしながら左右に動く</span>
+              <span class="text-normal">スタートすると、一番上の行に「みかん」を表す1つのドットが点滅しながら左右に動く</span>
+            </li>
+            <li>
+              <span class="text-easy">本体を右や左にかたむけてみかんを動かす</span>
+              <span class="text-normal">本体を右や左に傾けてみかんを動かす</span>
+            </li>
+            <li>
+              <span class="text-easy">5秒間、動きを見ながら、みかんがかがみもちの真ん中にのるようにバランスをとる</span>
+              <span class="text-normal">5秒間、動きを見ながら、みかんが鏡餅の真ん中に乗るようにバランスを取る</span>
+            </li>
+            <li>
+              <span class="text-easy">5秒たつとみかんがその場所で止まり、真ん中にのったときはにっこりした顔、真ん中の3マスの中ならむすっとした顔、はじにのったときはかなしい顔が出る</span>
+              <span class="text-normal">5秒経つとみかんがその場所で止まり、真ん中に乗ったときはにっこりした顔、真ん中の3マスの中ならむすっとした顔、端に乗ったときは悲しい顔が出る</span>
+            <li>
+              <span class="text-easy">もう一度あそびたいときは、Bボタンをおしてまたスタートする</span>
+              <span class="text-normal">もう一度遊びたいときは、Bボタンを押してまたスタートする</span>
+            </li>
+          </ol>
+          <img id="section-4-gif" src="img/202601_04.png" alt="micro:bit で真ん中にみかんをおこう！ゲームを遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-4-gif', 'img/202601_04.gif', 'img/202601_04.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">かそくどセンサーで本体のかたむきとLEDの動きがつながることをりかいする学習</span>
+              <span class="text-normal">加速度センサーで本体の傾きとLEDの動きがつながることを理解する学習</span>
+            </li>
+            <li>
+              <span class="text-easy">自分でかたむきをコントロールして、集中してバランスをとる活動</span>
+              <span class="text-normal">自分で傾きをコントロールして、集中してバランスを取る活動</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">3秒や7秒など、時間をかえてむずかしさをちょうせつする活動</span>
+              <span class="text-normal">3秒や7秒など、時間を変えて難しさを調節する活動</span>
+            </li>
+            <li>
+              <span class="text-easy">みかんやかがみもちのドット絵を自分たちでかえてみる活動</span>
+              <span class="text-normal">みかんや鏡餅のドット絵を自分たちで変えてみる活動</span>
+            </li>
+            <li>
+              <span class="text-easy">スコアのルールを作って、クラスで大会にする活動</span>
+              <span class="text-normal">スコアのルールを作って、クラスで大会にする活動</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/真ん中にみかんをおこう！.hex" download aria-label="真ん中にみかんをおこう！のサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-5" aria-labelledby="section-5-h">
+      <h2 id="section-5-h">
+        <span class="text-easy">🍡おもちふくらみシミュレーター</span>
+        <span class="text-normal">🍡お餅膨らみシミュレーター</span>
+        <span class="meta">— 理科（小学3年生〜中学生）</span></h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、AとBボタンで火かげんを5だんかいのヒートバーでせっていし、そのだんかいに合わせておもちのふくらみ方が変わる様子をLEDでかんさつするシミュレーターを作ることができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、AとBボタンで火加減を5段階のヒートバーで設定し、その段階に合わせてお餅の膨らみ方が変わる様子をLEDで観察するシミュレーターを作ることができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-5-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動すると、ヒートバー1だん目からスタート（下の1行だけが光る）</span>
+              <span class="text-normal">起動すると、ヒートバー1段目からスタート（下の1行だけが光る）</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンで火かげんのだんかいを1つ下げ、Bボタンでだんかいを1つ上げる</span>
+              <span class="text-normal">Aボタンで火加減の段階を1つ下げ、Bボタンで段階を1つ上げる</span>
+            </li>
+            <li>
+              <span class="text-easy">1だんのときは下の1行だけ光り、5だんのときは下から5行ぜんぶ光るので、火が弱いときと強いときのイメージで見くらべる</span>
+              <span class="text-normal">1段のときは下の1行だけ光り、5段のときは下から5行全部光るので、火が弱いときと強いときのイメージで見比べる</span>
+            </li>
+            <li>
+              <span class="text-easy">AかBボタンでヒートバーをちょうせいしたあと、1秒間何もおさないと、自動でおもち画面に切りかわる</span>
+              <span class="text-normal">AかBボタンでヒートバーを調整したあと、1秒間何も押さないと、自動でお餅画面に切り替わる</span>
+            </li>
+            <li>
+              <span class="text-easy">おもち画面では、火かげんを強くするとおもちの絵がふくらんでいくことをかくにんする</span>
+              <span class="text-normal">お餅画面では、火加減を強くするとお餅の絵が膨らんでいくことを確認する</span>
+            </li>
+            <li>
+              <span class="text-easy">おもち画面のときにAかBボタンをおすと、もう一度ヒートバー画面にもどり、何回でも火かげんをかえておもちの様子のちがいをかんさつできる</span>
+              <span class="text-normal">お餅画面のときにAかBボタンを押すと、もう一度ヒートバー画面に戻り、何回でも火加減を変えてお餅の様子の違いを観察できる</span>
+            </li>
+            <li>
+              <span class="text-easy">火かげんのだんかいとおもちの様子を見くらべて、「火がよわいとどうなるか」「ちょうどよさそうなとき」「強すぎるとどうなるか」を話し合う</span>
+              <span class="text-normal">火加減の段階とお餅の様子を見比べて、「火が弱いとどうなるか」「丁度良さそうなとき」「強すぎるとどうなるか」を話し合う</span>
+            </li>
+          </ol>
+          <img id="section-5-gif" src="img/202601_05.png" alt="micro:bit でおもちふくらみシミュレーターを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-5-gif', 'img/202601_05.gif', 'img/202601_05.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">5だんかいのヒートバーを使って、火の強さとおもちのふくらみ方のつながりを目でとらえる学習</span>
+              <span class="text-normal">5段階のヒートバーを使って、火の強さとお餅の膨らみ方のつながりを目でとらえる学習</span>
+            </li>
+            <li>
+              <span class="text-easy">ボタンそうさでモデルを動かしながら、食べ物があたためられたときに中でどのようなへんかがおきるかをイメージする学習</span>
+              <span class="text-normal">ボタン操作でモデルを動かしながら、食べ物が温められたときに中でどのような変化が起きるかをイメージする学習</span>
+            </li>
+            <li>
+              <span class="text-easy">新年の食べ物であるおもちをテーマに、生活と科学をむすびつけて学ぶ活動</span>
+              <span class="text-normal">新年の食べ物であるお餅をテーマに、生活と科学を結びつけて学ぶ活動</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">各だんかいに「生」「ふくらみはじめ」「ちょうどよい」「ふくらみすぎ」など自分たちでラベルをつけてプリントにまとめる活動</span>
+              <span class="text-normal">各段階に「生」「膨らみはじめ」「丁度良い」「膨らみすぎ」など自分たちでラベルをつけてプリントにまとめる活動</span>
+            </li>
+            <li>
+              <span class="text-easy">おもちのドット絵を自分たちでアレンジして、丸もちやかがみもちの形にしてみる活動</span>
+              <span class="text-normal">お餅のドット絵を自分たちでアレンジして、丸お餅や鏡餅の形にしてみる活動</span>
+            </li>
+            <li>
+              <span class="text-easy">火かげんのだんかいによってかおマークや音が出るようにプログラムをくふうする活動</span>
+              <span class="text-normal">火加減の段階によって顔マークや音が出るようにプログラムを工夫する活動</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/おもちふくらみシミュレーター.hex" download aria-label="おもちふくらみシミュレーターのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+
+  <p class="foot">本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+  </main>
+
+  <footer class="wrap" role="contentinfo">
+    <p><a href="https://www.microsoft.com/ja-jp/enable/study/programming" aria-label="特別支援教育におけるプログラミング活用" target="_blank"> 特別支援教育におけるプログラミング活用 </a>にもどる</p>
+  </footer>
+
+<script>
+  const states = {}; // GIFごとの再生状態を保持
+
+  function toggleGif(id, gifSrc, stillSrc, button) {
+    const img = document.getElementById(id);
+    const isPlaying = states[id];
+
+    if (!isPlaying) {
+      // 再生開始
+      img.src = gifSrc;
+      button.textContent = "止める";
+      states[id] = true;
+    } else {
+      // 再生停止
+      img.src = stillSrc;
+      button.textContent = "見る";
+      states[id] = false;
+    }
+  }
+  
+  // ===== 追加：表記モード（URL優先 / ラジオ） =====
+  const MODE_KEY = 'readingMode';
+  const radios = document.querySelectorAll('input[name="mode"]');
+
+  function readModeFromUrl() {
+    const url = new URL(location.href);
+    const m = url.searchParams.get('mode');
+    return (m === 'easy' || m === 'normal') ? m : null;
+  }
+
+  function readModeFromStorage() {
+    try {
+      const m = localStorage.getItem(MODE_KEY);
+      return (m === 'easy' || m === 'normal') ? m : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyMode(mode) {
+    document.body.classList.toggle('mode-normal', mode === 'normal');
+    document.body.classList.toggle('mode-easy', mode === 'easy');
+
+    radios.forEach(r => { r.checked = (r.value === mode); });
+
+    // 記事内リンクも引き継ぐ（data-basehrefがあるものだけ）
+    document.querySelectorAll('a[data-basehref]').forEach(a => {
+      const base = a.getAttribute('data-basehref');
+      a.href = `${base}?mode=${mode}`;
+    });
+
+    // URL更新（共有・ブックマーク・戻る整合）
+    const url = new URL(location.href);
+    url.searchParams.set('mode', mode);
+    history.replaceState(null, '', url);
+
+    // 保存（補助）
+    try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
+  }
+
+  // 初期化：URL → storage → easy
+  applyMode(readModeFromUrl() || readModeFromStorage() || 'easy');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => applyMode(radio.value));
+  });
+
+  // 上部タイトル固定
+  function syncFixedTopHeight(){
+    const fixed = document.querySelector('.fixed-top');
+    if (!fixed) return;
+    document.documentElement.style.setProperty('--fixed-top-h', fixed.offsetHeight + 'px');
+  }
+
+  window.addEventListener('load', syncFixedTopHeight);
+  window.addEventListener('resize', syncFixedTopHeight);
+  syncFixedTopHeight();
+
+</script>
+</body>
+</html>

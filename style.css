@@ -1,0 +1,282 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #555;
+  --link: #0b63ce;
+  --link-visited: #7a33aa;
+  --card: #f6f7f9;
+  --accent: #155e75;
+  --focus: #ff8c00;
+  --border: #d8dee4;
+  font-size: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f14;
+    --fg: #f4f7fb;
+    --muted: #cbd5e1;
+    --link: #8ab4ff;
+    --link-visited: #c58cff;
+    --card: #111827;
+    --accent: #38bdf8;
+    --border: #233043;
+  }
+}
+
+.hc :where(body) { background: #000 !important; color: #fff !important; }
+.hc a { color: #9cf !important; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.7;
+}
+
+/*
+header {
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card), transparent);
+}
+*/
+
+.wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.brand { display: flex; align-items: center; gap: .75rem; }
+
+.brand__logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: .5rem;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin: .5rem 0 0; }
+.lead { color: var(--muted); margin: .25rem 0 0; }
+/*
+nav {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+*/
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: 0 0;
+  list-style: none;
+  margin: 0;
+}
+
+.toc a {
+  display: inline-block;
+  padding: .4rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+  text-decoration: none;
+}
+
+main { padding: 1rem 0 2rem; }
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+section h2 { margin-top: 0; font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+.meta {
+  font-size: .95rem;
+  color: var(--muted);
+  margin-top: -.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 920px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: .8rem;
+  padding: .8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card { background: #0b1220; }
+}
+
+h3 { font-size: 1.05rem; margin: .6rem 0 .25rem; }
+ul { padding-left: 1.2rem; }
+
+.btn {
+  display: inline-block;
+  margin-top: .5rem;
+  padding: .6rem .9rem;
+  border-radius: .6rem;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  background: transparent;
+}
+
+.btn[download]::after {
+  content: "（.hex）";
+  font-weight: 400;
+  margin-left: .25rem;
+}
+
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
+
+.foot {
+  font-size: .9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+/* フォーカス表示 */
+:where(a, button, summary, input):focus-visible,
+.toc a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ===== 表記モード切替 ===== */
+
+.mode-switch {
+  display: flex;
+  justify-content: flex-end;
+  /* margin-top: .75rem; */
+}
+
+.mode-switch fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mode-switch .options {
+  display: inline-flex;
+  border: 2px solid var(--accent);
+  border-radius: .6rem;
+  overflow: hidden;
+}
+
+.mode-switch input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.mode-switch label {
+  padding: .3rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  user-select: none;
+}
+
+.mode-switch input[type="radio"]:checked + label {
+  background: var(--accent);
+  color: #fff;
+}
+
+.mode-switch input[type="radio"]:focus-visible + label {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ===== 表記出し分け ===== */
+
+.text-normal { display: none; }
+
+body.mode-normal .text-normal { display: inline; }
+body.mode-normal .text-easy { display: none; }
+
+body.mode-easy .text-easy { display: inline; }
+body.mode-easy .text-normal { display: none; }
+
+
+/* タイトル＋表示モードをまとめて上部固定 */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg);
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* 固定ヘッダーぶんだけ、ページ全体の開始位置を下げる */
+body{
+  padding-top: var(--fixed-top-h, 0px);
+}
+
+/* main側の padding-top は不要 */
+#main{
+  padding-top: 0;
+}
+
+/* ページ内リンクで見出しが固定ヘッダーに隠れないように */
+section{
+  scroll-margin-top: var(--fixed-top-h, 0px);
+}
+
+.faq dt {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+  margin-bottom: 8px;   /* QとAの間隔 */
+}
+
+
+.faq dd {
+  margin-left: 0;       /* ddのデフォルトインデントを消す */
+  margin-bottom: 32px;  /* 次のQとの間隔 */
+}
+

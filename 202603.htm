@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【3月】授業が変わる！作ってすぐに試せるmicro:bitのチカラ</title>
+  <meta name="description" content="授業に生かせる、micro:bitの色々なプログラムの作り方" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mode-easy"
+
+data-title-easy="【3月】じゅぎょうがかわる！作ってすぐにためせるmicro:bitのチカラ"
+data-title-normal="【3月】授業が変わる！作ってすぐに試せるmicro:bitのチカラ"
+
+data-lead-easy="じゅぎょうで使える、いろいろなmicro:bitのプログラムを作ってみよう"
+data-lead-normal="授業で使える、色々なmicro:bitのプログラムを作ってみよう"
+
+>
+
+  <div id="header"></div>
+
+  <div id="nav"></div>
+
+  <main id="main" class="wrap">
+    <section id="section-1" aria-labelledby="section-1-h">
+      <h2 id="section-1-h">
+        <span aria-hidden="true">🏞️</span>
+        <span class="text-easy" id="sample1-title">かたむきを調べるすいへいき</span>
+        <span class="text-normal">傾きを調べる水平器</span>
+        <span class="meta">— 理科（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitのかそくどセンサーを使って、地面（土）のかたむきがゆるやかか急かを、1つのLEDの動きで見えるようにします。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの加速度センサーを使って、地面（土）の傾きが緩やかか急かを、1つのLEDの動きで見えるようにします。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-1-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">micro:bitを左にかたむけると、LEDが左へ動く</span>
+              <span class="text-normal">micro:bitを左に傾けると、LEDが左へ動く</span>
+            </li>
+            <li>
+              <span class="text-easy">micro:bitを右にかたむけると、LEDが右へ動く</span>
+              <span class="text-normal">micro:bitを右に傾けると、LEDが右へ動く</span>  
+            </li>
+            <li>
+              <span class="text-easy">かたむきを小さくすると、LEDがゆっくり動く</span>
+              <span class="text-normal">傾きを小さくすると、LEDがゆっくり動く</span>  
+            </li>
+            <li>
+              <span class="text-easy">かたむきを大きくすると、LEDが速く動く</span>
+              <span class="text-normal">傾きを大きくすると、LEDが速く動く</span>  
+            </li>
+            <li>
+              <span class="text-easy">micro:bitを水平にすると、LEDが中央に近づく</span>
+              <span class="text-normal">micro:bitを水平にすると、LEDが中央に近づく</span>  
+            </li>
+          </ol>
+          <img id="section-1-gif" src="img/202603_01.png" alt="micro:bit でかたむきを調べるすいへいきを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-1-gif', 'img/202603_01.gif', 'img/202603_01.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">地面のかたむきと水の流れる速さのかんけいのりかい</span>
+              <span class="text-normal">地面の傾きと水の流れる速さの関係の理解</span>
+            </li>
+            <li>
+              <span class="text-easy">ゆるやかなしゃめんと急なしゃめんのちがいのせつめい</span>
+              <span class="text-normal">緩やかな斜面と急な斜面の違いの説明</span>
+            </li>
+            <li>
+              <span class="text-easy">センサーのすうちの動きを見える化するたいけん</span>
+              <span class="text-normal">センサーの数値の動きを見える化する体験</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">ゆるやかと急のさかい目の角度をかえる</span>
+              <span class="text-normal">緩やかと急の境目の角度を変える</span>
+            </li>
+            <li>
+              <span class="text-easy">LEDの速さのへんかを調整して見やすくする</span>
+              <span class="text-normal">LEDの速さの変化を調整して見やすくする</span>
+            </li>
+            <li>
+              <span class="text-easy">上下のかたむきでも同じモデルを作ってみる</span>
+              <span class="text-normal">上下の傾きでも同じモデルを作ってみる</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        <a class="btn" href="samples/かたむきを調べるすいへいき.hex" download aria-labelledby="sample1-title sample1-btn">
+          <span id="sample1-btn">サンプルコードをダウンロード</span>
+        </a>
+      </p>
+    </section>
+
+    <section id="section-2" aria-labelledby="section-2-h">
+      <h2 id="section-2-h">
+        <span aria-hidden="true">🌔</span>
+        <span class="text-easy" id="sample2-title">月のみちかけを学ぼう</span>
+        <span class="text-normal">月の満ち欠けを学ぼう</span>
+        <span class="meta">— 理科（小学6年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、月のみちかけをLEDの形でじゅんばんにたしかめます。月のひょうじは新月→三日月→じょうげんの月→十三夜→まん月→ねまち月→かげんの月→有明月→新月のじゅんです。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、月の満ち欠けをLEDの形で順番に確かめます。月の表示は新月→三日月→上弦の月→十三夜→満月→寝待月→下弦の月→有明月→新月の順です。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-2-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょは「B」と「→」のこうごのひょうじ、Bボタンで月のひょうじを始める</span>
+              <span class="text-normal">最初は「B」と「→」の交互の表示、Bボタンで月の表示を始める</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンをつづけておして、月の形のへんかをじゅんばんに見くらべる</span>
+              <span class="text-normal">Bボタンを続けて押して、月の形の変化を順番に見比べる</span>  
+            </li>
+            <li>
+              <span class="text-easy">1しゅうが終わってさいしょの画面ひょうじにもどる</span>
+              <span class="text-normal">1周が終わって最初の画面表示に戻る</span>  
+            </li>
+          </ol>
+          <img id="section-2-gif" src="img/202603_02.png" alt="micro:bit で月のみちかけを学ぼうを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-2-gif', 'img/202603_02.gif', 'img/202603_02.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">月のみちかけのじゅんばんのりかい</span>
+              <span class="text-normal">月の満ち欠けの順番の理解</span>
+            </li>
+            <li>
+              <span class="text-easy">ボタンそうさでひょうじを切りかえるくり返しのりかい</span>
+              <span class="text-normal">ボタン操作で表示を切り替える繰り返しの理解</span>
+            </li>
+            <li>
+              <span class="text-easy">合図のアニメひょうじで開始としゅうりょうの区切りをそろえるたいけん</span>
+              <span class="text-normal">合図のアニメ表示で開始と終了の区切りを揃える体験</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">「B」と「→」のこうごのひょうじの速さをかえるなどの見え方のくふう</span>
+              <span class="text-normal">「B」と「→」の交互の表示の速さを変えるなどの見え方の工夫</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンで1つ前の形にもどす仕組みのついか</span>
+              <span class="text-normal">Aボタンで1つ前の形に戻す仕組みの追加</span>
+            </li>
+            <li>
+              <span class="text-easy">月の形の名前を「カタカナ」のドット絵でひょうじ</span>
+              <span class="text-normal">月の形の名前を「カタカナ」のドット絵で表示</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        <a class="btn" href="samples/月のみちかけを学ぼう.hex" download aria-labelledby="sample2-title sample2-btn">
+          <span id="sample2-btn">サンプルコードをダウンロード</span>
+        </a>
+      </p>
+    </section>
+
+    <section id="section-3" aria-labelledby="section-3-h">
+      <h2 id="section-3-h">
+        <span aria-hidden="true">📐</span>        
+        <span class="text-easy">0度・45度・90度をたしかめよう</span>
+        <span class="text-normal">0度・45度・90度を確かめよう</span>
+        <span class="meta">— 算数（小学4年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの角度センサーを使って、0度・45度・90度の角度をたしかめます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの角度センサーを使って、0度・45度・90度の角度を確かめます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-3-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">「カクド」のひょうじのあとに出るもくひょう角度、0・45・90のじゅんにちょうせん</span>
+              <span class="text-normal">「カクド」の表示のあとに出る目標角度、0・45・90の順に挑戦</span>
+            </li>
+            <li>
+              <span class="text-easy">micro:bitを回転させてもくひょう角度に近づける</span>
+              <span class="text-normal">micro:bitを回転させて目標角度に近づける</span>  
+            </li>
+            <li>
+              <span class="text-easy">上から3行目のLED1行がうすい（はなれている）か明るい（近づいている）かをかくにん</span>
+              <span class="text-normal">上から3行目のLED1行が薄い（離れている）か明るい（近づいている）かを確認</span>  
+            </li>
+            <li>
+              <span class="text-easy">Bボタンではんていけっかのうれしい顔（せいかい）・悲しい顔（ふせいかい）をひょうじ</span>
+              <span class="text-normal">Bボタンで判定結果の嬉しい顔（正解）・悲しい顔（不正解）を表示</span>  
+            </li>
+            <li>
+              <span class="text-easy">Aボタンでもくひょう角度をリセットして、0度にもどる</span>
+              <span class="text-normal">Aボタンで目標角度をリセットして、0度に戻る</span>  
+            </li>
+          </ol>
+          <img id="section-3-gif" src="img/202603_03.png" alt="micro:bit で角度センサーを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-3-gif', 'img/202603_03.gif', 'img/202603_03.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">角度（0度・45度・90度）のかんかくづくり</span>
+              <span class="text-normal">角度（0度・45度・90度）の感覚づくり</span>
+            </li>
+            <li>
+              <span class="text-easy">回転そうさで角度を調整するたいけん</span>
+              <span class="text-normal">回転操作で角度を調整する体験</span>
+            </li>
+            <li>
+              <span class="text-easy">もくひょう角度とげんざい角度のさの考え方のりかい</span>
+              <span class="text-normal">目標角度と現在角度の差の考え方の理解</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">明るさ（40）をかえる見やすさ調整</span>
+              <span class="text-normal">明るさ（40）を変える見やすさ調整</span>
+            </li>
+            <li>
+              <span class="text-easy">せいかいのはんい（10度いない）を5度や15度にかえるじょうけん調整</span>
+              <span class="text-normal">正解の範囲（10度以内）を5度や15度に変える条件調整</span>
+            </li>
+            <li>
+              <span class="text-easy">もくひょう角度を0度・30度・60度・90度などにふやすせっていへんこう</span>
+              <span class="text-normal">目標角度を0度・30度・60度・90度などに増やす設定変更</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/0度・45度・90度をたしかめよう.hex" download aria-label="角度センサーのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-4" aria-labelledby="section-4-h">
+      <h2 id="section-4-h">
+        <span aria-hidden="true">🔤</span>   
+        <span class="text-easy">えいたんご2たくクイズ</span>
+        <span class="text-normal">英単語2択クイズ</span>
+        <span class="meta">— 外国語／英語（小学4年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、えいたんごクイズを2たくで答えます。</span>
+        <span class="text-normal">このプログラムは、micro:bitを使って、上の行を左右に動く鬼を狙い、豆を投げて8秒以内の得点を楽しむゲームです。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-4-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょは「B」と「→」をこうごにひょうじ、Bボタンでクイズ開始</span>
+              <span class="text-normal">最初は「B」と「→」を交互に表示、Bボタンでクイズ開始</span>
+            </li>
+            <li>
+              <span class="text-easy">えいたんご「APPLE」がスクロールでひょうじされる</span>
+              <span class="text-normal">英単語「APPLE」がスクロールで表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">「A」のひょうじのあとに「リンゴ」がひょうじされる</span>
+              <span class="text-normal">「A」の表示のあとに「リンゴ」が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">「B」のひょうじのあとに「イチゴ」がひょうじされる</span>
+              <span class="text-normal">「B」の表示のあとに「イチゴ」が表示される</span>  
+            </li>
+            <li>
+              <span class="text-easy">「A」と「B」がこうごにひょうじされるあいだ、AボタンまたはBボタンでせいかいをえらぶ</span>
+              <span class="text-normal">「A」と「B」が交互に表示される間、AボタンまたはBボタンで正解を選ぶ</span>  
+            </li>
+          </ol>
+          <img id="section-4-gif" src="img/202603_04.png" alt="英単語2択クイズで遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-4-gif', 'img/202603_04.gif', 'img/202603_04.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">えいたんごと意味をむすびつけるたいけん</span>
+              <span class="text-normal">英単語と意味を結びつける体験</span>
+            </li>
+            <li>
+              <span class="text-easy">2たくで答えをえらぶはんだんのたいけん</span>
+              <span class="text-normal">2択で答えを選ぶ判断の体験</span>
+            </li>
+            <li>
+              <span class="text-easy">ひょうじのじゅんばんをそろえて学習をくり返すたいけん</span>
+              <span class="text-normal">表示の順番を揃えて学習を繰り返す体験</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">問題の数をふやしてくり返し練習できるようにする</span>
+              <span class="text-normal">問題の数を増やして繰り返し練習できるようにする</span>
+            </li>
+            <li>
+              <span class="text-easy">えいたんごをほかのたんごに入れかえる</span>
+              <span class="text-normal">英単語をほかの単語に入れかえる</span>
+            </li>
+            <li>
+              <span class="text-easy">せいかいのときだけ次の問題へ進むれんぞくクイズへのはってん</span>
+              <span class="text-normal">正解のときだけ次の問題へ進む連続クイズへの発展</span>
+            </li>            
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/えいたんご2たくクイズ.hex" download aria-label="英単語2択クイズのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-5" aria-labelledby="section-5-h">
+      <h2 id="section-5-h">
+        <span aria-hidden="true">✏️</span>   
+        <span class="text-easy">カタカナで表そう</span>
+        <span class="text-normal">カタカナで表そう</span>
+        <span class="meta">— 国語（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、カタカナの「アリガトウ」を1文字ずつLEDでひょうじします。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、カタカナの「アリガトウ」を1文字ずつLEDで表示します。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-5-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">さいしょは「B」と「→」をこうごにひょうじ、Bボタンで開始</span>
+              <span class="text-normal">最初は「B」と「→」を交互に表示、Bボタンで開始</span>
+            </li>
+            <li>
+              <span class="text-easy">「ア」「リ」「ガ」「ト」「ウ」をじゅんばんにひょうじ</span>
+              <span class="text-normal">「ア」「リ」「ガ」「ト」「ウ」を順番に表示</span>  
+            </li>
+            <li>
+              <span class="text-easy">1文字ごとに暗転で区切りが入る</span>
+              <span class="text-normal">1文字ごとに暗転で区切りが入る</span>  
+            </li>
+            <li>
+              <span class="text-easy">ひょうじが終わったあとにさいしょの「B」と「→」の画面にもどる</span>
+              <span class="text-normal">表示が終わったあとに最初の「B」と「→」の画面に戻る</span>  
+            </li>
+          </ol>
+          <img id="section-5-gif" src="img/202603_05.png" alt="micro:bit でカタカナで表そうを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-5-gif', 'img/202603_05.gif', 'img/202603_05.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">カタカナ文字の形をLEDで表す学習</span>
+              <span class="text-normal">カタカナ文字の形をLEDで表す学習</span>
+            </li>
+            <li>
+              <span class="text-easy">決まったじゅんばんでひょうじするてじゅんのりかい</span>
+              <span class="text-normal">決まった順番で表示する手順の理解</span>
+            </li>
+            <li>
+              <span class="text-easy">開始の区切りをそろえるたいけん</span>
+              <span class="text-normal">開始の区切りを揃える体験</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">ひょうじ時間をかえて見やすさのくふう</span>
+              <span class="text-normal">表示時間を変更して見やすさを工夫</span>
+            </li>
+            <li>
+              <span class="text-easy">文字の間の暗転時間をかえる区切りのくふう</span>
+              <span class="text-normal">文字の間の暗転時間を変える区切りを工夫</span>
+            </li>
+            <li>
+              <span class="text-easy">自分のメッセージをカタカナのドット絵で作る</span>
+              <span class="text-normal">自分のメッセージをカタカナのドット絵で作る</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/カタカナで表そう.hex" download aria-label="カタカナで表そうのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+
+  <p class="foot">本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/common.js"></script>
+
+</body>
+</html>

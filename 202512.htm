@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【12月】冬休み直前！気温やほういをしらべて歩こう！</title>
+  <meta name="description" content="micro:bit を使った温度計やコンパスの作り方" />
+  <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body class="mode-easy">
+  <header class="wrap" role="banner">
+    <div class="fixed-top wrap">
+      <div class="mode-switch">
+        <fieldset>
+          <legend>表示モード</legend>
+          <div class="options">
+            <input type="radio" name="mode" id="mode-easy" value="easy">
+            <label for="mode-easy">小3までの漢字</label>
+            <input type="radio" name="mode" id="mode-normal" value="normal">
+            <label for="mode-normal">全学年の漢字</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="brand" aria-label="サイト名">
+      <div>
+        <h1>
+          <span class="text-easy">【12月】冬休み直前！気温やほういをしらべて歩こう！</span>
+          <span class="text-normal">【12月】冬休み直前！気温や方位を調べて歩こう！</span>
+        </h1>
+        <p class="lead">
+          <span class="text-easy">micro:bitを使って、ほういがわかるコンパスや気温センサーを作ってみよう</span>
+          <span class="text-normal">micro:bitを使って、方位が分かるコンパスや気温センサーを作ってみよう</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap" aria-label="ページ内ナビ">
+    <ul class="toc">
+      <li>
+        <span class="text-easy"><a href="#section-1">コンパスでほういを調べよう（アルファベット）</a></span>
+        <span class="text-normal"><a href="#section-1">コンパスで方位を調べよう（アルファベット）</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-2">コンパスでほういを調べよう（カタカナ）</a></span>
+        <span class="text-normal"><a href="#section-2">コンパスで方位を調べよう（カタカナ）</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-3">万歩計</a></span>
+        <span class="text-normal"><a href="#section-3">万歩計</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-4">かいてきな気温をさがしてみよう！</a></span>
+        <span class="text-normal"><a href="#section-4">快適な気温を探してみよう！</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-5">じゃんけんゲーム</a></span>
+        <span class="text-normal"><a href="#section-5">じゃんけんゲーム</a></span>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="section-1" aria-labelledby="section-1-h">
+      <h2 id="section-1-h">
+        <span class="text-easy">🧭コンパスでほういを調べよう（アルファベット）</span>
+        <span class="text-normal">🧭コンパスで方位を調べよう（アルファベット）</span>
+        <span class="meta">— 理科／外国語（小学5年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitのコンパスセンサーを使って、本体が向くほういをNORTH（北）・EAST（東）・SOUTH（南）・WEST（西）のアルファベット頭文字「N・E・S・W」でリアルタイムにひょうじします。</span>
+        <span class="text-normal">このプログラムでは、micro:bitのコンパスセンサーを使って、本体が向く方位をNORTH（北）・EAST（東）・SOUTH（南）・WEST（西）のアルファベット頭文字「N・E・S・W」でリアルタイムに表示します。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-1-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動直後にキャリブレーション開始</span>
+              <span class="text-normal">起動直後にキャリブレーション開始</span>
+            </li>
+            <li>
+              <span class="text-easy">「TILT TO FILL SCREEN」という文字が流れたら、LEDがすべて光るように、micro:bitをかたむけて円をえがくように動かす</span>
+              <span class="text-normal">「TILT TO FILL SCREEN」という文字が流れたら、LEDがすべて光るように、micro:bitを傾けて円を描くように動かす</span>
+            </li>
+            <li>
+              <span class="text-easy">キャリブレーションが終わったらにっこりした顔がひょうじされて、プログラムがスタート</span>
+              <span class="text-normal">キャリブレーションが終わったらにっこりした顔が表示されて、プログラムがスタート</span>
+            </li>
+            <li>
+              <span class="text-easy">ロゴがある方を上にして、本体を水平にたもつ</span>
+              <span class="text-normal">ロゴがある方を上にして、本体を水平に保つ</span>
+            </li>
+            <li>
+              <span class="text-easy">本体の向きをかえると、ほういに合わせてN・E・S・W の文字が切りかわる</span>
+              <span class="text-normal">本体の向きを変えると、方位に合わせてN・E・S・W の文字が切り替わる</span>
+            </li>            
+            <li>
+              <span class="text-easy">AとBを同時におしてキャリブレーションをやりなおし</span>
+              <span class="text-normal">AとBを同時に押してキャリブレーションをやり直し</span>
+            </li>
+          </ol>
+          <img id="section-1-gif" src="img/202512_01.png" alt="micro:bit でコンパス（英字）を動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-1-gif', 'img/202512_01.gif', 'img/202512_01.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">ほういをあらわすえいごの学習</span>
+              <span class="text-normal">方位を表す英語の学習</span>
+            </li>
+            <li>
+              <span class="text-easy">キャリブレーションの意味と地磁気（ちじき）のりかい</span>
+              <span class="text-normal">キャリブレーションの意味と地磁気の理解</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">水平のしきいち（どれだけかたむいてもOKか）をせっていしてみる</span>
+              <span class="text-normal">水平のしきい値（どれだけ傾いてもOKか）を設定してみる</span>
+            </li>
+            <li>
+              <span class="text-easy">ほういを8方向に広げて、NEやSWなどのひょうじにチャレンジ</span>
+              <span class="text-normal">方位を8方向に広げて、NEやSWなどの表示にチャレンジ</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/コンパス（英字）.hex" download aria-label="コンパス（英字）のサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-2" aria-labelledby="section-2-h">
+      <h2 id="section-2-h">
+        <span class="text-easy">🧭コンパスでほういを調べよう（カタカナ）</span>
+        <span class="text-normal">🧭コンパスで方位を調べよう（カタカナ）</span>
+        <span class="meta">— 理科／外国語（中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitのコンパスセンサーを使って、本体が向くほういを「キタ↑／ニシ↑／ミナミ↑／ヒガシ↑」のカタカナでひょうじします。</span>
+        <span class="text-normal">このプログラムでは、micro:bitのコンパスセンサーを使って、本体が向く方位を「キタ↑／ニシ↑／ミナミ↑／ヒガシ↑」のカタカナで表示します。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-2-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動直後にキャリブレーション開始</span>
+              <span class="text-normal">起動直後にキャリブレーション開始</span>
+            </li>
+            <li>
+              <span class="text-easy">「TILT TO FILL SCREEN」という文字が流れたら、LEDがすべて光るように、micro:bitをかたむけて円をえがくように動かす</span>
+              <span class="text-normal">「TILT TO FILL SCREEN」という文字が流れたら、LEDがすべて光るように、micro:bitを傾けて円を描くように動かす</span>
+            </li>
+            <li>
+              <span class="text-easy">キャリブレーションが終わったらにっこりした顔がひょうじされて、プログラムがスタート</span>
+              <span class="text-normal">キャリブレーションが終わったらにっこりした顔が表示されて、プログラムがスタート</span>
+            </li>
+            <li>
+              <span class="text-easy">ロゴがある方を上にして、本体を水平にたもつ</span>
+              <span class="text-normal">ロゴがある方を上にして、本体を水平に保つ</span>
+            </li>
+            <li>
+              <span class="text-easy">ほういがNなら「キタ↑」、Wなら「ニシ↑」、Eなら「ヒガシ↑」、Sなら「ミナミ↑」を、ほういがかわらないかぎりくり返しひょうじ</span>
+              <span class="text-normal">方位がNなら「キタ↑」、Wなら「ニシ↑」、Eなら「ヒガシ↑」、Sなら「ミナミ↑」を、方位が変わらない限り繰り返し表示</span>
+            </li> 
+            <li>
+              <span class="text-easy">ほういをかえたら、ただちに新しいほういのカタカナ＋「↑」にきりかわり、うわがきひょうじ</span>
+              <span class="text-normal">方位を変えたら、直ちに新しい方位のカタカナ＋「↑」に切りかわり、上書き表示</span>
+            </li>            
+            <li>
+              <span class="text-easy">AとBを同時におしてキャリブレーションをやりなおし</span>
+              <span class="text-normal">AとBを同時に押してキャリブレーションをやり直し</span>
+            </li>       
+          </ol>
+          <img id="section-2-gif" src="img/202512_02.png" alt="micro:bit でコンパス（カタカナ）を動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-2-gif', 'img/202512_02.gif', 'img/202512_02.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">日本語をひょうじするほうほうの学習</span>
+              <span class="text-normal">日本語を表示する方法の学習</span>
+            </li>
+            <li>
+              <span class="text-easy">コンパスのちょうせいと地磁気（ちじき）のりかい</span>
+              <span class="text-normal">コンパスの調整と地磁気の理解</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">水平のしきいちやひょうじ時間をちょうせいする</span>
+              <span class="text-normal">水平のしきい値や表示時間を調整する</span>
+            </li>
+            <li>
+              <span class="text-easy">ほういを8方向に広げて「ホクトウ↑」などのひょうじも作る</span>
+              <span class="text-normal">方位を8方向に広げて「ホクトウ↑」などの表示も作る</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/コンパス（カタカナ）.hex" download aria-label="コンパス（カタカナ）のサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-3" aria-labelledby="section-3-h">
+      <h2 id="section-3-h">
+        <span class="text-easy">👣万歩計</span>
+        <span class="text-normal">👣万歩計</span>
+        <span class="meta">— 理科／生活（小学4年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの「かそくどセンサー」をいかして、歩いたときの体のゆれから歩数をカウントする「ミニ万歩計」を作ります。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの「加速度センサー」を活かして、歩いたときの体の揺れから歩数をカウントする「ミニ万歩計」を作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-3-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">micro:bitをズボンのポケットやベルトにこていする</span>
+              <span class="text-normal">micro:bitをズボンのポケットやベルトに固定する</span>
+            </li>
+            <li>
+              <span class="text-easy">歩くと歩数が自動でカウントされる</span>
+              <span class="text-normal">歩くと歩数が自動でカウントされる</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンでリセット、Bボタンで歩数をひょうじ</span>
+              <span class="text-normal">Aボタンでリセット、Bボタンで歩数を表示</span>
+            </li>            
+          </ol>
+          <img id="section-3-gif" src="img/202512_03.png" alt="micro:bit で万歩計を動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-3-gif', 'img/202512_03.gif', 'img/202512_03.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">かそくどセンサーのしくみをしらべる</span>
+              <span class="text-normal">加速度センサーの仕組みを調べる</span>
+            </li>
+            <li>
+              <span class="text-easy">からだの動きとデータのかんけいを学ぶ</span>
+              <span class="text-normal">身体の動きとデータの関係を学ぶ</span>
+            </li>
+            <li>
+              <span class="text-easy">けんこう・ほけん学習や体育の活動と組み合わせる</span>
+              <span class="text-normal">健康・保健学習や体育の活動と組み合わせる</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">1日の歩数をきろくしてみよう</span>
+              <span class="text-normal">1日の歩数を記録してみよう</span>
+            </li>
+            <li>
+              <span class="text-easy">10歩ごとにおうえんメッセージをひょうじするなどのくふうをしてみよう</span>
+              <span class="text-normal">10歩ごとに応援メッセージを表示するなどの工夫をしてみよう</span>
+            </li>
+            <li>
+              <span class="text-easy">家族やクラスで歩数をくらべてみよう</span>
+              <span class="text-normal">家族やクラスで歩数を比べてみよう</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/万歩計.hex" download aria-label="万歩計のサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-4" aria-labelledby="section-4-h">
+      <h2 id="section-4-h">
+        <span class="text-easy">🌡️かいてきな気温をさがしてみよう！</span>
+        <span class="text-normal">🌡️快適な気温を探してみよう！</span>
+        <span class="meta">— 理科（小学3年生〜中学生）</span></h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitの温度センサーを使って、気温によっていろいろな顔の絵文字をひょうじします。</span>
+        <span class="text-normal">このプログラムでは、micro:bitの温度センサーを使って、気温によっていろいろな顔の絵文字を表示します。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-4-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">micro:bitを手にもつ</span>
+              <span class="text-normal">micro:bitを手に持つ</span>
+            </li>
+            <li>
+              <span class="text-easy">つくえの上において、しばらくまつ</span>
+              <span class="text-normal">机の上に置いて、しばらく待つ</span>
+            </li>
+            <li>
+              <span class="text-easy">気温が30度をこえると、かなしい顔をひょうじ</span>
+              <span class="text-normal">気温が30度を超えると、悲しい顔を表示</span>
+            </li>
+            <li>
+              <span class="text-easy">20度から30度のあいだは、にっこりした顔をひょうじ</span>
+              <span class="text-normal">20度から30度の間は、にっこりした顔を表示</span>
+            </li>
+            <li>
+              <span class="text-easy">20度みまんでは、むすっとした顔をひょうじ</span>
+              <span class="text-normal">20度未満では、むすっとした顔を表示</span>
+            </li>
+          </ol>
+          <img id="section-4-gif" src="img/202512_04.png" alt="micro:bit で気温センサーを遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-4-gif', 'img/202512_04.gif', 'img/202512_04.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">温度センサーのしくみを学ぶ</span>
+              <span class="text-normal">温度センサーの仕組みを学ぶ</span>
+            </li>
+            <li>
+              <span class="text-easy">気温とかんじかたのつながりのりかい</span>
+              <span class="text-normal">気温と感じ方のつながりの理解</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">ひょうじするアイコンをかえてみる</span>
+              <span class="text-normal">表示するアイコンを変えてみる</span>
+            </li>
+            <li>
+              <span class="text-easy">「しきいち」をちょうせいしてちがいをくらべる</span>
+              <span class="text-normal">「しきい値」を調整して違いを比べる</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/気温センサー.hex" download aria-label="気温センサーのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-5" aria-labelledby="section-5-h">
+      <h2 id="section-5-h">
+        <span class="text-easy">✊✌️✋じゃんけんゲーム</span>
+        <span class="text-normal">✊✌️✋じゃんけんゲーム</span>
+        <span class="meta">— 算数（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、Aボタン＝グー、Bボタン＝チョキ、A＋Bボタン＝パー でたたかうじゃんけんゲームを作ります。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、Aボタン＝グー、Bボタン＝チョキ、A＋Bボタン＝パー で戦うじゃんけんゲームを作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-5-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">Aボタンでグーを出す</span>
+              <span class="text-normal">Aボタンでグーを出す</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンでチョキを出す</span>
+              <span class="text-normal">Bボタンでチョキを出す</span>
+            </li>
+            <li>
+              <span class="text-easy">A＋Bボタンでパーを出す</span>
+              <span class="text-normal">A＋Bボタンでパーを出す</span>
+            </li>
+            <li>
+              <span class="text-easy">ボタンをおしたしゅんかんに相手の手をランダム表じ</span>
+              <span class="text-normal">ボタンを押した瞬間に相手の手をランダム表示</span>
+            </li>
+            <li>
+              <span class="text-easy">勝ちならにっこりした顔、負けならかなしい顔、あいこなら「＝」をひょうじ</span>
+              <span class="text-normal">勝ちならにっこりした顔、負けなら悲しい顔、あいこなら「＝」を表示</span>
+            </li>            
+          </ol>
+          <img id="section-5-gif" src="img/202512_05.png" alt="micro:bit でじゃんけんゲームを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-5-gif', 'img/202512_05.gif', 'img/202512_05.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">三すくみの学習</span>
+              <span class="text-normal">三すくみの学習</span>
+            </li>
+            <li>
+              <span class="text-easy">組み合わせとルールにもとづく考え方を学ぶ</span>
+              <span class="text-normal">組み合わせとルールに基づく考え方を学ぶ</span>
+            </li>
+            <li>
+              <span class="text-easy">入力と出力（勝ち・負け）のロジックを学ぶ</span>
+              <span class="text-normal">入力と出力（勝ち・負け）のロジックを学ぶ</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">勝ち回数をカウントする</span>
+              <span class="text-normal">勝ち回数をカウントする</span>
+            </li>
+            <li>
+              <span class="text-easy">えんしゅつをくふうしてみる</span>
+              <span class="text-normal">演出を工夫してみる</span>
+            </li>
+            <li>
+              <span class="text-easy">つうしんで二人プレイできるようにする</span>
+              <span class="text-normal">通信で二人プレイできるようにする</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/じゃんけんゲーム.hex" download aria-label="じゃんけんゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+
+  <p class="foot">本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+  </main>
+
+  <footer class="wrap" role="contentinfo">
+    <p><a href="https://www.microsoft.com/ja-jp/enable/study/programming" aria-label="特別支援教育におけるプログラミング活用" target="_blank"> 特別支援教育におけるプログラミング活用 </a>にもどる</p>
+  </footer>
+
+<script>
+  const states = {}; // GIFごとの再生状態を保持
+
+  function toggleGif(id, gifSrc, stillSrc, button) {
+    const img = document.getElementById(id);
+    const isPlaying = states[id];
+
+    if (!isPlaying) {
+      // 再生開始
+      img.src = gifSrc;
+      button.textContent = "止める";
+      states[id] = true;
+    } else {
+      // 再生停止
+      img.src = stillSrc;
+      button.textContent = "見る";
+      states[id] = false;
+    }
+  }
+
+  // ===== 追加：表記モード（URL優先 / ラジオ） =====
+  const MODE_KEY = 'readingMode';
+  const radios = document.querySelectorAll('input[name="mode"]');
+
+  function readModeFromUrl() {
+    const url = new URL(location.href);
+    const m = url.searchParams.get('mode');
+    return (m === 'easy' || m === 'normal') ? m : null;
+  }
+
+  function readModeFromStorage() {
+    try {
+      const m = localStorage.getItem(MODE_KEY);
+      return (m === 'easy' || m === 'normal') ? m : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyMode(mode) {
+    document.body.classList.toggle('mode-normal', mode === 'normal');
+    document.body.classList.toggle('mode-easy', mode === 'easy');
+
+    radios.forEach(r => { r.checked = (r.value === mode); });
+
+    // 記事内リンクも引き継ぐ（data-basehrefがあるものだけ）
+    document.querySelectorAll('a[data-basehref]').forEach(a => {
+      const base = a.getAttribute('data-basehref');
+      a.href = `${base}?mode=${mode}`;
+    });
+
+    // URL更新（共有・ブックマーク・戻る整合）
+    const url = new URL(location.href);
+    url.searchParams.set('mode', mode);
+    history.replaceState(null, '', url);
+
+    // 保存（補助）
+    try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
+  }
+
+  // 初期化：URL → storage → easy
+  applyMode(readModeFromUrl() || readModeFromStorage() || 'easy');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => applyMode(radio.value));
+  });
+
+  // 上部タイトル固定
+  function syncFixedTopHeight(){
+    const fixed = document.querySelector('.fixed-top');
+    if (!fixed) return;
+    document.documentElement.style.setProperty('--fixed-top-h', fixed.offsetHeight + 'px');
+  }
+
+  window.addEventListener('load', syncFixedTopHeight);
+  window.addEventListener('resize', syncFixedTopHeight);
+  syncFixedTopHeight();
+
+</script>
+</body>
+</html>

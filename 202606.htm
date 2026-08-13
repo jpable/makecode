@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【6月】日ざしに注意！運動会・プールの安全サポートmicro:bit</title>
+  <meta name="description" content="運動会やプールじゅぎょうで使えるmicro:bitプログラム集です。" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body
+  class="mode-easy"
+  data-title-easy="【6月】日ざしに注意！運動会・プールの安全サポートmicro:bit"
+  data-title-normal="【6月】日差しに注意！運動会・プールの安全サポートmicro:bit"
+  data-lead-easy="運動会やプールじゅぎょうで使えるmicro:bitプログラム集です。"
+  data-lead-normal="運動会やプール授業で使えるmicro:bitプログラム集です。"
+>
+  <div id="header"></div>
+  <div id="nav"></div>
+  <main id="main" class="wrap">
+<section id="section-1" aria-labelledby="section-1-h">
+
+  <h2 id="section-1-h">
+    <span aria-hidden="true">🦘</span>
+    <span class="text-easy" id="sample1-title">
+      なわとびジャンプゲーム
+    </span>
+    <span class="text-normal">
+      なわとびジャンプゲーム
+    </span>
+    <span class="meta">
+      — 体育（中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、なわとびジャンプゲームを行うことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、なわとびジャンプゲームを行うことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-1-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">「B」ひょうじ中にBボタンをおす</span>
+          <span class="text-normal">「B」表示中にBボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">「スタート」スクロール後にBボタンでジャンプそうさ</span>
+          <span class="text-normal">「スタート」スクロール後にBボタンでジャンプ操作</span>
+        </li>
+        <li>
+          <span class="text-easy">なわが下の行に来たときのジャンプで1回カウント</span>
+          <span class="text-normal">なわが下の行に来たときのジャンプで1回カウント</span>
+        </li>
+        <li>
+          <span class="text-easy">しっぱい時にスコアを数でひょうじ</span>
+          <span class="text-normal">失敗時にスコアを数で表示</span>
+        </li>
+        <li>
+          <span class="text-easy">10回せいこうごとにスピードアップ（1倍 1.5倍 2倍 2.5倍）</span>
+          <span class="text-normal">10回成功ごとにスピードアップ（1倍 1.5倍 2倍 2.5倍）</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-1-gif"
+        src="img/202606_01.png"
+        alt="なわとびジャンプゲーム"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-1-gif',
+          'img/202606_01.gif',
+          'img/202606_01.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">くり返しの動きのりかい</span>
+          <span class="text-normal">くり返しの動きの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">数のカウントのしかたのりかい</span>
+          <span class="text-normal">数のカウントのしかたの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">スピードへんかとゲームせいのたいけん</span>
+          <span class="text-normal">スピード変化とゲーム性の体験</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ジャンプの時間をかえるくふう</span>
+          <span class="text-normal">ジャンプの時間を変える工夫</span>
+        </li>
+        <li>
+          <span class="text-easy">なわのスピードをかえるくふう</span>
+          <span class="text-normal">なわのスピードを変える工夫</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-なわとびジャンプゲーム.hex"
+      download
+      aria-labelledby="
+        sample1-title
+        sample1-btn
+      "
+    >
+      <span id="sample1-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-2" aria-labelledby="section-2-h">
+
+  <h2 id="section-2-h">
+    <span aria-hidden="true">➡️</span>
+    <span class="text-easy" id="sample2-title">
+      やじるし流れゲーム
+    </span>
+    <span class="text-normal">
+      矢印流れゲーム
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムは、micro:bitを使って、上から流れてくる←と→のやじるしに合わせてAボタンとBボタンをすばやくおすゲームです。
+    </span>
+    <span class="text-normal">
+      このプログラムは、micro:bitを使って、上から流れてくる←と→の矢印に合わせてAボタンとBボタンをすばやく押すゲームです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-2-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">画面にBと→がこうごにひょうじされる（待ち受けじょうたい）</span>
+          <span class="text-normal">画面にBと→が交互に表示される（待ち受け状態）</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンで「スタート」の文字がじゅんばんにひょうじされる</span>
+          <span class="text-normal">Bボタンで「スタート」の文字が順番に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">スタートひょうじのあとに←か→のやじるしが上から下へ流れてくる</span>
+          <span class="text-normal">スタート表示のあとに←か→の矢印が上から下へ流れてくる</span>
+        </li>
+        <li>
+          <span class="text-easy">←のときにAボタンをおす</span>
+          <span class="text-normal">←のときにAボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">→のときにBボタンをおす</span>
+          <span class="text-normal">→のときにBボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">正しいボタンでせいこうすると次のやじるしが出る</span>
+          <span class="text-normal">正しいボタンで成功すると次の矢印が出る</span>
+        </li>
+        <li>
+          <span class="text-easy">10回せいこうごとに矢印のスピードアップ</span>
+          <span class="text-normal">10回成功ごとに矢印のスピードアップ</span>
+        </li>
+        <li>
+          <span class="text-easy">おしまちがいかおしおくれで×が出てゲームが終わる</span>
+          <span class="text-normal">押し間違いか押し遅れで×が出てゲームが終わる</span>
+        </li>
+        <li>
+          <span class="text-easy">終わったあとにせいこう回数がひょうじされて待ち受けにもどる</span>
+          <span class="text-normal">終わったあとに成功回数が表示されて待ち受けに戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-2-gif"
+        src="img/202606_02.png"
+        alt="矢印流れゲーム"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-2-gif',
+          'img/202606_02.gif',
+          'img/202606_02.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">左右の合図とボタンそうさのたいおうづけ</span>
+          <span class="text-normal">左右の合図とボタン操作の対応づけ</span>
+        </li>
+        <li>
+          <span class="text-easy">時間をいしきしたすばやいはんだんのたいけん</span>
+          <span class="text-normal">時間を意識したすばやい判断の体験</span>
+        </li>
+        <li>
+          <span class="text-easy">くり返しできろくをのばす活動</span>
+          <span class="text-normal">くり返しで記録をのばす活動</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">10回せいこうごとの速さの上がり方の調整</span>
+          <span class="text-normal">10回成功ごとの速さの上がり方の調整</span>
+        </li>
+        <li>
+          <span class="text-easy">せいこうしたときの音やマークのへんかのついか</span>
+          <span class="text-normal">成功したときの音やマークの変化の追加</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちと交代してさいこうきろくをきそうルール作り</span>
+          <span class="text-normal">友だちと交代して最高記録を競うルール作り</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-やじるし流れゲーム.hex"
+      download
+      aria-labelledby="
+        sample2-title
+        sample2-btn
+      "
+    >
+      <span id="sample2-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-3" aria-labelledby="section-3-h">
+
+  <h2 id="section-3-h">
+    <span aria-hidden="true">📡</span>
+    <span class="text-easy" id="sample3-title">
+      むせんスタートランプ（おやき）
+    </span>
+    <span class="text-normal">
+      無線スタートランプ（親機）
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムは、micro:bitの「むせんきのう」を使って、先生のおやきから運動会のスタートランプの合図を送るしくみです。
+    </span>
+    <span class="text-normal">
+      このプログラムは、micro:bitの「無線機能」を使って、先生の親機から運動会のスタートランプの合図を送るしくみです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-3-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">たいき中に「オヤキ」の文字がじゅんばんに出る</span>
+          <span class="text-normal">待機中に「オヤキ」の文字が順番に出る</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンでてんとうの「T」合図をこきへ送る</span>
+          <span class="text-normal">Bボタンで点灯の「T」合図を子機へ送る</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしん後にこきのランプてんとうがつづくことのかくにん</span>
+          <span class="text-normal">送信後に子機のランプ点灯が続くことの確認</span>
+        </li>
+        <li>
+          <span class="text-easy">もう一度Bボタンでしょうとうの「S」合図をこきへ送る</span>
+          <span class="text-normal">もう一度Bボタンで消灯の「S」合図を子機へ送る</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしん後に開始画面の「オヤキ」にもどるかくにん</span>
+          <span class="text-normal">送信後に開始画面の「オヤキ」にもどる確認</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-3-gif"
+        src="img/202606_03.png"
+        alt="無線スタートランプ（親機）"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-3-gif',
+          'img/202606_03.gif',
+          'img/202606_03.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">そうしんを行うおやきのやくわりのりかい</span>
+          <span class="text-normal">送信を行う親機の役割の理解</span>
+        </li>
+        <li>
+          <span class="text-easy">合図を送ってじょうたいを切りかえるたいけん</span>
+          <span class="text-normal">合図を送って状態を切りかえる体験</span>
+        </li>
+        <li>
+          <span class="text-easy">運動会の進行をICTで支える学習</span>
+          <span class="text-normal">運動会の進行をICTで支える学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">合図の文字をふやすルール作り</span>
+          <span class="text-normal">合図の文字を増やすルール作り</span>
+        </li>
+        <li>
+          <span class="text-easy">クラスごとのグループ番号分けのくふう</span>
+          <span class="text-normal">クラスごとのグループ番号分けの工夫</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしんのタイミングをそろえるくふう</span>
+          <span class="text-normal">送信のタイミングをそろえる工夫</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-むせんスタートランプ（おやき）.hex"
+      download
+      aria-labelledby="
+        sample3-title
+        sample3-btn
+      "
+    >
+      <span id="sample3-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-4" aria-labelledby="section-4-h">
+
+  <h2 id="section-4-h">
+    <span aria-hidden="true">📡</span>
+    <span class="text-easy" id="sample4-title">
+      むせんスタートランプ（こき）
+    </span>
+    <span class="text-normal">
+      無線スタートランプ（子機）
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムは、micro:bitの「むせんきのう」を使って、おやきの合図を受け取るとこきがスタートランプとして光りつづけるしくみです。
+    </span>
+    <span class="text-normal">
+      このプログラムは、micro:bitの「無線機能」を使って、親機の合図を受け取ると子機がスタートランプとして光り続けるしくみです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-4-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">たいき中に「コキ」の文字がじゅんばんに出る</span>
+          <span class="text-normal">待機中に「コキ」の文字が順番に出る</span>
+        </li>
+        <li>
+          <span class="text-easy">おやきからてんとうの「T」合図を受け取ると全てのランプがてんとうする</span>
+          <span class="text-normal">親機から点灯の「T」合図を受け取ると全てのランプが点灯する</span>
+        </li>
+        <li>
+          <span class="text-easy">てんとうが「S」合図までつづくことのかくにん</span>
+          <span class="text-normal">点灯が「S」合図まで続くことの確認</span>
+        </li>
+        <li>
+          <span class="text-easy">おやきからしょうとうの「S」合図を受け取るとしょうとうし、「コキ」ひょうじへもどる</span>
+          <span class="text-normal">親機から消灯の「S」合図を受け取ると消灯し、「コキ」表示へ戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンで自分のこきだけたいきひょうじにもどす</span>
+          <span class="text-normal">Bボタンで自分の子機だけ待機表示に戻す</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-4-gif"
+        src="img/202606_04.png"
+        alt="無線スタートランプ（子機）"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-4-gif',
+          'img/202606_04.gif',
+          'img/202606_04.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">じゅしんを行うこきのやくわりのりかい</span>
+          <span class="text-normal">受信を行う子機の役割の理解</span>
+        </li>
+        <li>
+          <span class="text-easy">同時に光る合図のたいけん</span>
+          <span class="text-normal">同時に光る合図の体験</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしんとじゅしんでやくわりが分かれる学習</span>
+          <span class="text-normal">送信と受信で役割が分かれる学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">てんとうをてんめつにかえるくふう</span>
+          <span class="text-normal">点灯を点滅に変える工夫</span>
+        </li>
+        <li>
+          <span class="text-easy">たいき中のひょうじをべつの言葉にかえるくふう</span>
+          <span class="text-normal">待機中の表示を別の言葉に変える工夫</span>
+        </li>
+        <li>
+          <span class="text-easy">じゅしん回数のきろくを加えるくふう</span>
+          <span class="text-normal">受信回数の記録を加える工夫</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-むせんスタートランプ（こき）.hex"
+      download
+      aria-labelledby="
+        sample4-title
+        sample4-btn
+      "
+    >
+      <span id="sample4-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-5" aria-labelledby="section-5-h">
+
+  <h2 id="section-5-h">
+    <span aria-hidden="true">🌞</span>
+    <span class="text-easy" id="sample5-title">
+      日ざしキケンアラーム
+    </span>
+    <span class="text-normal">
+      日差しキケンアラーム
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitの「光センサー」を使って、太陽の光が強すぎるときに「キケン」とひょうじしてにっしゃ病をふせぐ合図を出すしくみです。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの「光センサー」を使って、太陽の光が強すぎるときに「キケン」と表示して日射病をふせぐ合図を出すしくみです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-5-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">画面にBと→がこうごにひょうじされる</span>
+          <span class="text-normal">画面にBと→が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンで見守りスタート</span>
+          <span class="text-normal">Bボタンで見守りスタート</span>
+        </li>
+        <li>
+          <span class="text-easy">5秒ごとに光の強さをはかり、点のグラフでひょうじする</span>
+          <span class="text-normal">5秒ごとに光の強さを測り、点のグラフで表示する</span>
+        </li>
+        <li>
+          <span class="text-easy">太陽の光が強すぎると「キケン」とひょうじされる</span>
+          <span class="text-normal">太陽の光が強すぎると「キケン」と表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">動作中にBボタンで「ストツプ」をひょうじし、開始画面へもどる</span>
+          <span class="text-normal">動作中にBボタンで「ストツプ」を表示し、開始画面へ戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-5-gif"
+        src="img/202606_05.png"
+        alt="日差しキケンアラーム"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-5-gif',
+          'img/202606_05.gif',
+          'img/202606_05.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">光センサーで太陽の光の強さを知るたいけん</span>
+          <span class="text-normal">光センサーで太陽の光の強さを知る体験</span>
+        </li>
+        <li>
+          <span class="text-easy">あぶないときに日かげへいどうするはんだんの学習</span>
+          <span class="text-normal">危ないときに日かげへ移動する判断の学習</span>
+        </li>
+        <li>
+          <span class="text-easy">きろくのグラフから光のへんかを読み取る練習</span>
+          <span class="text-normal">記録のグラフから光の変化を読み取る練習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">自分がまぶしいと感じる明るさに合わせたしきいちの見直し</span>
+          <span class="text-normal">自分がまぶしいと感じる明るさに合わせたしきい値の見直し</span>
+        </li>
+        <li>
+          <span class="text-easy">「キケン」の出る長さや回数のへんこう</span>
+          <span class="text-normal">「キケン」の出る長さや回数の変更</span>
+        </li>
+        <li>
+          <span class="text-easy">光のきろく回数やきろくかんかくをかえるくふう</span>
+          <span class="text-normal">光の記録回数や記録間隔を変える工夫</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-日ざしキケンアラーム.hex"
+      download
+      aria-labelledby="
+        sample5-title
+        sample5-btn
+      "
+    >
+      <span id="sample5-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-6" aria-labelledby="section-6-h">
+
+  <h2 id="section-6-h">
+    <span aria-hidden="true">⏱️</span>
+    <span class="text-easy" id="sample6-title">
+      LEDラップカウンター
+    </span>
+    <span class="text-normal">
+      LEDラップカウンター
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムは、micro:bitを使って、ラップ（しゅうかい）の数やプールのおうふく数をカウントするために、進みぐあいをLEDで見えるようにするしくみです。
+    </span>
+    <span class="text-normal">
+      このプログラムは、micro:bitを使って、ラップ（周回）の数やプールの往復数をカウントするために、進みぐあいをLEDで見えるようにするしくみです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-6-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動時に「0」がひょうじされる</span>
+          <span class="text-normal">起動時に「0」が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">BボタンをおすたびにLEDが左下から上に1こずつてんとうする</span>
+          <span class="text-normal">Bボタンを押すたびにLEDが左下から上に1個ずつ点灯する</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDが25こぜんぶてんとうするとゴールマークがひょうじされる</span>
+          <span class="text-normal">LEDが25個ぜんぶ点灯するとゴールマークが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで今のLEDの数がひょうじされる</span>
+          <span class="text-normal">Aボタンで今のLEDの数が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">その後「0」にもどり、カウントがリセットされる</span>
+          <span class="text-normal">その後「0」に戻り、カウントがリセットされる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-6-gif"
+        src="img/202606_06.png"
+        alt="LEDラップカウンター"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-6-gif',
+          'img/202606_06.gif',
+          'img/202606_06.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">しゅうかい数やプールのおうふく数を自分で数えるじこかんりのたいけん</span>
+          <span class="text-normal">周回数やプールの往復数を自分で数える自己管理の体験</span>
+        </li>
+        <li>
+          <span class="text-easy">へんすうがふえるとLEDがふえるつながりのりかい</span>
+          <span class="text-normal">変数が増えるとLEDが増えるつながりの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかを見てふり返ってからリセットする学習</span>
+          <span class="text-normal">結果を見てふり返ってからリセットする学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ゴールのアイコンをべつのマークにかえるくふう</span>
+          <span class="text-normal">ゴールのアイコンを別のマークに変える工夫</span>
+        </li>
+        <li>
+          <span class="text-easy">5こごとに中間チェックの合図を出すついか</span>
+          <span class="text-normal">5個ごとに中間チェックの合図を出す追加</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDがてんとうする向きをかえるルール作り</span>
+          <span class="text-normal">LEDが点灯する向きを変えるルール作り</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-LEDラップカウンター.hex"
+      download
+      aria-labelledby="
+        sample6-title
+        sample6-btn
+      "
+    >
+      <span id="sample6-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+
+  <p class="foot">
+    本情報の内容 (添付文書、リンク先などを含む) は、
+    作成日時点でのものであり、
+    予告なく変更される場合があります。
+  </p>
+  </main>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+</body>
+</html>

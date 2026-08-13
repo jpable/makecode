@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【5月】新しい学年になれてきた？頭も体も動かそう！</title>
+  <meta name="description" content="頭と体のエクササイズができるmicro:bitプログラム集" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body
+  class="mode-easy"
+  data-title-easy="【5月】新しい学年になれてきた？頭も体も動かそう！"
+  data-title-normal="【5月】新しい学年に慣れてきた？頭も体も動かそう！"
+  data-lead-easy="頭と体のエクササイズができるmicro:bitプログラム集"
+  data-lead-normal="頭と体のエクササイズができるmicro:bitプログラム集"
+>
+  <div id="header"></div>
+  <div id="nav"></div>
+  <main id="main" class="wrap">
+  <section id="section-1" aria-labelledby="section-1-h">
+
+    <h2 id="section-1-h">
+      <span aria-hidden="true">🔢</span>
+      <span class="text-easy" id="sample1-title">
+        1けたフラッシュ暗算チャレンジ
+      </span>
+      <span class="text-normal">
+        1桁フラッシュ暗算チャレンジ
+      </span>
+      <span class="meta">
+        — 算数（小学4年生〜中学生）
+      </span>
+    </h2>
+
+    <p>
+      <span class="text-easy">
+        このプログラムでは、micro:bitを使って、1けたの数をフラッシュひょうじで見て合計を答える暗算学習ができます。
+      </span>
+      <span class="text-normal">
+        このプログラムでは、micro:bitを使って、1桁の数をフラッシュ表示で見て合計を答える暗算学習ができます。
+      </span>
+    </p>
+
+    <div class="grid" role="group" aria-labelledby="section-1-h">
+      <div class="card">
+        <h3>使い方</h3>
+        <ol>
+          <li>
+            <span class="text-easy">さいしょにフラッシュの回数をえらぶ</span>
+            <span class="text-normal">最初にフラッシュの回数を選ぶ</span>
+          </li>
+          <li>
+            <span class="text-easy">Aボタンで2回ひょうじと3回ひょうじを切りかえる</span>
+            <span class="text-normal">Aボタンで2回表示と3回表示を切りかえる</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンでフラッシュひょうじを始める</span>
+            <span class="text-normal">Bボタンでフラッシュ表示を始める</span>
+          </li>
+          <li>
+            <span class="text-easy">1けたの数字がじゅんばんにフラッシュひょうじされる</span>
+            <span class="text-normal">1桁の数字が順番にフラッシュ表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">ひょうじが終わると回答画面になり「0」がひょうじされる</span>
+            <span class="text-normal">表示が終わると回答画面になり「0」が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">Aボタンで答えの数字を1ずつふやす</span>
+            <span class="text-normal">Aボタンで答えの数字を1ずつ増やす</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンで答えを決める</span>
+            <span class="text-normal">Bボタンで答えを決める</span>
+          </li>
+          <li>
+            <span class="text-easy">せいかいのときはうれしい顔がひょうじされる</span>
+            <span class="text-normal">正解のときはうれしい顔が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">ふせいかいのときはかなしい顔と正しい合計の数字がひょうじされる</span>
+            <span class="text-normal">不正解のときは悲しい顔と正しい合計の数字が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">終わるとさいしょの画面にもどり、くりかえし取り組める</span>
+            <span class="text-normal">終わると最初の画面に戻り、繰り返し取り組める</span>
+          </li>
+        </ol>
+
+        <img
+          id="section-1-gif"
+          src="img/202605_01.png"
+          alt="マイクロビットで1桁フラッシュ暗算チャレンジを実行している様子"
+          width="320"
+          height="240"
+          style="display:block; margin-bottom:10px;"
+        >
+        <button
+          class="btn"
+          onclick="toggleGif(
+            'section-1-gif',
+            'img/202605_01.gif',
+            'img/202605_01.png',
+            this
+          )"
+          aria-label="アニメーションの再生・停止"
+        >
+          見る
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>ねらい</h3>
+        <ul>
+          <li>
+            <span class="text-easy">短い時間で計算をする学習</span>
+            <span class="text-normal">短い時間で計算をする学習</span>
+          </li>
+          <li>
+            <span class="text-easy">暗算で合計を出す力をのばす学習</span>
+            <span class="text-normal">暗算で合計を出す力を伸ばす学習</span>
+          </li>
+          <li>
+            <span class="text-easy">フラッシュの回数をえらんでむずかしさをかえる学習</span>
+            <span class="text-normal">フラッシュの回数を選んで難しさを変える学習</span>
+          </li>
+        </ul>
+
+        <h3>チャレンジ</h3>
+        <ul>
+          <li>
+            <span class="text-easy">数字のひょうじ時間を短くしてむずかしさを調整するくふう</span>
+            <span class="text-normal">数字の表示時間を短くしてむずかしさを調整する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">3回ひょうじだけでれんぞくちょうせんするルール作り</span>
+            <span class="text-normal">3回表示だけで連続挑戦するルール作り</span>
+          </li>
+          <li>
+            <span class="text-easy">せいかい回数を数えてきろくするくふう</span>
+            <span class="text-normal">正解回数を数えて記録する工夫</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <a
+        class="btn"
+        href="samples/microbit-1けたフラッシュ暗算チャレンジ.hex"
+        download
+        aria-labelledby="
+          sample1-title
+          sample1-btn
+        "
+      >
+        <span id="sample1-btn">
+          サンプルコードをダウンロード
+        </span>
+      </a>
+    </p>
+  </section>
+
+  <section id="section-2" aria-labelledby="section-2-h">
+
+    <h2 id="section-2-h">
+      <span aria-hidden="true">🔢</span>
+      <span class="text-easy" id="sample2-title">
+        1けたフラッシュ暗算チャレンジ（そうさほうほうちがいバージョン）
+      </span>
+      <span class="text-normal">
+        1桁フラッシュ暗算チャレンジ（操作方法違いバージョン）
+      </span>
+      <span class="meta">
+        — 算数（小学3年生〜小学6年生）
+      </span>
+    </h2>
+
+    <p>
+      <span class="text-easy">
+        このプログラムでは、micro:bitを使って、1けたの数をフラッシュひょうじで見て合計を答える暗算学習ができます。
+      </span>
+      <span class="text-normal">
+        このプログラムでは、micro:bitを使って、1桁の数をフラッシュ表示で見て合計を答える暗算学習ができます。
+      </span>
+    </p>
+
+    <div class="grid" role="group" aria-labelledby="section-2-h">
+      <div class="card">
+        <h3>使い方</h3>
+        <ol>
+          <li>
+            <span class="text-easy">さいしょにフラッシュの回数をえらぶ</span>
+            <span class="text-normal">最初にフラッシュの回数を選ぶ</span>
+          </li>
+          <li>
+            <span class="text-easy">Aボタンで回数を1ずつふやす</span>
+            <span class="text-normal">Aボタンで回数を1ずつ増やす</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンで回数を1ずつへらす</span>
+            <span class="text-normal">Bボタンで回数を1ずつ減らす</span>
+          </li>
+          <li>
+            <span class="text-easy">A+Bボタンで回数を決めて、フラッシュひょうじを始める</span>
+            <span class="text-normal">A+Bボタンで回数を決めて、フラッシュ表示を始める</span>
+          </li>
+          <li>
+            <span class="text-easy">1けたの数字がじゅんばんにフラッシュひょうじされる</span>
+            <span class="text-normal">1けたの数字が順番にフラッシュ表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">ひょうじが終わると回答画面になり「0」がひょうじされる</span>
+            <span class="text-normal">表示が終わると回答画面になり「0」が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">Aボタンで10のくらいの数字を1ずつふやす</span>
+            <span class="text-normal">Aボタンで10の位の数字を1ずつ増やす</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンで1のくらいの数字を1ずつふやす</span>
+            <span class="text-normal">Bボタンで1の位の数字を1ずつ増やす</span>
+          </li>
+          <li>
+            <span class="text-easy">A+Bボタンで答えを決める</span>
+            <span class="text-normal">A+Bボタンで答えを決める</span>
+          </li>
+          <li>
+            <span class="text-easy">せいかいのときはうれしい顔がひょうじされる</span>
+            <span class="text-normal">正解のときはうれしい顔が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">ふせいかいのときはかなしい顔と正しい合計の数字がひょうじされる</span>
+            <span class="text-normal">不正解のときは悲しい顔と正しい合計の数字が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">終わるとさいしょの画面にもどり、くりかえし取り組める</span>
+            <span class="text-normal">終わると最初の画面に戻り、繰り返し取り組める</span>
+          </li>
+        </ol>
+
+        <img
+          id="section-2-gif"
+          src="img/202605_02.png"
+          alt="マイクロビットで1桁フラッシュ暗算チャレンジ（操作方法ちがいバージョン）を実行している様子"
+          width="320"
+          height="240"
+          style="display:block; margin-bottom:10px;"
+        >
+        <button
+          class="btn"
+          onclick="toggleGif(
+            'section-2-gif',
+            'img/202605_02.gif',
+            'img/202605_02.png',
+            this
+          )"
+          aria-label="アニメーションの再生・停止"
+        >
+          見る
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>ねらい</h3>
+        <ul>
+          <li>
+            <span class="text-easy">短い時間で計算をする学習</span>
+            <span class="text-normal">短い時間で計算をする学習</span>
+          </li>
+          <li>
+            <span class="text-easy">10のくらいと1のくらいを分けて考える学習</span>
+            <span class="text-normal">10の位と1の位を分けて考える学習</span>
+          </li>
+          <li>
+            <span class="text-easy">暗算で合計を出す力をのばす学習</span>
+            <span class="text-normal">暗算で合計を出す力を伸ばす学習</span>
+          </li>
+        </ul>
+
+        <h3>チャレンジ</h3>
+        <ul>
+          <li>
+            <span class="text-easy">数字のひょうじ時間を短くしてむずかしさを調整するくふう</span>
+            <span class="text-normal">数字の表示時間を短くして難しさを調整する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">3回ひょうじだけでれんぞくちょうせんするルール作り</span>
+            <span class="text-normal">3回表示だけで連続挑戦するルール作り</span>
+          </li>
+          <li>
+            <span class="text-easy">せいかい回数を数えてきろくするくふう</span>
+            <span class="text-normal">正解回数を数えて記録する工夫</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <a
+        class="btn"
+        href="samples/microbit-1けたフラッシュ暗算チャレンジ（そうさほうほうちがいバージョン）.hex"
+        download
+        aria-labelledby="
+          sample2-title
+          sample2-btn
+        "
+      >
+        <span id="sample2-btn">
+          サンプルコードをダウンロード
+        </span>
+      </a>
+    </p>
+  </section>
+
+  <section id="section-3" aria-labelledby="section-3-h">
+
+    <h2 id="section-3-h">
+      <span aria-hidden="true">🟨</span>
+      <span class="text-easy" id="sample3-title">
+        図形くらべ○×クイズ（△・◇・□）
+      </span>
+      <span class="text-normal">
+        図形比べ○×クイズ（△・◇・□）
+      </span>
+      <span class="meta">
+        — 算数（小学3年生〜小学6年生）
+      </span>
+    </h2>
+
+    <p>
+      <span class="text-easy">
+        このプログラムでは、micro:bitを使って、2回出る図形をくらべて同じかちがうかを○×で答える学習ができます。
+      </span>
+      <span class="text-normal">
+        このプログラムでは、micro:bitを使って、2回出る図形を比べて同じか違うかを○×で答える学習ができます。
+      </span>
+    </p>
+
+    <div class="grid" role="group" aria-labelledby="section-3-h">
+      <div class="card">
+        <h3>使い方</h3>
+        <ol>
+          <li>
+            <span class="text-easy">開始画面で「B」、「→」（右のBボタンをおして）がこうごにひょうじされる</span>
+            <span class="text-normal">開始画面で「B」、「→」（右のBボタンを押して）が交互に表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンをおすと「クラベテ」とひょうじされ、クイズが始まる</span>
+            <span class="text-normal">Bボタンを押すと「クラベテ」と表示され、クイズが始まる</span>
+          </li>
+          <li>
+            <span class="text-easy">1回目の図形がひょうじされるので形をおぼえる</span>
+            <span class="text-normal">1回目の図形が表示されるので形を覚える</span>
+          </li>
+          <li>
+            <span class="text-easy">2回目の図形がひょうじされるので1回目と見くらべる</span>
+            <span class="text-normal">2回目の図形が表示されるので1回目と見比べる</span>
+          </li>
+          <li>
+            <span class="text-easy">△は向きがちがっても同じ図形として考える</span>
+            <span class="text-normal">△は向きが違っても同じ図形として考える</span>
+          </li>
+          <li>
+            <span class="text-easy">同じと思ったときは○をえらぶ</span>
+            <span class="text-normal">同じと思ったときは○を選ぶ</span>
+          </li>
+          <li>
+            <span class="text-easy">ちがうと思ったときは×をえらぶ</span>
+            <span class="text-normal">違うと思ったときは×を選ぶ</span>
+          </li>
+          <li>
+            <span class="text-easy">Aボタンで○と×を切りかえる</span>
+            <span class="text-normal">Aボタンで○と×を切りかえる</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンで答えを決定する</span>
+            <span class="text-normal">Bボタンで答えを決定する</span>
+          </li>
+          <li>
+            <span class="text-easy">せいかいのときはうれしい顔がひょうじされる</span>
+            <span class="text-normal">正解のときはうれしい顔が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">ふせいかいのときはかなしい顔がひょうじされる</span>
+            <span class="text-normal">不正解のときは悲しい顔が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">終わると開始画面にもどり、くり返し遊べる</span>
+            <span class="text-normal">終わると開始画面に戻り、繰り返し遊べる</span>
+          </li>
+        </ol>
+
+        <img
+          id="section-3-gif"
+          src="img/202605_03.png"
+          alt="マイクロビットで図形比べ○×クイズ（△・◇・□）を実行している様子"
+          width="320"
+          height="240"
+          style="display:block; margin-bottom:10px;"
+        >
+        <button
+          class="btn"
+          onclick="toggleGif(
+            'section-3-gif',
+            'img/202605_03.gif',
+            'img/202605_03.png',
+            this
+          )"
+          aria-label="アニメーションの再生・停止"
+        >
+          見る
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>ねらい</h3>
+        <ul>
+          <li>
+            <span class="text-easy">図形の形のちがいに気づく学習</span>
+            <span class="text-normal">図形の形の違いに気付く学習</span>
+          </li>
+          <li>
+            <span class="text-easy">向きと形を分けて考える学習</span>
+            <span class="text-normal">向きと形を分けて考える学習</span>
+          </li>
+          <li>
+            <span class="text-easy">見くらべてはんだんする力をのばす学習</span>
+            <span class="text-normal">見比べて判断する力を伸ばす学習</span>
+          </li>
+        </ul>
+
+        <h3>チャレンジ</h3>
+        <ul>
+          <li>
+            <span class="text-easy">図形のひょうじ時間を短くしてむずしさを調整するくふう</span>
+            <span class="text-normal">図形の表示時間を短くして難しさを調整する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">れんぞくせいかい回数を数えてきろくするくふう</span>
+            <span class="text-normal">連続正解回数を数えて記録する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">ひし形と□の見分けポイントを見つけるくふう</span>
+            <span class="text-normal">ひし形と□の見分けポイントを見つける工夫</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <a
+        class="btn"
+        href="samples/microbit-図形くらべ○×クイズ（△・◇・□）.hex"
+        download
+        aria-labelledby="
+          sample3-title
+          sample3-btn
+        "
+      >
+        <span id="sample3-btn">
+          サンプルコードをダウンロード
+        </span>
+      </a>
+    </p>
+  </section>
+
+  <section id="section-4" aria-labelledby="section-4-h">
+
+    <h2 id="section-4-h">
+      <span aria-hidden="true">⏱️</span>
+      <span class="text-easy" id="sample4-title">
+        ストップウォッチ
+      </span>
+      <span class="text-normal">
+        ストップウォッチ
+      </span>
+      <span class="meta">
+        — 体育（小学3年生〜中学生）
+      </span>
+    </h2>
+
+    <p>
+      <span class="text-easy">
+        このプログラムでは、micro:bitを使って、Bボタンでスタートとストップができるストップウォッチを作ります。
+      </span>
+      <span class="text-normal">
+        このプログラムでは、micro:bitを使って、Bボタンでスタートとストップができるストップウォッチを作ります。
+      </span>
+    </p>
+
+    <div class="grid" role="group" aria-labelledby="section-4-h">
+      <div class="card">
+        <h3>使い方</h3>
+        <ol>
+          <li>
+            <span class="text-easy">開始画面で「B」、「→」（右のBボタンをおして）がこうごにひょうじされる</span>
+            <span class="text-normal">開始画面で「B」、「→」（右のBボタンを押して）が交互に表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンをおすとスタートし、時間のけいそくが始まる</span>
+            <span class="text-normal">Bボタンを押すとスタートし、時間の計測が始まる</span>
+          </li>
+          <li>
+            <span class="text-easy">けいそく中に右下のLEDがてんめつして、動いている合図になる</span>
+            <span class="text-normal">計測中に右下のLEDが点滅して、動いている合図になる</span>
+          </li>
+          <li>
+            <span class="text-easy">もう一度Bボタンをおすとストップし、時間のけいそくが終わる</span>
+            <span class="text-normal">もう一度Bボタンを押すとストップし、時間の計測が終わる</span>
+          </li>
+          <li>
+            <span class="text-easy">ストップのあとに秒数が数字でひょうじされる</span>
+            <span class="text-normal">ストップのあとに秒数が数字で表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">A+Bボタンをおすと時間が0にもどり、開始画面にもどる</span>
+            <span class="text-normal">A+Bボタンを押すと時間が0に戻り、開始画面に戻る</span>
+          </li>
+        </ol>
+
+        <img
+          id="section-4-gif"
+          src="img/202605_04.png"
+          alt="マイクロビットでストップウォッチを実行している様子"
+          width="320"
+          height="240"
+          style="display:block; margin-bottom:10px;"
+        >
+        <button
+          class="btn"
+          onclick="toggleGif(
+            'section-4-gif',
+            'img/202605_04.gif',
+            'img/202605_04.png',
+            this
+          )"
+          aria-label="アニメーションの再生・停止"
+        >
+          見る
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>ねらい</h3>
+        <ul>
+          <li>
+            <span class="text-easy">ボタンそうさで動きが切りかわる仕組みの学習</span>
+            <span class="text-normal">ボタン操作で動きが切り替わる仕組みの学習</span>
+          </li>
+          <li>
+            <span class="text-easy">時間を秒で数えてくらべられる活動づくり</span>
+            <span class="text-normal">時間を秒で数えて比べられる活動づくり</span>
+          </li>
+          <li>
+            <span class="text-easy">けっかの数字を見てふり返る学習</span>
+            <span class="text-normal">結果の数字を見て振り返る学習</span>
+          </li>
+        </ul>
+
+        <h3>チャレンジ</h3>
+        <ul>
+          <li>
+            <span class="text-easy">Aボタンでラップきろくをついかするくふう</span>
+            <span class="text-normal">Aボタンでラップ記録を追加する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">ラップ回数やラップ秒をひょうじするくふう</span>
+            <span class="text-normal">ラップ回数やラップ秒を表示する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">けいそく中の秒をひょうじするくふう</span>
+            <span class="text-normal">計測中の秒を表示する工夫</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <a
+        class="btn"
+        href="samples/microbit-ストップウォッチ.hex"
+        download
+        aria-labelledby="
+          sample4-title
+          sample4-btn
+        "
+      >
+        <span id="sample4-btn">
+          サンプルコードをダウンロード
+        </span>
+      </a>
+    </p>
+  </section>
+
+  <section id="section-5" aria-labelledby="section-5-h">
+
+    <h2 id="section-5-h">
+      <span aria-hidden="true">🚶</span>
+      <span class="text-easy" id="sample5-title">
+        チーム歩数きょうそう（ホスト）
+      </span>
+      <span class="text-normal">
+        チーム歩数競争（ホスト）
+      </span>
+      <span class="meta">
+        — 体育（小学4年生〜中学生）
+      </span>
+    </h2>
+
+    <p>
+      <span class="text-easy">
+        このプログラムは、micro:bitの「むせん（radio）」を使って、ホスト役1台とプレイヤー役1台いじょうからさいだい4台までを使い、合計2台から5台で遊ぶ集計プログラムです。
+      </span>
+      <span class="text-normal">
+        このプログラムは、micro:bitの「無線（radio）」を使って、ホスト役1台とプレイヤー役1台以上から最大4台までを使い、合計2台から5台で遊ぶ集計プログラムです。
+      </span>
+    </p>
+
+    <div class="grid" role="group" aria-labelledby="section-5-h">
+      <div class="card">
+        <h3>使い方</h3>
+        <ol>
+          <li>
+            <span class="text-easy">開始画面で「H」（ホスト）、「B」、「→」（右のBボタンをおして）がこうごにひょうじされる</span>
+            <span class="text-normal">開始画面で「H」（ホスト）、「B」、「→」（右のBボタンを押して）が交互に表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンをおすと「スタート」とひょうじされ、きょうぎが始まる</span>
+            <span class="text-normal">Bボタンを押すと「スタート」と表示され、競技が始まる</span>
+          </li>
+          <li>
+            <span class="text-easy">きょうぎ中はプレイヤーから送られた歩数がチームごとに合計される</span>
+            <span class="text-normal">競技中はプレイヤーから送られた歩数がチームごとに合計される</span>
+          </li>
+          <li>
+            <span class="text-easy">もう一度Bボタンをおすと「ストップ」とひょうじされ、きょうぎが終わる</span>
+            <span class="text-normal">もう一度Bボタンを押すと「ストップ」と表示され、競技が終わる</span>
+          </li>
+          <li>
+            <span class="text-easy">その後、「1→合計」「2→合計」「3→合計」「4→合計」のじゅんにけっかがひょうじされる</span>
+            <span class="text-normal">その後、「1→合計」「2→合計」「3→合計」「4→合計」の順に結果が表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">けっかをひょうじし終わると、開始画面にもどる</span>
+            <span class="text-normal">結果を表示し終わると、開始画面に戻る</span>
+          </li>
+        </ol>
+
+        <img
+          id="section-5-gif"
+          src="img/202605_05.png"
+          alt="マイクロビットでチーム歩数競争を実行している様子"
+          width="320"
+          height="240"
+          style="display:block; margin-bottom:10px;"
+        >
+        <button
+          class="btn"
+          onclick="toggleGif(
+            'section-5-gif',
+            'img/202605_05.gif',
+            'img/202605_05.png',
+            this
+          )"
+          aria-label="アニメーションの再生・停止"
+        >
+          見る
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>ねらい</h3>
+        <ul>
+          <li>
+            <span class="text-easy">むせんで受け取った数をチームべつに足し算してまとめる学習</span>
+            <span class="text-normal">無線で受け取った数をチーム別に足し算してまとめる学習</span>
+          </li>
+          <li>
+            <span class="text-easy">開始としゅうりょうでプログラムの動きを切りかえる学習</span>
+            <span class="text-normal">開始と終了でプログラムの動きを切り替える学習</span>
+          </li>
+          <li>
+            <span class="text-easy">けっかを見てさくせんを考え直す学習</span>
+            <span class="text-normal">結果を見て作戦を考え直す学習</span>
+          </li>
+        </ul>
+
+        <h3>チャレンジ</h3>
+        <ul>
+          <li>
+            <span class="text-easy">勝ったチームだけを大きくひょうじするくふう</span>
+            <span class="text-normal">勝ったチームだけを大きく表示する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">きょうぎ中のとちゅうけいかをひょうじするくふう</span>
+            <span class="text-normal">競技中の途中経過を表示する工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">チーム数をふやしたときの集計ほうほうのくふう</span>
+            <span class="text-normal">チーム数を増やしたときの集計方法の工夫</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <a
+        class="btn"
+        href="samples/microbit-チーム歩数競争（ホスト）.hex"
+        download
+        aria-labelledby="
+          sample5-title
+          sample5-btn
+        "
+      >
+        <span id="sample5-btn">
+          サンプルコードをダウンロード
+        </span>
+      </a>
+    </p>
+  </section>
+
+  <section id="section-6" aria-labelledby="section-6-h">
+
+    <h2 id="section-6-h">
+      <span aria-hidden="true">🚶</span>
+      <span class="text-easy" id="sample6-title">
+        チーム歩数きょうそう（プレイヤー）
+      </span>
+      <span class="text-normal">
+        チーム歩数競争（プレイヤー）
+      </span>
+      <span class="meta">
+        — 体育（小学4年生〜中学生）
+      </span>
+    </h2>
+
+    <p>
+      <span class="text-easy">
+        このプログラムは、micro:bitの「むせん（radio）」と「かそくどセンサー」を使って、ホスト役1台とプレイヤー役1台いじょうからさいだい4台までを使い、合計2台から5台で遊ぶそうしんプログラムです。
+      </span>
+      <span class="text-normal">
+        このプログラムは、micro:bitの「無線（radio）」と「加速度センサー」を使って、ホスト役1台とプレイヤー役1台以上から最大4台までを使い、合計2台から5台で遊ぶ送信プログラムです。
+      </span>
+    </p>
+
+    <div class="grid" role="group" aria-labelledby="section-6-h">
+      <div class="card">
+        <h3>使い方</h3>
+        <ol>
+          <li>
+            <span class="text-easy">開始画面の「P」（プレイヤー）、「B」、「→」（右のBボタンをおして）がこうごにひょうじされる</span>
+            <span class="text-normal">開始画面の「P」（プレイヤー）、「B」、「→」（右のBボタンを押して）が交互に表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">Aボタンをおすと、チーム番号が1から4まで切りかわってひょうじされる</span>
+            <span class="text-normal">Aボタンを押すと、チーム番号が1から4まで切り替わって表示される</span>
+          </li>
+          <li>
+            <span class="text-easy">Bボタンをおすと「スタート」とひょうじされ、きょうぎが始まる</span>
+            <span class="text-normal">Bボタンを押すと「スタート」と表示され、競技が始まる</span>
+          </li>
+          <li>
+            <span class="text-easy">きょうぎ中にmicro:bitをゆすると、歩数が1ずつふえる</span>
+            <span class="text-normal">競技中にmicro:bitをゆすると、歩数が1ずつ増える</span>
+          </li>
+          <li>
+            <span class="text-easy">ふえた分の歩数が2秒ごとにホストへ送られる</span>
+            <span class="text-normal">増えた分の歩数が2秒ごとにホストへ送られる</span>
+          </li>
+          <li>
+            <span class="text-easy">もう一度Bボタンをおすときょうぎが終わり、開始画面にもどる</span>
+            <span class="text-normal">もう一度Bボタンを押すと競技が終わり、開始画面に戻る</span>
+          </li>
+        </ol>
+
+        <img
+          id="section-6-gif"
+          src="img/202605_05.png"
+          alt="マイクロビットでチーム歩数競争を実行している様子"
+          width="320"
+          height="240"
+          style="display:block; margin-bottom:10px;"
+        >
+        <button
+          class="btn"
+          onclick="toggleGif(
+            'section-6-gif',
+            'img/202605_05.gif',
+            'img/202605_05.png',
+            this
+          )"
+          aria-label="アニメーションの再生・停止"
+        >
+          見る
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>ねらい</h3>
+        <ul>
+          <li>
+            <span class="text-easy">かそくどセンサーで動きを数にしてふやす学習</span>
+            <span class="text-normal">加速度センサーで動きを数にして増やす学習</span>
+          </li>
+          <li>
+            <span class="text-easy">ふえた分だけを送ってデータをまとめる学習</span>
+            <span class="text-normal">増えた分だけを送ってデータをまとめる学習</span>
+          </li>
+          <li>
+            <span class="text-easy">チームできょうりょくして合計をきそう活動づくり</span>
+            <span class="text-normal">チームで協力して合計を競う活動づくり</span>
+          </li>
+        </ul>
+
+        <h3>チャレンジ</h3>
+        <ul>
+          <li>
+            <span class="text-easy">ゆするいがいの動きで歩数をふやすルール作り</span>
+            <span class="text-normal">ゆする以外の動きで歩数を増やすルール作り</span>
+          </li>
+          <li>
+            <span class="text-easy">送るかんかくをかえてはんのうのちがいをくらべるくふう</span>
+            <span class="text-normal">送る間隔を変えて反応の違いを比べる工夫</span>
+          </li>
+          <li>
+            <span class="text-easy">しゅうりょうのときに「ストップ」ひょうじをついかするくふう</span>
+            <span class="text-normal">終了のときに「ストップ」表示を追加する工夫</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <a
+        class="btn"
+        href="samples/microbit-チーム歩数競争（プレイヤー）.hex"
+        download
+        aria-labelledby="
+          sample6-title
+          sample6-btn
+        "
+      >
+        <span id="sample6-btn">
+          サンプルコードをダウンロード
+        </span>
+      </a>
+    </p>
+  </section>
+
+
+  <p class="foot">
+    本情報の内容 (添付文書、リンク先などを含む) は、
+    作成日時点でのものであり、
+    予告なく変更される場合があります。
+  </p>
+  </main>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+</body>
+</html>

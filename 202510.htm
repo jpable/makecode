@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【10月】文化祭で遊べる！かんたんゲームプログラミング</title>
+  <meta name="description" content="micro:bit を使って楽しめる、かんたんゲーム集" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="wrap" role="banner">
+    <div class="fixed-top wrap">
+      <div class="mode-switch">
+        <fieldset>
+          <legend>表示モード</legend>
+          <div class="options">
+            <input type="radio" name="mode" id="mode-easy" value="easy">
+            <label for="mode-easy">小3までの漢字</label>
+            <input type="radio" name="mode" id="mode-normal" value="normal">
+            <label for="mode-normal">全学年の漢字</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>    
+    <div class="brand" aria-label="サイト名">
+      <div>
+        <h1>
+          <span class="text-easy">【10月】ぶんかさいで遊べる！かんたんゲームプログラミング</span>
+          <span class="text-normal">【10月】文化祭で遊べる！かんたんゲームプログラミング</span>
+        </h1>
+        <p class="lead">
+          <span class="text-easy">micro:bit を使って楽しめる、かんたんなゲーム集</span>
+          <span class="text-normal">micro:bit を使って楽しめる、簡単なゲーム集</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap" aria-label="ページ内ナビ">
+    <ul class="toc">
+      <li>
+        <span class="text-easy"><a href="#section-1">数あてゲーム</a></span>
+        <span class="text-normal"><a href="#section-1">数当てゲーム</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-2">はた上げゲーム</a></span>
+        <span class="text-normal"><a href="#section-2">旗上げゲーム</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-3">サイコロゲーム</a></span>
+        <span class="text-normal"><a href="#section-3">サイコロゲーム</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-4">体内時計チャレンジゲーム</a></span>
+        <span class="text-normal"><a href="#section-4">体内時計チャレンジゲーム</a></span>
+      </li>
+      <li>
+        <span class="text-easy"><a href="#section-5">カチカチカウンター</a></span>
+        <span class="text-normal"><a href="#section-5">カチカチカウンター</a></span>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="section-1" aria-labelledby="section-1-h">
+      <h2 id="section-1-h">
+        <span class="text-easy">🎯数あてゲーム</span>
+        <span class="text-normal">🎯数当てゲーム</span>
+        <span class="meta">— 算数（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、数あてゲームを作ります。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、数当てゲームを作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-1-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">Bボタンをおして、画面に出たドットの数にあわせて数字を入力</span>
+              <span class="text-normal">Bボタンを押して、画面に出たドットの数に合わせて数字を入力</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンをおしてせいかいかどうかをたしかめる</span>
+              <span class="text-normal">Aボタンを押して正解かどうかを確かめる</span>
+            </li>
+            <li>
+              <span class="text-easy">せいかいすると「にっこりした顔」、まちがえると「かなしい顔」をひょうじ</span>
+              <span class="text-normal">正解すると「うれしい顔」、まちがえると「悲しい顔」を表示</span>
+            </li>
+          </ol>
+          <img id="section-1-gif" src="img/202510_01.png" alt="micro:bit で数あてゲームを遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-1-gif', 'img/202510_01.gif', 'img/202510_01.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">数のりかい</span>
+              <span class="text-normal">数の理解</span>
+            </li>
+            <li>
+              <span class="text-easy">じょうけん分けの考え方を学ぶ</span>
+              <span class="text-normal">条件分けの考え方を学ぶ</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">スコアきのうをつける</span>
+              <span class="text-normal">スコア機能をつける</span>
+            </li>
+            <li>
+              <span class="text-easy">数のはんいを広げる</span>
+              <span class="text-normal">数の範囲を広げる</span>
+            </li>
+            <li>
+              <span class="text-easy">タイムアタックルールのついか</span>
+              <span class="text-normal">タイムアタックルールの追加</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/数あてゲーム.hex" download aria-label="数あてゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-2" aria-labelledby="section-2-h">
+      <h2 id="section-2-h">
+        <span class="text-easy">🚩はた上げゲーム</span>
+        <span class="text-normal">🚩旗上げゲーム</span>
+        <span class="meta">— 特別支援（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、はた上げゲームで遊ぶことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、旗上げゲームで遊ぶことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-2-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">LEDに「はた」が左向きまたは右向きにランダムに出る</span>
+              <span class="text-normal">LEDに「旗」が左向きまたは右向きにランダムに出る</span>
+            </li>
+            <li>
+              <span class="text-easy">出た向きにあわせて、Aボタン（左）またはBボタン（右）をおす</span>
+              <span class="text-normal">出た向きに合わせて、Aボタン（左）またはBボタン（右）を押す</span>
+            </li>
+            <li>
+              <span class="text-easy">せいかいすると「にっこりした顔」、まちがえると「かなしい顔」を表示</span>
+              <span class="text-normal">正解すると「にっこりした顔」、間違えると「悲しい顔」を表示</span>
+            </li>
+          </ol>
+          <img id="section-2-gif" src="img/202510_02.png" alt="micro:bit ではた上げゲームを遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-2-gif', 'img/202510_02.gif', 'img/202510_02.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">はんしゃしんけいをきたえる</span>
+              <span class="text-normal">反応神経を鍛える</span>
+            </li>
+            <li>
+              <span class="text-easy">はんだん力をきたえる</span>
+              <span class="text-normal">判断力を鍛える</span>
+            </li>
+            <li>
+              <span class="text-easy">プログラミングのきそにふれる</span>
+              <span class="text-normal">プログラミングの基礎に触れる</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">れんぞくせいかいしたらスピードアップする</span>
+              <span class="text-normal">連続正解したらスピードアップする</span>
+            </li>
+            <li>
+              <span class="text-easy">スコアきのうをつける</span>
+              <span class="text-normal">スコア機能をつける</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/はた上げゲーム.hex" download aria-label="はた上げゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-3" aria-labelledby="section-3-h">
+      <h2 id="section-3-h">
+        <span class="text-easy">🎲サイコロゲーム</span>
+        <span class="text-normal">🎲サイコロゲーム</span>
+        <span class="meta">— プログラミング教育（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、サイコロゲームで遊ぶことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、サイコロゲームで遊ぶことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-3-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">らんすうのしくみを使って、1〜6の数字をつぎつぎにひょうじ</span>
+              <span class="text-normal">乱数の仕組みを使って、1〜6の数字を次々に表示</span>
+            </li>
+            <li>
+              <span class="text-easy">Bボタンで数字を決定</span>
+              <span class="text-normal">Bボタンで数字を決定</span>
+            </li>
+            <li>
+              <span class="text-easy">数秒後にらんすうひょうじにもどる</span>
+              <span class="text-normal">数秒後に乱数表示に戻る</span>
+            </li>
+          </ol>
+          <img id="section-3-gif" src="img/202510_03.png" alt="micro:bit でサイコロゲームを遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-3-gif', 'img/202510_03.gif', 'img/202510_03.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">らんすう（ランダムな数）のはたらきを学ぶ</span>
+              <span class="text-normal">乱数（ランダムな数）の働きを学ぶ</span>
+            </li>
+            <li>
+              <span class="text-easy">プログラミングのきそにふれる</span>
+              <span class="text-normal">プログラミングの基礎に触れる</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">らんすうのひょうじかんかくをかえて、よりリアルなサイコロのように見せる</span>
+              <span class="text-normal">乱数の表示間隔を変えて、よりリアルなサイコロのように見せる</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンで一時ていし・さいかいするきのうをつける</span>
+              <span class="text-normal">Aボタンで一時停止・再開する機能をつける</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/サイコロゲーム.hex" download aria-label="サイコロゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-4" aria-labelledby="section-4-h">
+      <h2 id="section-4-h">
+        <span class="text-easy">⏱️体内時計チャレンジゲーム</span>
+        <span class="text-normal">⏱️体内時計チャレンジゲーム</span>
+        <span class="meta">— プログラミング教育（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、体内時計チャレンジで遊ぶことができます。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、体内時計チャレンジで遊ぶことができます。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-4-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">起動すると「Go」をひょうじしてタイマーがスタート</span>
+              <span class="text-normal">起動すると「Go」を表示してタイマーがスタート</span>
+            </li>
+            <li>
+              <span class="text-easy">自分のかんかくで5秒がたったと思ったタイミングでBボタンをおす</span>
+              <span class="text-normal">自分の感覚で5秒が経ったと思ったタイミングでBボタンを押す</span>
+            </li>
+            <li>
+              <span class="text-easy">5秒台なら「にっこりした顔」、それいがいは「すぎた秒数」をひょうじ</span>
+              <span class="text-normal">5秒台なら「にっこりした顔」、それ以外は「過ぎた秒数」を表示</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンをおして再スタート</span>
+              <span class="text-normal">Aボタンを押して再スタート</span>
+            </li>
+          </ol>
+          <img id="section-4-gif" src="img/202510_04.png" alt="micro:bit で体内時計チャレンジゲームを遊ぶ様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-4-gif', 'img/202510_04.gif', 'img/202510_04.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">時間のかんかくを体で学ぶ</span>
+              <span class="text-normal">時間の感覚を体で学ぶ</span>
+            </li>
+            <li>
+              <span class="text-easy">タイマーのしくみや、じょうけん分けのプログラミングについて学ぶ</span>
+              <span class="text-normal">タイマーの仕組みや、条件分けのプログラミングについて学ぶ</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">ごさ（せいかいからずれた秒数）をスクロールでひょうじしてみる</span>
+              <span class="text-normal">誤差（正解からずれた秒数）をスクロールで表示してみる</span>
+            </li>
+            <li>
+              <span class="text-easy">よりせいかくに5秒を止められるようにくふうする</span>
+              <span class="text-normal">より正確に5秒を止められるように工夫する</span>
+            </li>
+            <li>
+              <span class="text-easy">10秒や15秒モードを追加するプログラムを作ってみる</span>
+              <span class="text-normal">10秒や15秒モードを追加するプログラムを作ってみる</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/体内時計チャレンジゲーム.hex" download aria-label="体内時計チャレンジゲームのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+    <section id="section-5" aria-labelledby="section-5-h">
+      <h2 id="section-5-h">
+        <span class="text-easy">🔘カチカチカウンター</span>
+        <span class="text-normal">🔘カチカチカウンター</span>
+        <span class="meta">— プログラミング教育（小学3年生〜中学生）</span>
+      </h2>
+      <p>
+        <span class="text-easy">このプログラムでは、micro:bitを使って、数をかぞえるカウンターを作ります。</span>
+        <span class="text-normal">このプログラムでは、micro:bitを使って、数を数えるカウンターを作ります。</span>
+      </p>
+      <div class="grid" role="group" aria-labelledby="section-5-h">
+        <div class="card">
+          <h3>使い方</h3>
+          <ol>
+            <li>
+              <span class="text-easy">Bボタンをおすたびに、数が一つずつふえる</span>
+              <span class="text-normal">Bボタンを押す度に、数が一つずつ増える</span>
+            </li>
+            <li>
+              <span class="text-easy">Aボタンをおすと、数が0にもどる</span>
+              <span class="text-normal">Aボタンを押すと、数が0に戻る</span>
+            </li>
+            <li>
+              <span class="text-easy">画面に今の数がひょうじされる</span>
+              <span class="text-normal">画面に今の数が表示される</span>
+            </li>
+          </ol>
+          <img id="section-5-gif" src="img/202510_05.png" alt="micro:bit でカチカチカウンターを動かす様子" width="320" height="240" style="display:block; margin-bottom:10px;">
+          <button class="btn" onclick="toggleGif('section-5-gif', 'img/202510_05.gif', 'img/202510_05.png', this)" aria-label="アニメーションの再生・停止">見る</button>
+        </div>
+        <div class="card">
+          <h3>ねらい</h3>
+          <ul>
+            <li>
+              <span class="text-easy">くりかえしの数をきろくして、「何回やったか」を見えるようにする</span>
+              <span class="text-normal">繰り返しの数を記録して、「何回やったか」を見えるようにする</span>
+            </li>
+            <li>
+              <span class="text-easy">算数の「ぞうげん」や「数のふえ方」のりかいにつなげる</span>
+              <span class="text-normal">算数の「増減」や「数の増え方」の理解につなげる</span>
+            </li>
+            <li>
+              <span class="text-easy">生活のなかで「やったこと」をカウントする</span>
+              <span class="text-normal">生活のなかで「やったこと」をカウントする</span>
+            </li>
+          </ul>
+          <h3>チャレンジ</h3>
+          <ul>
+            <li>
+              <span class="text-easy">2人でかわりばんこにボタンをおして、数くらべたいせんをする</span>
+              <span class="text-normal">2人で代わりばんこにボタンを押して、数比べ対戦をする</span>
+            </li>
+            <li>
+              <span class="text-easy">活動ごとのカウントをグラフにして見えるようにする</span>
+              <span class="text-normal">活動ごとのカウントをグラフにして見えるようにする</span>
+            </li>
+            <li>
+              <span class="text-easy">「100回までがんばろう！」などのもくひょうカウントとして使う</span>
+              <span class="text-normal">「100回までがんばろう！」などの目標カウントとして使う</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p><a class="btn" href="samples/カチカチカウンター.hex" download aria-label="カチカチカウンターのサンプルコードをダウンロード（.hex）">サンプルコードをダウンロード</a></p>
+    </section>
+
+
+  <p class="foot">本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+  </main>
+
+  <footer class="wrap" role="contentinfo">
+    <p><a href="https://www.microsoft.com/ja-jp/enable/study/programming" aria-label="特別支援教育におけるプログラミング活用" target="_blank"> 特別支援教育におけるプログラミング活用 </a>にもどる</p>
+  </footer>
+
+<script>
+  const states = {}; // GIFごとの再生状態を保持
+
+  function toggleGif(id, gifSrc, stillSrc, button) {
+    const img = document.getElementById(id);
+    const isPlaying = states[id];
+
+    if (!isPlaying) {
+      // 再生開始
+      img.src = gifSrc;
+      button.textContent = "止める";
+      states[id] = true;
+    } else {
+      // 再生停止
+      img.src = stillSrc;
+      button.textContent = "見る";
+      states[id] = false;
+    }
+  }
+
+  // ===== 追加：表記モード（URL優先 / ラジオ） =====
+  const MODE_KEY = 'readingMode';
+  const radios = document.querySelectorAll('input[name="mode"]');
+
+  function readModeFromUrl() {
+    const url = new URL(location.href);
+    const m = url.searchParams.get('mode');
+    return (m === 'easy' || m === 'normal') ? m : null;
+  }
+
+  function readModeFromStorage() {
+    try {
+      const m = localStorage.getItem(MODE_KEY);
+      return (m === 'easy' || m === 'normal') ? m : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyMode(mode) {
+    document.body.classList.toggle('mode-normal', mode === 'normal');
+    document.body.classList.toggle('mode-easy', mode === 'easy');
+
+    radios.forEach(r => { r.checked = (r.value === mode); });
+
+    // 記事内リンクも引き継ぐ（data-basehrefがあるものだけ）
+    document.querySelectorAll('a[data-basehref]').forEach(a => {
+      const base = a.getAttribute('data-basehref');
+      a.href = `${base}?mode=${mode}`;
+    });
+
+    // URL更新（共有・ブックマーク・戻る整合）
+    const url = new URL(location.href);
+    url.searchParams.set('mode', mode);
+    history.replaceState(null, '', url);
+
+    // 保存（補助）
+    try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
+  }
+
+  // 初期化：URL → storage → easy
+  applyMode(readModeFromUrl() || readModeFromStorage() || 'easy');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => applyMode(radio.value));
+  });
+
+  // 上部タイトル固定
+  function syncFixedTopHeight(){
+    const fixed = document.querySelector('.fixed-top');
+    if (!fixed) return;
+    document.documentElement.style.setProperty('--fixed-top-h', fixed.offsetHeight + 'px');
+  }
+
+  window.addEventListener('load', syncFixedTopHeight);
+  window.addEventListener('resize', syncFixedTopHeight);
+  syncFixedTopHeight();
+
+</script>
+</body>
+</html>
