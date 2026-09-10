@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【9月】新学期にチャレンジ！micro:bitをためして動かして、しくみやへんかを見つけよう</title>
+  <meta name="description" content="micro:bitの温度センサーや明るさセンサーを使って、いろいろなしぜんげんしょうを調べてみましょう。" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body
+  class="mode-easy"
+  data-title-easy="【9月】新学期にチャレンジ！micro:bitをためして動かして、しくみやへんかを見つけよう"
+  data-title-normal="【9月】新学期にチャレンジ！micro:bitを試して動かして、しくみや変化を見つけよう"
+  data-lead-easy="micro:bitの温度センサーや明るさセンサーを使って、いろいろなしぜんげんしょうを調べてみましょう。"
+  data-lead-normal="micro:bitの温度センサーや明るさセンサーを使って、色々な自然現象を調べてみましょう。"
+>
+  <div id="header"></div>
+  <div id="nav"></div>
+  <main id="main" class="wrap">
+<section id="section-1" aria-labelledby="section-1-h">
+
+  <h2 id="section-1-h">
+    <span aria-hidden="true">💧</span>
+    <span class="text-easy" id="sample1-title">
+      温度をかえて！水のすがたチェッカー
+    </span>
+    <span class="text-normal">
+      温度を変えて！水のすがたチェッカー
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitの温度センサーを使って、今の温度を調べながら、温度によって水がこたい・えきたい・気体にかわる様子をたしかめることができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの温度センサーを使って、今の温度を調べながら、温度によって水が固体・液体・気体に変わる様子を確かめることができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-1-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">はじめに温度センサーで今の温度を調べ、数字でひょうじする</span>
+          <span class="text-normal">はじめに温度センサーで今の温度を調べ、数字で表示する</span>
+        </li>
+        <li>
+          <span class="text-easy">0℃いかのときはこたい、1℃から99℃のときはえきたい、100℃いじょうのときは気体のドット絵がひょうじされる</span>
+          <span class="text-normal">0℃以下のときは固体、1℃から99℃のときは液体、100℃以上のときは気体のドット絵が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">えきたいのじょうたいでAボタンをおすと、温度が一気に100℃になり、気体のドット絵がひょうじされる</span>
+          <span class="text-normal">液体の状態でAボタンを押すと、温度が一気に100℃になり、気体のドット絵が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">100℃のじょうたいからさらにAボタンをおすと、110℃、120℃のように10℃ずつ温度が上がり、気体のドット絵がひょうじされる</span>
+          <span class="text-normal">100℃の状態からさらにAボタンを押すと、110℃、120℃のように10℃ずつ温度が上がり、気体のドット絵が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">えきたいのじょうたいでBボタンをおすと、温度が一気に0℃になり、こたいのドット絵がひょうじされる</span>
+          <span class="text-normal">液体の状態でBボタンを押すと、温度が一気に0℃になり、固体のドット絵が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">0℃のじょうたいからさらにBボタンをおすと、－10℃、－20℃のように10℃ずつ温度が下がり、こたいのドット絵がひょうじされる</span>
+          <span class="text-normal">0℃の状態からさらにBボタンを押すと、－10℃、－20℃のように10℃ずつ温度が下がり、固体のドット絵が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">気体のじょうたいでBボタンをおすと、今の温度をもう一度調べ、さいしょのじょうたいにもどる</span>
+          <span class="text-normal">気体の状態でBボタンを押すと、今の温度をもう一度調べ、最初の状態に戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">こたいのじょうたいでAボタンをおしたときも、今の温度をもう一度調べ、さいしょのじょうたいにもどる</span>
+          <span class="text-normal">固体の状態でAボタンを押したときも、今の温度をもう一度調べ、最初の状態に戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">げんざいの温度にもどったあと、もう一度AボタンやBボタンをおして水のじょうたいのへんかをたしかめる</span>
+          <span class="text-normal">現在の温度に戻ったあと、もう一度AボタンやBボタンを押して水の状態の変化を確かめる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-1-gif"
+        src="img/202609_01.png"
+        alt="温度を変えて！水のすがたチェッカーをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-1-gif',
+          'img/202609_01.gif',
+          'img/202609_01.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">温度センサーで今の温度を調べるたいけん</span>
+          <span class="text-normal">温度センサーで今の温度を調べる体験</span>
+        </li>
+        <li>
+          <span class="text-easy">温度とこたい・えきたい・気体のかんけいをたしかめる学習</span>
+          <span class="text-normal">温度と固体・液体・気体の関係を確かめる学習</span>
+        </li>
+        <li>
+          <span class="text-easy">0℃や100℃をさかいに水のじょうたいがかわることへのりかい</span>
+          <span class="text-normal">0℃や100℃を境に水の状態が変わることへの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">ボタンそうさによって温度のへんかをたしかめ、じょうけんによってひょうじがかわる仕組みを知る活動</span>
+          <span class="text-normal">ボタン操作によって温度の変化を確かめ、条件によって表示が変わる仕組みを知る活動</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">0℃や100℃の前後で水のじょうたいがどうかわるかをくらべる</span>
+          <span class="text-normal">0℃や100℃の前後で水の状態がどう変わるかを比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">温度ごとにひょうじされるドット絵を自分で考えて作りかえる</span>
+          <span class="text-normal">温度ごとに表示されるドット絵を自分で考えて作り替える</span>
+        </li>
+        <li>
+          <span class="text-easy">今の温度を何度かはかり、場所による温度のちがいをくらべる</span>
+          <span class="text-normal">今の温度を何度か測り、場所による温度の違いを比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">水いがいのものがこたい・えきたい・気体にかわる温度について調べる</span>
+          <span class="text-normal">水以外のものが固体・液体・気体に変わる温度について調べる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-温度をかえて！水のすがたチェッカー.hex"
+      download
+      aria-labelledby="
+        sample1-title
+        sample1-btn
+      "
+    >
+      <span id="sample1-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-2" aria-labelledby="section-2-h">
+
+  <h2 id="section-2-h">
+    <span aria-hidden="true">🎆</span>
+    <span class="text-easy" id="sample2-title">
+      花火までのきょり計（かみなりモードつき）
+    </span>
+    <span class="text-normal">
+      花火までの距離計（雷モード付）
+    </span>
+    <span class="meta">
+      — 理科（中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitの温度センサーを使って、花火が光ったしゅんかんと音が聞こえたしゅんかんの時間のさから、花火までのおおよそのきょりを計算してひょうじします。気温によって音の速さがかわることも学べます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの温度センサーを使って、花火が光った瞬間と音が聞こえた瞬間の時間の差から、花火までのおおよその距離を計算して表示します。気温によって音の速さが変わることも学べます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-2-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">画面に「ヨウイ」とひょうじされたら、花火が光ったしゅんかんにAボタンをおす</span>
+          <span class="text-normal">画面に「ヨウイ」と表示されたら、花火が光った瞬間にAボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">次に、花火の音が聞こえたしゅんかんにAボタンをおす</span>
+          <span class="text-normal">次に、花火の音が聞こえた瞬間にAボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">光ってから音が聞こえるまでの時間を使ってきょりが計算され、「○○m」のように2回ひょうじされる</span>
+          <span class="text-normal">光ってから音が聞こえるまでの時間を使って距離が計算され、「○○m」のように2回表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">1回目にAボタンをおしてから30秒いないに2回目のAボタンをおさなかったときは「X」がひょうじされ、さいしょのじょうたいにもどる</span>
+          <span class="text-normal">1回目にAボタンを押してから30秒以内に2回目のAボタンを押さなかったときは「X」が表示され、最初の状態に戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">もう一度はかるときはBボタンをおして、次の花火で同じようにそくていする</span>
+          <span class="text-normal">もう一度はかるときはBボタンを押して、次の花火で同じように測定する</span>
+        </li>
+        <li>
+          <span class="text-easy">かみなりまでのきょりをはかるときはAボタンとBボタンを同時におして、気温を入力するかみなりモードに切りかえる</span>
+          <span class="text-normal">雷までの距離をはかるときはAボタンとBボタンを同時に押して、気温を入力する雷モードに切り替える</span>
+        </li>
+        <li>
+          <span class="text-easy">かみなりモードではAボタンをおすと気温が1℃上がり、Bボタンをおすと1℃下がる</span>
+          <span class="text-normal">雷モードではAボタンを押すと気温が1℃上がり、Bボタンを押すと1℃下がる</span>
+        </li>
+        <li>
+          <span class="text-easy">天気よほうなどで調べた外の気温に合わせたら、AボタンとBボタンを同時におしてそくていモードにもどる</span>
+          <span class="text-normal">天気予報などで調べた外の気温に合わせたら、AボタンとBボタンを同時に押して測定モードに戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">かみなりをかんさつするときは安全なたてものの中から行い、かみなりが光ったしゅんかんと音が聞こえたしゅんかんにAボタンをおしてきょりをはかる</span>
+          <span class="text-normal">雷を観察するときは安全な建物の中から行い、雷が光った瞬間と音が聞こえた瞬間にAボタンを押して距離をはかる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-2-gif"
+        src="img/202609_02.png"
+        alt="花火までの距離計（雷モード付）をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-2-gif',
+          'img/202609_02.gif',
+          'img/202609_02.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">光はとても速くとどき、音はやく340m/sの速さで進むため、光と音がとどく時間にさができることをたいけんする</span>
+          <span class="text-normal">光はとても速く届き、音は約340m/sの速さで進むため、光と音が届く時間に差ができることを体験する</span>
+        </li>
+        <li>
+          <span class="text-easy">「時間×速さ＝きょり」のかんけいを、自分ではかった時間を使って考える</span>
+          <span class="text-normal">「時間×速さ＝距離」の関係を、自分ではかった時間を使って考える</span>
+        </li>
+        <li>
+          <span class="text-easy">音の速さは気温によってかわり、あたたかい空気では速く、つめたい空気ではゆっくり進むことを知る</span>
+          <span class="text-normal">音の速さは気温によって変わり、あたたかい空気では速く、つめたい空気ではゆっくり進むことを知る</span>
+        </li>
+        <li>
+          <span class="text-easy">花火ではmicro:bitの温度センサーを使い、かみなりでは天気よほうなどで調べた外の気温を入力する理由を考える</span>
+          <span class="text-normal">花火ではmicro:bitの温度センサーを使い、雷では天気予報などで調べた外の気温を入力する理由を考える</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ボタンをおすまでの人のはんのう時間によって、計算されるきょりがどのくらいかわるかくらべる</span>
+          <span class="text-normal">ボタンを押すまでの人の反応時間によって、計算される距離がどのくらい変わるか比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">同じ花火を何回かそくていして、そくていしたきょりのへいきんを求める</span>
+          <span class="text-normal">同じ花火を何回か測定して、測定した距離の平均を求める</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちとそくていけっかをくらべて、けっかにちがいが出る理由を考える</span>
+          <span class="text-normal">友だちと測定結果を比べて、結果にちがいが出る理由を考える</span>
+        </li>
+        <li>
+          <span class="text-easy">かみなりモードを使って、安全なたてものの中からかみなりまでのおおよそのきょりを調べる</span>
+          <span class="text-normal">雷モードを使って、安全な建物の中から雷までのおおよその距離を調べる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-花火までのきょり計（かみなりモードつき）.hex"
+      download
+      aria-labelledby="
+        sample2-title
+        sample2-btn
+      "
+    >
+      <span id="sample2-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-3" aria-labelledby="section-3-h">
+
+  <h2 id="section-3-h">
+    <span aria-hidden="true">🐟</span>
+    <span class="text-easy" id="sample3-title">
+      10秒勝負！ボタンで金魚すくい
+    </span>
+    <span class="text-normal">
+      10秒勝負！ボタンで金魚すくい
+    </span>
+    <span class="meta">
+      — 総合（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、画面の中を動く金魚をねらい、A+Bボタンを同時におして10秒間でなんびきすくえるかにちょうせんするゲームです。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、画面の中を動く金魚をねらい、A+Bボタンを同時に押して10秒間で何匹すくえるかに挑戦するゲームです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-3-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">はじめに「B」と右向きのやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">はじめに「B」と右向きの矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームを始める前にAボタンをおすと、金魚が動く速さをレベル1、2、3からえらべる</span>
+          <span class="text-normal">ゲームを始める前にAボタンを押すと、金魚が動く速さをレベル1、2、3から選べる</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすたびにレベルが1、2、3のじゅんにかわり、えらんだレベルが数字でひょうじされる</span>
+          <span class="text-normal">Aボタンを押すたびにレベルが1、2、3の順に変わり、選んだレベルが数字で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、えらんだレベルでゲームがスタートする</span>
+          <span class="text-normal">Bボタンを押すと、選んだレベルでゲームがスタートする</span>
+        </li>
+        <li>
+          <span class="text-easy">さいしょに、金魚をすくうことができる真ん中の3×3のはんいがひょうじされる</span>
+          <span class="text-normal">最初に、金魚をすくうことができる真ん中の3×3の範囲が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">1つの光が金魚になり、画面の中を動く</span>
+          <span class="text-normal">1つの光が金魚になり、画面の中を動く</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚が真ん中の3×3に入ったと思ったら、A+Bボタンを同時におす</span>
+          <span class="text-normal">金魚が真ん中の3×3に入ったと思ったら、A+Bボタンを同時に押す</span>
+        </li>
+        <li>
+          <span class="text-easy">うまくすくえると金魚のドット絵がひょうじされ、すくった回数が1ふえる</span>
+          <span class="text-normal">うまくすくえると金魚のドット絵が表示され、すくった回数が1増える</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚がはんいの外にいるときにA+Bボタンをおすと、しょんぼりした顔がひょうじされる</span>
+          <span class="text-normal">金魚が範囲の外にいるときにA+Bボタンを押すと、しょんぼりした顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームが始まったあとはAボタンやBボタンをおしても何も起こらない</span>
+          <span class="text-normal">ゲームが始まったあとはAボタンやBボタンを押しても何も起こらない</span>
+        </li>
+        <li>
+          <span class="text-easy">10秒たつと「オワリ」のカタカナが横に流れてひょうじされる</span>
+          <span class="text-normal">10秒経つと「オワリ」のカタカナが横に流れて表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">「オワリ」のあとに、10秒間ですくった金魚の合計数が数字でひょうじされる</span>
+          <span class="text-normal">「オワリ」のあとに、10秒間ですくった金魚の合計数が数字で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかのひょうじが終わると「B」と右向きのやじるしの開始画面にもどり、もう一度レベルをえらんで遊べる</span>
+          <span class="text-normal">結果の表示が終わると「B」と右向きの矢印の開始画面に戻り、もう一度レベルを選んで遊べる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-3-gif"
+        src="img/202609_03.png"
+        alt="10秒勝負！ボタンで金魚すくいをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-3-gif',
+          'img/202609_03.gif',
+          'img/202609_03.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">A+Bボタンを同時におすそうさと画面のへんかをむすびつけるたいけん</span>
+          <span class="text-normal">A+Bボタンを同時に押す操作と画面の変化を結びつける体験</span>
+        </li>
+        <li>
+          <span class="text-easy">動く金魚のいちを見ながら、すくうタイミングを考える活動</span>
+          <span class="text-normal">動く金魚の位置を見ながら、すくうタイミングを考える活動</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚の速さをえらび、レベルによるむずかしさのちがいをくらべる学習</span>
+          <span class="text-normal">金魚の速さを選び、レベルによる難しさの違いを比べる学習</span>
+        </li>
+        <li>
+          <span class="text-easy">10秒という決められた時間をいしきして集中するたいけん</span>
+          <span class="text-normal">10秒という決められた時間を意識して集中する体験</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">レベル1、2、3でなんびきすくえるかをくらべる</span>
+          <span class="text-normal">レベル1、2、3で何匹すくえるかを比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちと同じレベルで遊び、すくえた数をくらべる</span>
+          <span class="text-normal">友だちと同じレベルで遊び、すくえた数を比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚をすくえるはんいをせまくしてむずかしくする</span>
+          <span class="text-normal">金魚をすくえる範囲をせまくして難しくする</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームの時間や金魚の速さをかえてオリジナルルールを作る</span>
+          <span class="text-normal">ゲームの時間や金魚の速さを変えてオリジナルルールを作る</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-10秒勝負！ボタンで金魚すくい.hex"
+      download
+      aria-labelledby="
+        sample3-title
+        sample3-btn
+      "
+    >
+      <span id="sample3-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-4" aria-labelledby="section-4-h">
+
+  <h2 id="section-4-h">
+    <span aria-hidden="true">👋</span>
+    <span class="text-easy" id="sample4-title">
+      10秒勝負！ふって金魚すくい
+    </span>
+    <span class="text-normal">
+      10秒勝負！ふって金魚すくい
+    </span>
+    <span class="meta">
+      — 総合（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitのかそくどセンサーを使って、画面の中を動く金魚をねらい、10秒間でなんびきすくえるかにちょうせんするゲームです。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの加速度センサーを使って、画面の中を動く金魚をねらい、10秒間で何匹すくえるかに挑戦するゲームです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-4-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">はじめに「B」と右向きのやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">はじめに「B」と右向きの矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームを始める前にAボタンをおすと、金魚が動く速さをレベル1、2、3からえらべる</span>
+          <span class="text-normal">ゲームを始める前にAボタンを押すと、金魚が動く速さをレベル1、2、3から選べる</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすたびにレベルが1、2、3のじゅんにかわり、えらんだレベルが数字でひょうじされる</span>
+          <span class="text-normal">Aボタンを押すたびにレベルが1、2、3の順に変わり、選んだレベルが数字で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、えらんだレベルでゲームがスタートする</span>
+          <span class="text-normal">Bボタンを押すと、選んだレベルでゲームがスタートする</span>
+        </li>
+        <li>
+          <span class="text-easy">さいしょに、金魚をすくうことができる真ん中の3×3のはんいがひょうじされる</span>
+          <span class="text-normal">最初に、金魚をすくうことができる真ん中の3×3の範囲が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">1つの光が金魚になり、画面の中を動く</span>
+          <span class="text-normal">1つの光が金魚になり、画面の中を動く</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚が真ん中の3×3に入ったと思ったら、金魚をすくうようにmicro:bitを軽くふる</span>
+          <span class="text-normal">金魚が真ん中の3×3に入ったと思ったら、金魚をすくうようにmicro:bitを軽く振る</span>
+        </li>
+        <li>
+          <span class="text-easy">うまくすくえると金魚のドット絵がひょうじされ、すくった回数が1ふえる</span>
+          <span class="text-normal">うまくすくえると金魚のドット絵が表示され、すくった回数が1増える</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚がはんいの外にいるときにふると、しょんぼりした顔がひょうじされる</span>
+          <span class="text-normal">金魚が範囲の外にいるときに振ると、しょんぼりした顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームが始まったあとはAボタンとBボタンをおしても何も起こらない</span>
+          <span class="text-normal">ゲームが始まったあとはAボタンとBボタンを押しても何も起こらない</span>
+        </li>
+        <li>
+          <span class="text-easy">10秒たつと「オワリ」のカタカナが横に流れてひょうじされる</span>
+          <span class="text-normal">10秒経つと「オワリ」のカタカナが横に流れて表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">「オワリ」のあとに、10秒間ですくった金魚の合計数が数字でひょうじされる</span>
+          <span class="text-normal">「オワリ」のあとに、10秒間ですくった金魚の合計数が数字で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかのひょうじが終わると「B」と右向きのやじるしの開始画面にもどり、もう一度レベルをえらんで遊べる</span>
+          <span class="text-normal">結果の表示が終わると「B」と右向きの矢印の開始画面に戻り、もう一度レベルを選んで遊べる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-4-gif"
+        src="img/202609_04.png"
+        alt="10秒勝負！ふって金魚すくいをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-4-gif',
+          'img/202609_04.gif',
+          'img/202609_04.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">かそくどセンサーでふる動きを読み取るたいけん</span>
+          <span class="text-normal">加速度センサーで振る動きを読み取る体験</span>
+        </li>
+        <li>
+          <span class="text-easy">動く金魚のいちを見ながら、すくうタイミングを考える活動</span>
+          <span class="text-normal">動く金魚の位置を見ながら、すくうタイミングを考える活動</span>
+        </li>
+        <li>
+          <span class="text-easy">速さのちがうレベルをえらび、むずかしさのへんかをくらべる学習</span>
+          <span class="text-normal">速さの違うレベルを選び、難しさの変化を比べる学習</span>
+        </li>
+        <li>
+          <span class="text-easy">10秒という決められた時間をいしきして集中するたいけん</span>
+          <span class="text-normal">10秒という決められた時間を意識して集中する体験</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">レベル1、2、3でなんびきすくえるかをくらべる</span>
+          <span class="text-normal">レベル1、2、3で何匹すくえるかを比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちと同じレベルで遊び、すくえた数をくらべる</span>
+          <span class="text-normal">友だちと同じレベルで遊び、すくえた数を比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚をすくえるはんいをせまくしてむずかしいルールを作る</span>
+          <span class="text-normal">金魚をすくえる範囲をせまくして難しいルールを作る</span>
+        </li>
+        <li>
+          <span class="text-easy">金魚の動く速さをかえて新しいレベルを考える</span>
+          <span class="text-normal">金魚の動く速さを変えて新しいレベルを考える</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-10秒勝負！ふって金魚すくい.hex"
+      download
+      aria-labelledby="
+        sample4-title
+        sample4-btn
+      "
+    >
+      <span id="sample4-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-5" aria-labelledby="section-5-h">
+
+  <h2 id="section-5-h">
+    <span aria-hidden="true">🏠</span>
+    <span class="text-easy" id="sample5-title">
+      顔でわかる！お部屋のかいてき度チェッカー
+    </span>
+    <span class="text-normal">
+      顔でわかる！お部屋の快適度チェッカー
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitの温度センサーを使って、まわりの温度を調べ、暑さや寒さを3つのひょうじょうでわかりやすくかくにんできます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの温度センサーを使って、まわりの温度を調べ、暑さや寒さを3つの表情でわかりやすく確認できます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-5-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">温度が17℃いかになると、寒いことを表すねむそうな顔がひょうじされる</span>
+          <span class="text-normal">温度が17℃以下になると、寒いことを表すねむそうな顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">温度が18℃から27℃のときは、すごしやすいことを表すえがおがひょうじされる</span>
+          <span class="text-normal">温度が18℃から27℃のときは、過ごしやすいことを表す笑顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">温度が28℃いじょうになると、暑いことを表すかなしい顔がひょうじされる</span>
+          <span class="text-normal">温度が28℃以上になると、暑いことを表すかなしい顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすと、今の温度が数字でひょうじされる</span>
+          <span class="text-normal">Aボタンを押すと、今の温度が数字で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">場所をかえて、温度とひょうじょうがどのようにかわるかをくらべる</span>
+          <span class="text-normal">場所を変えて、温度と表情がどのように変わるかを比べる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-5-gif"
+        src="img/202609_05.png"
+        alt="顔でわかる！お部屋の快適度チェッカーをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-5-gif',
+          'img/202609_05.gif',
+          'img/202609_05.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">温度センサーでまわりの温度を調べるたいけん</span>
+          <span class="text-normal">温度センサーでまわりの温度を調べる体験</span>
+        </li>
+        <li>
+          <span class="text-easy">温度の数字とひょうじょうをむすびつけて考える学習</span>
+          <span class="text-normal">温度の数字と表情を結びつけて考える学習</span>
+        </li>
+        <li>
+          <span class="text-easy">温度によってけっかを分けるじょうけんぶんきの仕組みを知る</span>
+          <span class="text-normal">温度によって結果を分ける条件分岐の仕組みを知る</span>
+        </li>
+        <li>
+          <span class="text-easy">教室や身の回りのかんきょうに目を向ける活動</span>
+          <span class="text-normal">教室や身の回りの環境に目を向ける活動</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ひょうじょうが切りかわる温度をかえて自分なりのかいてきな温度を考える</span>
+          <span class="text-normal">表情が切り替わる温度を変えて自分なりの快適な温度を考える</span>
+        </li>
+        <li>
+          <span class="text-easy">教室のいろいろな場所で温度を調べてくらべる</span>
+          <span class="text-normal">教室のいろいろな場所で温度を調べて比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">朝と昼で温度やひょうじょうがどのようにかわるかきろくする</span>
+          <span class="text-normal">朝と昼で温度や表情がどのように変わるか記録する</span>
+        </li>
+        <li>
+          <span class="text-easy">温度だけでなく明るさも使ったかいてき度チェックにはってんさせる</span>
+          <span class="text-normal">温度だけでなく明るさも使った快適度チェックに発展させる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-顔でわかる！お部屋のかいてき度チェッカー.hex"
+      download
+      aria-labelledby="
+        sample5-title
+        sample5-btn
+      "
+    >
+      <span id="sample5-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-6" aria-labelledby="section-6-h">
+
+  <h2 id="section-6-h">
+    <span aria-hidden="true">💡</span>
+    <span class="text-easy" id="sample6-title">
+      顔でわかる！お部屋の明るさチェッカー
+    </span>
+    <span class="text-normal">
+      顔でわかる！お部屋の明るさチェッカー
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitの明るさセンサーを使って、まわりの明るさを調べ、暗いか、ちょうどいいか、明るすぎるかを3つのひょうじょうでわかりやすくかくにんできます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの明るさセンサーを使って、まわりの明るさを調べ、暗いか、ちょうどいいか、明るすぎるかを3つの表情でわかりやすく確認できます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-6-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">まわりが暗いと、ねむそうな顔がひょうじされる</span>
+          <span class="text-normal">まわりが暗いと、ねむそうな顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ちょうどいい明るさになると、えがおがひょうじされる</span>
+          <span class="text-normal">ちょうどいい明るさになると、笑顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">まわりが明るすぎると、かなしい顔がひょうじされる</span>
+          <span class="text-normal">まわりが明るすぎると、かなしい顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすと、今の明るさが0から255までの数字でひょうじされる</span>
+          <span class="text-normal">Aボタンを押すと、今の明るさが0から255までの数字で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">まどの近くや部屋のおくなど場所をかえて、数字とひょうじょうがどのようにかわるかをくらべる</span>
+          <span class="text-normal">窓の近くや部屋の奥など場所を変えて、数字と表情がどのように変わるかを比べる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-6-gif"
+        src="img/202609_06.png"
+        alt="顔でわかる！お部屋の明るさチェッカーをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-6-gif',
+          'img/202609_06.gif',
+          'img/202609_06.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">明るさセンサーでまわりの明るさを調べるたいけん</span>
+          <span class="text-normal">明るさセンサーでまわりの明るさを調べる体験</span>
+        </li>
+        <li>
+          <span class="text-easy">明るさの数字とひょうじょうをむすびつけて考える学習</span>
+          <span class="text-normal">明るさの数字と表情を結びつけて考える学習</span>
+        </li>
+        <li>
+          <span class="text-easy">すうちの大きさによってひょうじをかえるじょうけんぶんきの仕組みを知る</span>
+          <span class="text-normal">数値の大きさによって表示を変える条件分岐の仕組みを知る</span>
+        </li>
+        <li>
+          <span class="text-easy">教室や身の回りの明るさのちがいに気づく活動</span>
+          <span class="text-normal">教室や身の回りの明るさの違いに気づく活動</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ひょうじょうが切りかわる明るさの数字をかえて自分なりのかいてきな明るさを考える</span>
+          <span class="text-normal">表情が切り替わる明るさの数字を変えて自分なりの快適な明るさを考える</span>
+        </li>
+        <li>
+          <span class="text-easy">まどの近くやろうかなどいろいろな場所の明るさを調べてくらべる</span>
+          <span class="text-normal">窓の近くや廊下などいろいろな場所の明るさを調べて比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">朝と昼で明るさがどのようにかわるかきろくする</span>
+          <span class="text-normal">朝と昼で明るさがどのように変わるか記録する</span>
+        </li>
+        <li>
+          <span class="text-easy">温度チェッカーと組み合わせて、お部屋のかいてきさを2つのセンサーで調べる</span>
+          <span class="text-normal">温度チェッカーと組み合わせて、お部屋の快適さを2つのセンサーで調べる</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-顔でわかる！お部屋の明るさチェッカー.hex"
+      download
+      aria-labelledby="
+        sample6-title
+        sample6-btn
+      "
+    >
+      <span id="sample6-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-7" aria-labelledby="section-7-h">
+
+  <h2 id="section-7-h">
+    <span aria-hidden="true">💪</span>
+    <span class="text-easy" id="sample7-title">
+      10秒勝負！もちつきパワー
+    </span>
+    <span class="text-normal">
+      10秒勝負！もちつきパワー
+    </span>
+    <span class="meta">
+      — 総合（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、10秒間にBボタンを何回おせるかにちょうせんし、おした回数によっておもちが大きくなるゲームを楽しめます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、10秒間にBボタンを何回押せるかに挑戦し、押した回数によっておもちが大きくなるゲームを楽しめます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-7-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">はじめに「B」と右向きのやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">はじめに「B」と右向きの矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、すぐに10秒間のもちつきがスタートする</span>
+          <span class="text-normal">Bボタンを押すと、すぐに10秒間のもちつきがスタートする</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲーム中にBボタンをおすたびに、もちパワーが1ずつふえる</span>
+          <span class="text-normal">ゲーム中にBボタンを押すたびに、もちパワーが1ずつ増える</span>
+        </li>
+        <li>
+          <span class="text-easy">もちパワーが10回みまんのときは、小さなおもちがひょうじされる</span>
+          <span class="text-normal">もちパワーが10回未満のときは、小さなおもちが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">もちパワーが10回いじょうになると、中くらいのおもちにかわる</span>
+          <span class="text-normal">もちパワーが10回以上になると、中くらいのおもちに変わる</span>
+        </li>
+        <li>
+          <span class="text-easy">もちパワーが20回いじょうになると、大きなおもちにかわる</span>
+          <span class="text-normal">もちパワーが20回以上になると、大きなおもちに変わる</span>
+        </li>
+        <li>
+          <span class="text-easy">10秒たつとゲームが終わり、Bボタンをおした回数が数字でひょうじされる</span>
+          <span class="text-normal">10秒経つとゲームが終わり、Bボタンを押した回数が数字で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">20回いじょうおせたときだけ、数字のあとにうさぎのドット絵がひょうじされる</span>
+          <span class="text-normal">20回以上押せたときだけ、数字のあとにうさぎのドット絵が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">20回みまんのときは数字だけがひょうじされる</span>
+          <span class="text-normal">20回未満のときは数字だけが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかのひょうじが終わると「B」と右向きのやじるしの開始画面にもどり、何回でもちょうせんできる</span>
+          <span class="text-normal">結果の表示が終わると「B」と右向きの矢印の開始画面に戻り、何回でも挑戦できる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-7-gif"
+        src="img/202609_07.png"
+        alt="10秒勝負！もちつきパワーをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-7-gif',
+          'img/202609_07.gif',
+          'img/202609_07.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ボタンをおした回数を数える仕組みをたいけんする</span>
+          <span class="text-normal">ボタンを押した回数を数える仕組みを体験する</span>
+        </li>
+        <li>
+          <span class="text-easy">回数によってひょうじがかわるじょうけんぶんきの仕組みを知る</span>
+          <span class="text-normal">回数によって表示が変わる条件分岐の仕組みを知る</span>
+        </li>
+        <li>
+          <span class="text-easy">10秒という決められた時間をいしきして集中する活動</span>
+          <span class="text-normal">10秒という決められた時間を意識して集中する活動</span>
+        </li>
+        <li>
+          <span class="text-easy">もちつきやうさぎのドット絵を使って、お月見のイメージとプログラミングをむすびつける学習</span>
+          <span class="text-normal">もちつきやうさぎのドット絵を使って、お月見のイメージとプログラミングを結びつける学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">10秒間で20回いじょうを目指してちょうせんする</span>
+          <span class="text-normal">10秒間で20回以上を目指して挑戦する</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちとおした回数をくらべる</span>
+          <span class="text-normal">友だちと押した回数を比べる</span>
+        </li>
+        <li>
+          <span class="text-easy">おもちが大きくなる回数をかえてむずかしさを調整する</span>
+          <span class="text-normal">おもちが大きくなる回数を変えて難しさを調整する</span>
+        </li>
+        <li>
+          <span class="text-easy">大きなおもちになったときのドット絵やひょうじを自分で考えてアレンジする</span>
+          <span class="text-normal">大きなおもちになったときのドット絵や表示を自分で考えてアレンジする</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-10秒勝負！もちつきパワー.hex"
+      download
+      aria-labelledby="
+        sample7-title
+        sample7-btn
+      "
+    >
+      <span id="sample7-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+
+  <p class="foot">
+    本情報の内容 (添付文書、リンク先などを含む) は、
+    作成日時点でのものであり、
+    予告なく変更される場合があります。
+  </p>
+  </main>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+</body>
+</html>
