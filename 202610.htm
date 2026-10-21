@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【10月】文化祭をもりあげよう！micro:bitゲーム＆ハロウィンとくしゅう</title>
+  <meta name="description" content="文化祭などで使える、色々なmicro:bitのゲームです。" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body
+  class="mode-easy"
+  data-title-easy="【10月】文化祭をもりあげよう！micro:bitゲーム＆ハロウィンとくしゅう"
+  data-title-normal="【10月】文化祭を盛り上げよう！micro:bitゲーム＆ハロウィン特集"
+  data-lead-easy="文化祭などで使える、色々なmicro:bitのゲームです。"
+  data-lead-normal="文化祭などで使える、色々なmicro:bitのゲームです。"
+>
+  <div id="header"></div>
+  <div id="nav"></div>
+  <main id="main" class="wrap">
+<section id="section-1" aria-labelledby="section-1-h">
+
+  <h2 id="section-1-h">
+    <span aria-hidden="true">🦘</span>
+    <span class="text-easy" id="sample1-title">
+      なわとびジャンプゲーム10回ごとスピードアップ
+    </span>
+    <span class="text-normal">
+      なわとびジャンプゲーム10回ごとスピードアップ
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、動くロープに合わせてBボタンでジャンプし、何回つづけられるかにちょうせんするゲームができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、動くロープに合わせてBボタンでジャンプし、何回続けられるかに挑戦するゲームができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-1-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょに「B」と右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">最初に「B」と右向き矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、ゲームが始まる</span>
+          <span class="text-normal">Bボタンを押すと、ゲームが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">「スタート」がカタカナのドット絵でひょうじされる</span>
+          <span class="text-normal">「スタート」がカタカナのドット絵で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">画面の真ん中に人がひょうじされ、横一列の光がロープとして動く</span>
+          <span class="text-normal">画面の真ん中に人が表示され、横一列の光がロープとして動く</span>
+        </li>
+        <li>
+          <span class="text-easy">ロープが下に来るタイミングに合わせて、Bボタンをおしてジャンプする</span>
+          <span class="text-normal">ロープが下に来るタイミングに合わせて、Bボタンを押してジャンプする</span>
+        </li>
+        <li>
+          <span class="text-easy">うまくジャンプできると、とくてんがふえる</span>
+          <span class="text-normal">うまくジャンプできると、得点が増える</span>
+        </li>
+        <li>
+          <span class="text-easy">ジャンプしないままロープが足元に来ると、ゲームが終わる</span>
+          <span class="text-normal">ジャンプしないままロープが足元に来ると、ゲームが終わる</span>
+        </li>
+        <li>
+          <span class="text-easy">10回ジャンプするごとに、ロープの動きが少しずつ速くなる</span>
+          <span class="text-normal">10回ジャンプするごとに、ロープの動きが少しずつ速くなる</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームが終わると、とくてんがひょうじされる</span>
+          <span class="text-normal">ゲームが終わると、得点が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">とくてんがひょうじされたあと、ふたたび「B」と右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">得点が表示されたあと、再び「B」と右向き矢印が交互に表示される</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-1-gif"
+        src="img/202610_01.png"
+        alt="なわとびジャンプゲーム10回ごとスピードアップをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-1-gif',
+          'img/202610_01.gif',
+          'img/202610_01.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">タイミングを見てボタンをおす</span>
+          <span class="text-normal">タイミングを見てボタンを押す</span>
+        </li>
+        <li>
+          <span class="text-easy">ロープの動きに合わせてジャンプする</span>
+          <span class="text-normal">ロープの動きに合わせてジャンプする</span>
+        </li>
+        <li>
+          <span class="text-easy">回数がふえるほど速くなるゲームのしくみを知る</span>
+          <span class="text-normal">回数が増えるほど速くなるゲームのしくみを知る</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ジャンプできる時間の長さをかえて、むずかしさを調整する</span>
+          <span class="text-normal">ジャンプできる時間の長さを変えて、難しさを調整する</span>
+        </li>
+        <li>
+          <span class="text-easy">10回ごとにロープが速くなる大きさをかえる</span>
+          <span class="text-normal">10回ごとにロープが速くなる大きさを変える</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちとさいこうきろくをくらべて、ランキングを作る</span>
+          <span class="text-normal">友だちと最高記録を比べて、ランキングを作る</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-なわとびジャンプゲーム10回ごとスピードアップ.hex"
+      download
+      aria-labelledby="
+        sample1-title
+        sample1-btn
+      "
+    >
+      <span id="sample1-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-2" aria-labelledby="section-2-h">
+
+  <h2 id="section-2-h">
+    <span aria-hidden="true">🧱</span>
+    <span class="text-easy" id="sample2-title">
+      かべよけゲーム10回ごとスピードアップ
+    </span>
+    <span class="text-normal">
+      壁避けゲーム10回ごとスピードアップ
+    </span>
+    <span class="meta">
+      — 総合（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、上から近づいてくるかべを左右に動いてよけ、10回よけるごとに速くなるゲームを楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、上から近づいてくる壁を左右に動いて避け、10回避けるごとに速くなるゲームを楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-2-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょに「B」と右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">最初に「B」と右向き矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、ゲームが始まる</span>
+          <span class="text-normal">Bボタンを押すと、ゲームが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">「スタート」がカタカナのドット絵でひょうじされる</span>
+          <span class="text-normal">「スタート」がカタカナのドット絵で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">画面下の光が自分を表し、上から出てくる光の列がかべを表す</span>
+          <span class="text-normal">画面下の光が自分を表し、上から出てくる光の列が壁を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすと自分が左へ動き、Bボタンをおすと右へ動く</span>
+          <span class="text-normal">Aボタンを押すと自分が左へ動き、Bボタンを押すと右へ動く</span>
+        </li>
+        <li>
+          <span class="text-easy">かべに当たらないように、左右へ動いてよける</span>
+          <span class="text-normal">壁に当たらないように、左右へ動いて避ける</span>
+        </li>
+        <li>
+          <span class="text-easy">A+Bボタンを同時におすと、今までによけたかべの数をかくにんできる</span>
+          <span class="text-normal">A+Bボタンを同時に押すと、今までに避けた壁の数を確認できる</span>
+        </li>
+        <li>
+          <span class="text-easy">10回かべをよけるごとに、かべの動きが少しずつ速くなる</span>
+          <span class="text-normal">10回壁を避けるごとに、壁の動きが少しずつ速くなる</span>
+        </li>
+        <li>
+          <span class="text-easy">かべに当たるとゲームが終わり、よけたかべの数がひょうじされる</span>
+          <span class="text-normal">壁に当たるとゲームが終わり、避けた壁の数が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">しゅうりょう後はふたたび「B」と右向きやじるしがこうごにひょうじされ、Bボタンをおすともう一度遊べる</span>
+          <span class="text-normal">終了後は再び「B」と右向き矢印が交互に表示され、Bボタンを押すともう一度遊べる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-2-gif"
+        src="img/202610_02.png"
+        alt="壁避けゲーム10回ごとスピードアップをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-2-gif',
+          'img/202610_02.gif',
+          'img/202610_02.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">上から近づいてくるかべを見て、タイミングよく左右に動く</span>
+          <span class="text-normal">上から近づいてくる壁を見て、タイミングよく左右に動く</span>
+        </li>
+        <li>
+          <span class="text-easy">自分とかべのいちをくらべて、どちらに動くかを考える</span>
+          <span class="text-normal">自分と壁の位置を比べて、どちらに動くかを考える</span>
+        </li>
+        <li>
+          <span class="text-easy">回数がふえるほど速くなるゲームのしくみを知る</span>
+          <span class="text-normal">回数が増えるほど速くなるゲームのしくみを知る</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">10回ごとにかべが速くなる大きさをかえる</span>
+          <span class="text-normal">10回ごとに壁が速くなる大きさを変える</span>
+        </li>
+        <li>
+          <span class="text-easy">かべが出てくるかんかくをかえて、むずかしさを調整する</span>
+          <span class="text-normal">壁が出てくる間隔を変えて、難しさを調整する</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちとよけたかべの数をくらべて、ランキングを作る</span>
+          <span class="text-normal">友だちと避けた壁の数を比べて、ランキングを作る</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-かべよけゲーム10回ごとスピードアップ.hex"
+      download
+      aria-labelledby="
+        sample2-title
+        sample2-btn
+      "
+    >
+      <span id="sample2-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-3" aria-labelledby="section-3-h">
+
+  <h2 id="section-3-h">
+    <span aria-hidden="true">⛳</span>
+    <span class="text-easy" id="sample3-title">
+      かたむけゴルフゲーム
+    </span>
+    <span class="text-normal">
+      傾けゴルフゲーム
+    </span>
+    <span class="meta">
+      — 体育（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitのかそくどセンサーを使って、本体をかたむけてボールを動かし、せいげん時間内にランダムにあらわれるあなへ入れるゴルフゲームができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの加速度センサーを使って、本体を傾けてボールを動かし、制限時間内にランダムに現れる穴へ入れるゴルフゲームができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-3-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょに「B」と右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">最初に「B」と右向き矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、「スタート」がカタカナのドット絵で流れたあと、ゲームが始まる</span>
+          <span class="text-normal">Bボタンを押すと、「スタート」がカタカナのドット絵で流れたあと、ゲームが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">一番上の行がのこり時間を表し、明るい光がボール、うすい光があなを表す</span>
+          <span class="text-normal">一番上の行が残り時間を表し、明るい光がボール、うすい光が穴を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">micro:bitを左右にかたむけると、ボールが左右へ動く</span>
+          <span class="text-normal">micro:bitを左右に傾けると、ボールが左右へ動く</span>
+        </li>
+        <li>
+          <span class="text-easy">micro:bitを前後にかたむけると、ボールが上下へ動く</span>
+          <span class="text-normal">micro:bitを前後に傾けると、ボールが上下へ動く</span>
+        </li>
+        <li>
+          <span class="text-easy">あなは、4つのドットでできたあな、動かない1つのドットのあな、4つのドットのはんい内を動く1つのドットのあなの中から、ランダムにひょうじされる</span>
+          <span class="text-normal">穴は、4つのドットでできた穴、動かない1つのドットの穴、4つのドットの範囲内を動く1つのドットの穴の中から、ランダムに表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">さいしょのせいげん時間は10秒で、上の5つのLEDがのこり時間の目安を表す</span>
+          <span class="text-normal">最初の制限時間は10秒で、上の5つのLEDが残り時間の目安を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">せいげん時間が10秒のときは、5つのLEDがそれぞれ2回ずつてんめつして、時間のけいかを知らせる</span>
+          <span class="text-normal">制限時間が10秒のときは、5つのLEDがそれぞれ2回ずつ点滅して、時間の経過を知らせる</span>
+        </li>
+        <li>
+          <span class="text-easy">せいげん時間内にボールをあなへ入れると、チェックマークがひょうじされ、せいこう回数がふえる</span>
+          <span class="text-normal">制限時間内にボールを穴へ入れると、チェックマークが表示され、成功回数が増える</span>
+        </li>
+        <li>
+          <span class="text-easy">5回せいこうするごとにせいげん時間が1秒ずつ短くなり、さいたんで1秒になる</span>
+          <span class="text-normal">5回成功するごとに制限時間が1秒ずつ短くなり、最短で1秒になる</span>
+        </li>
+        <li>
+          <span class="text-easy">せいげん時間内に入れられないとゲームが終わり、せいこう回数がひょうじされる</span>
+          <span class="text-normal">制限時間内に入れられないとゲームが終わり、成功回数が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">せいこう回数が3秒間ひょうじされたあと、ふたたび「B」と右向きやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">成功回数が3秒間表示されたあと、再び「B」と右向き矢印が交互に表示される</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-3-gif"
+        src="img/202610_03.png"
+        alt="傾けゴルフゲームをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-3-gif',
+          'img/202610_03.gif',
+          'img/202610_03.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">かそくどセンサーでかたむきを読み取るしくみを知る</span>
+          <span class="text-normal">加速度センサーで傾きを読み取るしくみを知る</span>
+        </li>
+        <li>
+          <span class="text-easy">ボールとあなのいちを見くらべてそうさする</span>
+          <span class="text-normal">ボールと穴の位置を見比べて操作する</span>
+        </li>
+        <li>
+          <span class="text-easy">時間内にあなへ入れられるように、かたむける方向や大きさをくふうする</span>
+          <span class="text-normal">時間内に穴へ入れられるように、傾ける方向や大きさを工夫する</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">あなのしゅるいを、4つのドットのあなだけや1つのドットのあなだけにかえる</span>
+          <span class="text-normal">穴の種類を、4つのドットの穴だけや1つのドットの穴だけに変える</span>
+        </li>
+        <li>
+          <span class="text-easy">せいげん時間の短くなり方をかえて、むずかしさを調整する</span>
+          <span class="text-normal">制限時間の短くなり方を変えて、難しさを調整する</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちとせいこう回数をくらべて、さいこうきろくにちょうせんする</span>
+          <span class="text-normal">友だちと成功回数を比べて、最高記録に挑戦する</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-かたむけゴルフゲーム.hex"
+      download
+      aria-labelledby="
+        sample3-title
+        sample3-btn
+      "
+    >
+      <span id="sample3-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-4" aria-labelledby="section-4-h">
+
+  <h2 id="section-4-h">
+    <span aria-hidden="true">❓</span>
+    <span class="text-easy" id="sample4-title">
+      クイズ早おしバトル（ホスト／プレイヤーきりかえたいおう）
+    </span>
+    <span class="text-normal">
+      クイズ早押しバトル（ホスト／プレイヤー切替対応）
+    </span>
+    <span class="meta">
+      — 総合（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitのむせんつうしんきのうを使って、ホストとプレイヤーに分かれ、ふくすう人でクイズの早おし対決を楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの無線通信機能を使って、ホストとプレイヤーに分かれ、複数人でクイズの早押し対決を楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-4-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると、カタカナの「ホスト」が横スクロールでひょうじされる</span>
+          <span class="text-normal">起動すると、カタカナの「ホスト」が横スクロールで表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすと「ホスト」と「プレイヤー」のひょうじが切りかわる</span>
+          <span class="text-normal">Aボタンを押すと「ホスト」と「プレイヤー」の表示が切り替わる</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、ひょうじされているやくわりが決定される</span>
+          <span class="text-normal">Bボタンを押すと、表示されている役割が決定される</span>
+        </li>
+        <li>
+          <span class="text-easy">ホストをえらぶと四角形、プレイヤーをえらぶと自分の番号と小さな四角形がひょうじされる</span>
+          <span class="text-normal">ホストを選ぶと四角形、プレイヤーを選ぶと自分の番号と小さな四角形が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ホストがクイズの問題を出し、Bボタンをおすと早おしうけつけが始まる</span>
+          <span class="text-normal">ホストがクイズの問題を出し、Bボタンを押すと早押し受付が始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">プレイヤーの画面にまとのマークがひょうじされたら、Bボタンで早おしできる</span>
+          <span class="text-normal">プレイヤーの画面に的のマークが表示されたら、Bボタンで早押しできる</span>
+        </li>
+        <li>
+          <span class="text-easy">さいしょにBボタンをおしたプレイヤーの番号がホストの画面にひょうじされる</span>
+          <span class="text-normal">最初にBボタンを押したプレイヤーの番号がホストの画面に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">さいしょにおしたプレイヤーにはえがお、ほかのプレイヤーには悲しい顔がひょうじされる</span>
+          <span class="text-normal">最初に押したプレイヤーには笑顔、ほかのプレイヤーには悲しい顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ホストがふたたびBボタンをおすと、次の問題の早おしうけつけが始まる</span>
+          <span class="text-normal">ホストが再びBボタンを押すと、次の問題の早押し受付が始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">AボタンとBボタンを同時におすとやくわりせんたく画面にもどり、やくわりをへんこうできる</span>
+          <span class="text-normal">AボタンとBボタンを同時に押すと役割選択画面に戻り、役割を変更できる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-4-gif"
+        src="img/202610_04.png"
+        alt="クイズ早押しバトル（ホスト／プレイヤー切替対応）をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-4-gif',
+          'img/202610_04.gif',
+          'img/202610_04.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">むせんつうしんを使ってふくすうのmicro:bitをつなぐ仕組みを学ぶ</span>
+          <span class="text-normal">無線通信を使って複数のmicro:bitをつなぐ仕組みを学ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">ホストとプレイヤーのやくわりのちがいをりかいする</span>
+          <span class="text-normal">ホストとプレイヤーの役割の違いを理解する</span>
+        </li>
+        <li>
+          <span class="text-easy">じょうけんぶんきを使ってさいしょにおした人だけをはんていする仕組みを学ぶ</span>
+          <span class="text-normal">条件分岐を使って最初に押した人だけを判定する仕組みを学ぶ</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">せいかいしたプレイヤーにとくてんが入る仕組みをついか</span>
+          <span class="text-normal">正解したプレイヤーに得点が入る仕組みを追加</span>
+        </li>
+        <li>
+          <span class="text-easy">ホストがせいかいとふせいかいをはんていできるきのうをついか</span>
+          <span class="text-normal">ホストが正解と不正解を判定できる機能を追加</span>
+        </li>
+        <li>
+          <span class="text-easy">早おししたじゅんばんをきろくしてランキングをひょうじ</span>
+          <span class="text-normal">早押しした順番を記録してランキングを表示</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-クイズ早おしバトル（ホスト／プレイヤーきりかえたいおう）.hex"
+      download
+      aria-labelledby="
+        sample4-title
+        sample4-btn
+      "
+    >
+      <span id="sample4-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-5" aria-labelledby="section-5-h">
+
+  <h2 id="section-5-h">
+    <span aria-hidden="true">📡</span>
+    <span class="text-easy" id="sample5-title">
+      モールスしんごうでひみつのつうしん
+    </span>
+    <span class="text-normal">
+      モールス信号で秘密の通信
+    </span>
+    <span class="meta">
+      — 技術・家庭（小学5年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、モールスしんごうをアルファベットや数字にへんかんし、2台のmicro:bitでむせんつうしんを楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、モールス信号をアルファベットや数字に変換し、2台のmicro:bitで無線通信を楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-5-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると画面の四すみがてんめつし、つうしんできるじょうたいになる</span>
+          <span class="text-normal">起動すると画面の四隅が点滅し、通信できる状態になる</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで「トン（・）」、Bボタンで「ツー（－）」を入力する</span>
+          <span class="text-normal">Aボタンで「トン（・）」、Bボタンで「ツー（－）」を入力する</span>
+        </li>
+        <li>
+          <span class="text-easy">入力したしんごうは画面の下がわに左からじゅんばんにひょうじされ、トンは短い光、ツーはたてに長い光でかくにんできる</span>
+          <span class="text-normal">入力した信号は画面の下側に左から順番に表示され、トンは短い光、ツーは縦に長い光で確認できる</span>
+        </li>
+        <li>
+          <span class="text-easy">AボタンとBボタンを同時におすと、入力したモールスしんごうがアルファベットや数字にへんかんされ、画面にひょうじされると同時に相手のmicro:bitへそうしんされる</span>
+          <span class="text-normal">AボタンとBボタンを同時に押すと、入力したモールス信号がアルファベットや数字に変換され、画面に表示されると同時に相手のmicro:bitへ送信される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンを3秒間長おしすると、入力中のしんごうを取り消せる</span>
+          <span class="text-normal">Bボタンを3秒間長押しすると、入力中の信号を取り消せる</span>
+        </li>
+        <li>
+          <span class="text-easy">相手から文字がとどくと、小さな「＋」がひょうじされたあと、じゅしんした文字がやく3秒間ひょうじされる</span>
+          <span class="text-normal">相手から文字が届くと、小さな「＋」が表示されたあと、受信した文字が約3秒間表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">2台のmicro:bitに同じプログラムを書きこみ、むせんグループを「1」にそろえると、おたがいに文字を送り合える</span>
+          <span class="text-normal">2台のmicro:bitに同じプログラムを書き込み、無線グループを「1」にそろえると、お互いに文字を送り合える</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-5-gif"
+        src="img/202610_05.png"
+        alt="モールス信号で秘密の通信をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-5-gif',
+          'img/202610_05.gif',
+          'img/202610_05.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">トンとツーの組み合わせで文字を表すモールスしんごうの仕組みを学ぶ</span>
+          <span class="text-normal">トンとツーの組み合わせで文字を表すモールス信号の仕組みを学ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">じょうほうを文字にへんかんするふごう化の仕組みをたいけんする</span>
+          <span class="text-normal">情報を文字に変換する符号化の仕組みを体験する</span>
+        </li>
+        <li>
+          <span class="text-easy">むせんつうしんを使ってじょうほうを送じゅしんする仕組みをりかいする</span>
+          <span class="text-normal">無線通信を使って情報を送受信する仕組みを理解する</span>
+        </li>
+        <li>
+          <span class="text-easy">相手に正しくつたえるためにしんごうの組み合わせを考える力を育てる</span>
+          <span class="text-normal">相手に正しく伝えるために信号の組み合わせを考える力を育てる</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">じゅしんした文字のひょうじ時間を長くしたり短くしたりする</span>
+          <span class="text-normal">受信した文字の表示時間を長くしたり短くしたりする</span>
+        </li>
+        <li>
+          <span class="text-easy">じゅしんした文字をためて、たんごとしてまとめてひょうじする仕組みをついか</span>
+          <span class="text-normal">受信した文字をためて、単語としてまとめて表示する仕組みを追加</span>
+        </li>
+        <li>
+          <span class="text-easy">カタカナのドット絵を使って日本語の文字も送れるようにかいぞう</span>
+          <span class="text-normal">カタカナのドット絵を使って日本語の文字も送れるように改造</span>
+        </li>
+        <li>
+          <span class="text-easy">むせんグループ番号をへんこうして、べつのグループとつうしんできるようにする</span>
+          <span class="text-normal">無線グループ番号を変更して、別のグループと通信できるようにする</span>
+        </li>
+        <li>
+          <span class="text-easy">モールスしんごうの一覧表を使わずに、友だちとひみつのメッセージこうかんにちょうせん</span>
+          <span class="text-normal">モールス信号の一覧表を使わずに、友だちと秘密のメッセージ交換に挑戦</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-モールスしんごうでひみつのつうしん.hex"
+      download
+      aria-labelledby="
+        sample5-title
+        sample5-btn
+      "
+    >
+      <span id="sample5-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-6" aria-labelledby="section-6-h">
+
+  <h2 id="section-6-h">
+    <span aria-hidden="true">🧭</span>
+    <span class="text-easy" id="sample6-title">
+      ほういでタカラさがしチャレンジ
+    </span>
+    <span class="text-normal">
+      方位でタカラさがしチャレンジ
+    </span>
+    <span class="meta">
+      — 社会（小学3年生～中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitのほういセンサーとかそくどセンサーを使って、じっさいに歩きながらたからの場所をさがすゲームを楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの方位センサーと加速度センサーを使って、実際に歩きながら宝の場所を探すゲームを楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-6-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動するとほういセンサーの調整が始まる。画面のあんないに合わせてmicro:bitをかたむけたり回したりして、画面の点を動かし、すべてのLEDをてんとうさせる</span>
+          <span class="text-normal">起動すると方位センサーの調整が始まる。画面の案内に合わせてmicro:bitを傾けたり回したりして、画面の点を動かし、すべてのLEDを点灯させる</span>
+        </li>
+        <li>
+          <span class="text-easy">調整が終わると北をさがす画面になり、やじるしを見ながらmicro:bitを水平に持って体ごと向きをかえる</span>
+          <span class="text-normal">調整が終わると北を探す画面になり、矢印を見ながらmicro:bitを水平に持って体ごと向きを変える</span>
+        </li>
+        <li>
+          <span class="text-easy">micro:bitの上がわを北に向けると「✓」がひょうじされ、Bボタンをおすとゲームが始まる</span>
+          <span class="text-normal">micro:bitの上側を北に向けると「✓」が表示され、Bボタンを押すとゲームが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">5×5マスの中央に自分のいち、ランダムな場所にたからのいちが1秒間ひょうじされる</span>
+          <span class="text-normal">5×5マスの中央に自分の位置、ランダムな場所に宝の位置が1秒間表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">そのあと、たからがある方向をしめすやじるしがひょうじされる</span>
+          <span class="text-normal">そのあと、宝がある方向を示す矢印が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">micro:bitの上がわに「↑」がひょうじされる方向をさがし、本体だけでなく自分の体もその方向へ向ける</span>
+          <span class="text-normal">micro:bitの上側に「↑」が表示される方向を探し、本体だけでなく自分の体もその方向へ向ける</span>
+        </li>
+        <li>
+          <span class="text-easy">「↑」がひょうじされた方向へじっさいに1歩歩くと、向いている方角に自分のいちが1マスいどうする</span>
+          <span class="text-normal">「↑」が表示された方向へ実際に1歩歩くと、向いている方角に自分の位置が1マス移動する</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすと、げんざい地とたからのいちを2秒間かくにんできる。げんざい地はてんとう、たからはてんめつでひょうじされる</span>
+          <span class="text-normal">Aボタンを押すと、現在地と宝の位置を2秒間確認できる。現在地は点灯、宝は点滅で表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">たからのいちにとうちゃくすると「○」がひょうじされる</span>
+          <span class="text-normal">宝の位置に到着すると「○」が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">たからの場所からさらに歩いてはなれると「○」が消え、もどるためのやじるしがひょうじされる</span>
+          <span class="text-normal">宝の場所からさらに歩いて離れると「○」が消え、戻るための矢印が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">「○」がひょうじされているときにBボタンをおすと、カタカナの「タカラ」とたから箱が開くアニメーションがひょうじされる</span>
+          <span class="text-normal">「○」が表示されているときにBボタンを押すと、カタカナの「タカラ」と宝箱が開くアニメーションが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">アニメーションが終わると、さいしょの北をさがす画面にもどり、もう一度ちょうせんできる</span>
+          <span class="text-normal">アニメーションが終わると、最初の北を探す画面に戻り、もう一度挑戦できる</span>
+        </li>
+        <li>
+          <span class="text-easy">AボタンとBボタンを同時におすと、ゲームをリセットして北をさがす画面にもどれる</span>
+          <span class="text-normal">AボタンとBボタンを同時に押すと、ゲームをリセットして北を探す画面に戻れる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-6-gif"
+        src="img/202610_06.png"
+        alt="方位でタカラさがしチャレンジをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-6-gif',
+          'img/202610_06.gif',
+          'img/202610_06.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ほういセンサーを使って東西南北の方向を調べるたいけん</span>
+          <span class="text-normal">方位センサーを使って東西南北の方向を調べる体験</span>
+        </li>
+        <li>
+          <span class="text-easy">かそくどセンサーで歩く動きをけんしゅつする仕組みを学ぶ</span>
+          <span class="text-normal">加速度センサーで歩く動きを検出する仕組みを学ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">地図とげんざい地のかんけいをりかいし、もくてきちまでの道じゅんを考える力を育てる</span>
+          <span class="text-normal">地図と現在地の関係を理解し、目的地までの道順を考える力を育てる</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">歩行をけんしゅつする感度を調整して、1歩ずつ正しく数えられるようにする</span>
+          <span class="text-normal">歩行を検出する感度を調整して、1歩ずつ正しく数えられるようにする</span>
+        </li>
+        <li>
+          <span class="text-easy">たからにとうちゃくするまでの歩数をきろくしてひょうじするきのうをついか</span>
+          <span class="text-normal">宝に到着するまでの歩数を記録して表示する機能を追加</span>
+        </li>
+        <li>
+          <span class="text-easy">せいげん時間をついかして、時間内にたからをさがすゲームにかいぞう</span>
+          <span class="text-normal">制限時間を追加して、時間内に宝を探すゲームに改造</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-ほういでタカラさがしチャレンジ.hex"
+      download
+      aria-labelledby="
+        sample6-title
+        sample6-btn
+      "
+    >
+      <span id="sample6-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-7" aria-labelledby="section-7-h">
+
+  <h2 id="section-7-h">
+    <span aria-hidden="true">👻</span>
+    <span class="text-easy" id="sample7-title">
+      ハロウィンおばけキャッチ
+    </span>
+    <span class="text-normal">
+      ハロウィンおばけキャッチ
+    </span>
+    <span class="meta">
+      — 総合学習（小学3年生～中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、コウモリとガイコツを見分けながら、10秒間で高とくてんを目指すハロウィンゲームを楽しむことができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、コウモリとガイコツを見分けながら、10秒間で高得点を目指すハロウィンゲームを楽しむことができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-7-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょに「B」と「→」がこうごにひょうじされる</span>
+          <span class="text-normal">最初に「B」と「→」が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、3、2、1のカウントダウンが始まる</span>
+          <span class="text-normal">Bボタンを押すと、3、2、1のカウントダウンが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">カウントダウン中にBボタンをおしてもはんのうしない</span>
+          <span class="text-normal">カウントダウン中にBボタンを押しても反応しない</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームが始まると、コウモリとガイコツがランダムなタイミングで0.7秒間ひょうじされる</span>
+          <span class="text-normal">ゲームが始まると、コウモリとガイコツがランダムなタイミングで0.7秒間表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ガイコツがひょうじされているときにBボタンをおすと「✓」がひょうじされ、1点ふえる</span>
+          <span class="text-normal">ガイコツが表示されているときにBボタンを押すと「✓」が表示され、1点増える</span>
+        </li>
+        <li>
+          <span class="text-easy">コウモリがひょうじされているときや、何もひょうじされていないときにBボタンをおすと「×」がひょうじされ、1点へる。ただし0点より下にはならない</span>
+          <span class="text-normal">コウモリが表示されているときや、何も表示されていないときにBボタンを押すと「×」が表示され、1点減る。ただし0点より下にはならない</span>
+        </li>
+        <li>
+          <span class="text-easy">10秒たつとゲームがしゅうりょうし、とくてんがひょうじされる</span>
+          <span class="text-normal">10秒経つとゲームが終了し、得点が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">0点ならミニカボチャ、1〜4点ならカボチャ、5点いじょうならレアなジャックオーランタンがひょうじされる</span>
+          <span class="text-normal">0点ならミニカボチャ、1〜4点ならカボチャ、5点以上ならレアなジャックオーランタンが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかが2秒間ひょうじされたあと、ふたたび「B」と「→」がこうごにひょうじされ、何度でもちょうせんできる</span>
+          <span class="text-normal">結果が2秒間表示されたあと、再び「B」と「→」が交互に表示され、何度でも挑戦できる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-7-gif"
+        src="img/202610_07.png"
+        alt="ハロウィンおばけキャッチをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-7-gif',
+          'img/202610_07.gif',
+          'img/202610_07.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">コウモリとガイコツのちがいを見分けるかんさつ力を育てる</span>
+          <span class="text-normal">コウモリとガイコツの違いを見分ける観察力を育てる</span>
+        </li>
+        <li>
+          <span class="text-easy">すばやくはんだんしてボタンをおすはんしゃしんけいをやしなう</span>
+          <span class="text-normal">素早く判断してボタンを押す反射神経を養う</span>
+        </li>
+        <li>
+          <span class="text-easy">じょうけんぶんきやらんすうを使ったゲームの仕組みを学ぶ</span>
+          <span class="text-normal">条件分岐や乱数を使ったゲームの仕組みを学ぶ</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">キャラクターのひょうじ時間をかえてなんい度を調整</span>
+          <span class="text-normal">キャラクターの表示時間を変えて難易度を調整</span>
+        </li>
+        <li>
+          <span class="text-easy">せいげん時間を15秒や20秒にへんこう</span>
+          <span class="text-normal">制限時間を15秒や20秒に変更</span>
+        </li>
+        <li>
+          <span class="text-easy">れんぞくせいかいでボーナス点が入る仕組みをついか</span>
+          <span class="text-normal">連続正解でボーナス点が入る仕組みを追加</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-ハロウィンおばけキャッチ.hex"
+      download
+      aria-labelledby="
+        sample7-title
+        sample7-btn
+      "
+    >
+      <span id="sample7-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+
+  <p class="foot">
+    本情報の内容 (添付文書、リンク先などを含む) は、
+    作成日時点でのものであり、
+    予告なく変更される場合があります。
+  </p>
+  </main>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+</body>
+</html>
