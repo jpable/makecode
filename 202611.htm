@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【11月】micro:bitで時間をはかって、電波でつながろう！とくしゅう</title>
+  <meta name="description" content="micro:bitのタイマーやつうしんきのうを活用したプログラム集です。" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body
+  class="mode-easy"
+  data-title-easy="【11月】micro:bitで時間をはかって、電波でつながろう！とくしゅう"
+  data-title-normal="【11月】micro:bitで時間をはかって、電波でつながろう！特集"
+  data-lead-easy="micro:bitのタイマーやつうしんきのうを活用したプログラム集です。"
+  data-lead-normal="micro:bitのタイマーや通信機能を活用したプログラム集です。"
+>
+  <div id="header"></div>
+  <div id="nav"></div>
+  <main id="main" class="wrap">
+<section id="section-1" aria-labelledby="section-1-h">
+
+  <h2 id="section-1-h">
+    <span aria-hidden="true">🚪</span>
+    <span class="text-easy" id="sample1-title">
+      目で見て分かるむせんドアチャイム
+    </span>
+    <span class="text-normal">
+      目で見て分かる無線ドアチャイム
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、2台をそうしんきとじゅしんきにせっていし、むせんでドアチャイムを鳴らすことができます。そうしんきのボタンをおすと、じゅしんきから音が鳴り、LEDが4回てんめつします。そうしんきとじゅしんきを同じプログラムで使えることがとくちょうです。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、2台を送信機と受信機に設定し、無線でドアチャイムを鳴らすことができます。送信機のボタンを押すと、受信機から音が鳴り、LEDが4回点滅します。送信機と受信機を同じプログラムで使えることが特徴です。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-1-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると、そうしんきを表すボタンのドット絵がひょうじされる</span>
+          <span class="text-normal">起動すると、送信機を表すボタンのドット絵が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンをおすと、そうしんきのボタンとじゅしんきの光のドット絵が切りかわる</span>
+          <span class="text-normal">Aボタンを押すと、送信機のボタンと受信機の光のドット絵が切り替わる</span>
+        </li>
+        <li>
+          <span class="text-easy">1台目はそうしんきをえらび、Bボタンで決定する</span>
+          <span class="text-normal">1台目は送信機を選び、Bボタンで決定する</span>
+        </li>
+        <li>
+          <span class="text-easy">2台目はじゅしんきをえらび、Bボタンで決定する</span>
+          <span class="text-normal">2台目は受信機を選び、Bボタンで決定する</span>
+        </li>
+        <li>
+          <span class="text-easy">決定するとチェックマークがひょうじされ、そのあとドット絵が白黒反転し、えらんだモードになったことがわかる</span>
+          <span class="text-normal">決定するとチェックマークが表示され、そのあとドット絵が白黒反転し、選んだモードになったことがわかる</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしんきのBボタンをおすと、むせんでしんごうが送られ、えがおのマークがいっしゅんひょうじされる</span>
+          <span class="text-normal">送信機のBボタンを押すと、無線で信号が送られ、笑顔のマークが一瞬表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">じゅしんきがしんごうを受け取ると、メロディーが鳴り、LEDが4回てんめつする</span>
+          <span class="text-normal">受信機が信号を受け取ると、メロディーが鳴り、LEDが4回点滅する</span>
+        </li>
+        <li>
+          <span class="text-easy">動作が終わると、それぞれのモードを表す反転したドット絵にもどる</span>
+          <span class="text-normal">動作が終わると、それぞれのモードを表す反転したドット絵に戻る</span>
+        </li>
+        <li>
+          <span class="text-easy">A＋Bボタンを同時におすと、さいしょのせんたく画面にもどり、そうしんきとじゅしんきをえらび直せる</span>
+          <span class="text-normal">A＋Bボタンを同時に押すと、最初の選択画面に戻り、送信機と受信機を選び直せる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-1-gif"
+        src="img/202611_01.png"
+        alt="目で見て分かる無線ドアチャイムをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-1-gif',
+          'img/202611_01.gif',
+          'img/202611_01.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">むせんつうしんを使って、はなれたmicro:bitどうしでじょうほうをやり取りするたいけん</span>
+          <span class="text-normal">無線通信を使って、離れたmicro:bit同士で情報をやり取りする体験</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしんきとじゅしんきのやくわりのちがいをりかいする学習</span>
+          <span class="text-normal">送信機と受信機の役割の違いを理解する学習</span>
+        </li>
+        <li>
+          <span class="text-easy">ボタンそうさやLEDひょうじを組み合わせたプログラミングのたいけん</span>
+          <span class="text-normal">ボタン操作やLED表示を組み合わせたプログラミングの体験</span>
+        </li>
+        <li>
+          <span class="text-easy">同じプログラムでも、せんたくしたモードによって動作がかわる仕組みのりかい</span>
+          <span class="text-normal">同じプログラムでも、選択したモードによって動作が変わる仕組みの理解</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">むせんがとどくきょりを調べて、どこまではなれて使えるかじっけん</span>
+          <span class="text-normal">無線が届く距離を調べて、どこまで離れて使えるか実験</span>
+        </li>
+        <li>
+          <span class="text-easy">じゅしんしたときのメロディーやLEDのてんめつ回数をへんこう</span>
+          <span class="text-normal">受信したときのメロディーやLEDの点滅回数を変更</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしんきをふやして、ふくすうの場所から呼び出せる仕組み作り</span>
+          <span class="text-normal">送信機を増やして、複数の場所から呼び出せる仕組み作り</span>
+        </li>
+        <li>
+          <span class="text-easy">そうしんきとじゅしんきのドット絵をオリジナルのデザインにへんこう</span>
+          <span class="text-normal">送信機と受信機のドット絵をオリジナルのデザインに変更</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-目で見て分かるむせんドアチャイム.hex"
+      download
+      aria-labelledby="
+        sample1-title
+        sample1-btn
+      "
+    >
+      <span id="sample1-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-2" aria-labelledby="section-2-h">
+
+  <h2 id="section-2-h">
+    <span aria-hidden="true">⏳</span>
+    <span class="text-easy" id="sample2-title">
+      ふってぎゃくてん！25秒LEDすな時計
+    </span>
+    <span class="text-normal">
+      振って逆転！25秒LED砂時計
+    </span>
+    <span class="meta">
+      — 理科（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitのかそくどセンサーを使って、25このLEDが1秒ごとにふえていくすな時計を作ります。micro:bitをふるたびにLEDがふえる方向とへる方向を切りかえ、時間の流れを自由にかえることができます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitの加速度センサーを使って、25個のLEDが1秒ごとに増えていく砂時計を作ります。micro:bitを振るたびにLEDが増える方向と減る方向を切り替え、時間の流れを自由に変えることができます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-2-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">さいしょに「B」と「→」がこうごにひょうじされる</span>
+          <span class="text-normal">最初に「B」と「→」が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、すな時計がスタートする</span>
+          <span class="text-normal">Bボタンを押すと、砂時計がスタートする</span>
+        </li>
+        <li>
+          <span class="text-easy">1秒ごとにLEDが1こずつてんとうする</span>
+          <span class="text-normal">1秒ごとにLEDが1個ずつ点灯する</span>
+        </li>
+        <li>
+          <span class="text-easy">25秒たつと25こすべてのLEDがてんとうし、そのまま止まる</span>
+          <span class="text-normal">25秒経つと25個すべてのLEDが点灯し、そのまま止まる</span>
+        </li>
+        <li>
+          <span class="text-easy">micro:bitをふると、LEDが1秒ごとに1こずつ消えていく</span>
+          <span class="text-normal">micro:bitを振ると、LEDが1秒ごとに1個ずつ消えていく</span>
+        </li>
+        <li>
+          <span class="text-easy">もう一度ふると、今度はLEDが1秒ごとに1こずつふえていく</span>
+          <span class="text-normal">もう一度振ると、今度はLEDが1秒ごとに1個ずつ増えていく</span>
+        </li>
+        <li>
+          <span class="text-easy">とちゅうで何度ふっても、そのたびにふえる方向とへる方向が切りかわる</span>
+          <span class="text-normal">途中で何度振っても、そのたびに増える方向と減る方向が切り替わる</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDが0こまたは25こになったら止まり、ふるとぎゃく方向に動き始める</span>
+          <span class="text-normal">LEDが0個または25個になったら止まり、振ると逆方向に動き始める</span>
+        </li>
+        <li>
+          <span class="text-easy">A＋Bボタンを同時におすと、さいしょの画面にもどる</span>
+          <span class="text-normal">A＋Bボタンを同時に押すと、最初の画面に戻る</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-2-gif"
+        src="img/202611_02.png"
+        alt="振って逆転！25秒LED砂時計をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-2-gif',
+          'img/202611_02.gif',
+          'img/202611_02.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">かそくどセンサーでふる動きをけんちするたいけん</span>
+          <span class="text-normal">加速度センサーで振る動きを検知する体験</span>
+        </li>
+        <li>
+          <span class="text-easy">1秒ごとにへんかするLEDを使った時間の学習</span>
+          <span class="text-normal">1秒ごとに変化するLEDを使った時間の学習</span>
+        </li>
+        <li>
+          <span class="text-easy">じょうけんによってLEDのぞうげんを切りかえるプログラミングのりかい</span>
+          <span class="text-normal">条件によってLEDの増減を切り替えるプログラミングの理解</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">LEDがぞうげんする速さをかえてみる</span>
+          <span class="text-normal">LEDが増減する速さを変えてみる</span>
+        </li>
+        <li>
+          <span class="text-easy">ふる強さによってLEDのぞうげんする速さをかえるくふう</span>
+          <span class="text-normal">振る強さによってLEDの増減する速さを変える工夫</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDが全部てんとうしたときや消えたときに音を鳴らすアレンジ</span>
+          <span class="text-normal">LEDが全部点灯したときや消えたときに音を鳴らすアレンジ</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-ふってぎゃくてん！25秒LEDすな時計.hex"
+      download
+      aria-labelledby="
+        sample2-title
+        sample2-btn
+      "
+    >
+      <span id="sample2-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-3" aria-labelledby="section-3-h">
+
+  <h2 id="section-3-h">
+    <span aria-hidden="true">⏱️</span>
+    <span class="text-easy" id="sample3-title">
+      集中ときゅうけいをくり返すポモドーロタイマー
+    </span>
+    <span class="text-normal">
+      集中と休憩をくり返すポモドーロタイマー
+    </span>
+    <span class="meta">
+      — 算数（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、集中する時間ときゅうけいする時間を自分で決め、こうごにくり返すポモドーロタイマーを作ることができます。集中中は数字が1秒ずつふえ、きゅうけい中は数字が1秒ずつへるため、時間の流れを目で見ながらかくにんできます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、集中する時間と休憩する時間を自分で決め、交互にくり返すポモドーロタイマーを作ることができます。集中中は数字が1秒ずつ増え、休憩中は数字が1秒ずつ減るため、時間の流れを目で見ながら確認できます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-3-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると「B」と右向きのやじるしがこうごにひょうじされる</span>
+          <span class="text-normal">起動すると「B」と右向きの矢印が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと「シュウチュウ」のカタカナが横スクロールでひょうじされる</span>
+          <span class="text-normal">Bボタンを押すと「シュウチュウ」のカタカナが横スクロールで表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">集中時間のしょきち「10」がひょうじされ、Aボタンで1秒へらし、Bボタンで1秒ふやして時間をせっていする</span>
+          <span class="text-normal">集中時間の初期値「10」が表示され、Aボタンで1秒減らし、Bボタンで1秒増やして時間を設定する</span>
+        </li>
+        <li>
+          <span class="text-easy">A+Bを同時におすと集中時間が決定し、「キュウケイ」のカタカナが横スクロールでひょうじされる</span>
+          <span class="text-normal">A+Bを同時に押すと集中時間が決定し、「キュウケイ」のカタカナが横スクロールで表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">きゅうけい時間のしょきち「5」がひょうじされ、同じようにAボタンとBボタンで時間をせっていする</span>
+          <span class="text-normal">休憩時間の初期値「5」が表示され、同じようにAボタンとBボタンで時間を設定する</span>
+        </li>
+        <li>
+          <span class="text-easy">A+Bを同時におすときゅうけい時間が決定し、タイマーが始まる</span>
+          <span class="text-normal">A+Bを同時に押すと休憩時間が決定し、タイマーが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">「シュウチュウ」が横スクロールでひょうじされたあと、1からせっていした秒数まで数字が1秒ずつふえる</span>
+          <span class="text-normal">「シュウチュウ」が横スクロールで表示されたあと、1から設定した秒数まで数字が1秒ずつ増える</span>
+        </li>
+        <li>
+          <span class="text-easy">集中時間が終わると「キュウケイ」が横スクロールでひょうじされ、せっていした秒数から1まで数字が1秒ずつへる</span>
+          <span class="text-normal">集中時間が終わると「キュウケイ」が横スクロールで表示され、設定した秒数から1まで数字が1秒ずつ減る</span>
+        </li>
+        <li>
+          <span class="text-easy">きゅうけいが終わるとふたたび「シュウチュウ」がひょうじされ、集中ときゅうけいをこうごにくり返す</span>
+          <span class="text-normal">休憩が終わると再び「シュウチュウ」が表示され、集中と休憩を交互にくり返す</span>
+        </li>
+        <li>
+          <span class="text-easy">タイマーの実行中にA+Bを同時におすと開始画面にもどり、もう一度せっていできる</span>
+          <span class="text-normal">タイマーの実行中にA+Bを同時に押すと開始画面に戻り、もう一度設定できる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-3-gif"
+        src="img/202611_03.png"
+        alt="集中と休憩をくり返すポモドーロタイマーをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-3-gif',
+          'img/202611_03.gif',
+          'img/202611_03.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">集中する時間ときゅうけいする時間を自分で決める時間かんりのたいけん</span>
+          <span class="text-normal">集中する時間と休憩する時間を自分で決める時間管理の体験</span>
+        </li>
+        <li>
+          <span class="text-easy">数字のカウントアップとカウントダウンを通じた時間の流れのりかい</span>
+          <span class="text-normal">数字のカウントアップとカウントダウンを通じた時間の流れの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">へんすうやじょうけんぶんき、くり返ししょりを使ったプログラミングの学習</span>
+          <span class="text-normal">変数や条件分岐、くり返し処理を使ったプログラミングの学習</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">集中時間ときゅうけい時間をかえて、自分に合った時間の組み合わせをさがす</span>
+          <span class="text-normal">集中時間と休憩時間を変えて、自分に合った時間の組み合わせを探す</span>
+        </li>
+        <li>
+          <span class="text-easy">集中ときゅうけいを何回くり返したか数えるきのうをついか</span>
+          <span class="text-normal">集中と休憩を何回くり返したか数える機能を追加</span>
+        </li>
+        <li>
+          <span class="text-easy">集中やきゅうけいの切りかわりを音やLEDのてんめつで知らせるきのうをついか</span>
+          <span class="text-normal">集中や休憩の切り替わりを音やLEDの点滅で知らせる機能を追加</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-集中ときゅうけいをくり返すポモドーロタイマー.hex"
+      download
+      aria-labelledby="
+        sample3-title
+        sample3-btn
+      "
+    >
+      <span id="sample3-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-4" aria-labelledby="section-4-h">
+
+  <h2 id="section-4-h">
+    <span aria-hidden="true">👾</span>
+    <span class="text-easy" id="sample4-title">
+      ひとりでもふたりでもドットシューター
+    </span>
+    <span class="text-normal">
+      ひとりでもふたりでもドットシューター
+    </span>
+    <span class="meta">
+      — 理科・技術（中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、ミサイルをうち合うたいせんゲームを楽しむことができます。1台でCPUとたいせんする「ひとりモード」と、2台のmicro:bitをむせんでつないで友だちとたいせんする「ふたりモード」があります。左右に動きながらミサイルをうち、先に相手のライフを0にした方が勝ちです。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、ミサイルを撃ち合う対戦ゲームを楽しむことができます。1台でCPUと対戦する「ひとりモード」と、2台のmicro:bitを無線でつないで友だちと対戦する「ふたりモード」があります。左右に動きながらミサイルを撃ち、先に相手のライフを0にした方が勝ちです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-4-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると、「A」→「ヒトリ」、「B」→「フタリ」がこうごにひょうじされる</span>
+          <span class="text-normal">起動すると、「A」→「ヒトリ」、「B」→「フタリ」が交互に表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Aボタンで「ひとりモード」、Bボタンで「ふたりモード」をせんたくする</span>
+          <span class="text-normal">Aボタンで「ひとりモード」、Bボタンで「ふたりモード」を選択する</span>
+        </li>
+        <li>
+          <span class="text-easy">ひとりモードでは、CPUがたいせん相手となり、「3・2・1」のカウントダウンのあとにゲームが始まる</span>
+          <span class="text-normal">ひとりモードでは、CPUが対戦相手となり、「3・2・1」のカウントダウンのあとにゲームが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">ふたりモードでは、「バンゴウ」とひょうじされたあと、1～9の番号がてんめつする。Aボタンで番号をへんこうし、Bボタンで決定する</span>
+          <span class="text-normal">ふたりモードでは、「バンゴウ」と表示されたあと、1～9の番号が点滅する。Aボタンで番号を変更し、Bボタンで決定する</span>
+        </li>
+        <li>
+          <span class="text-easy">ふたりモードでは、2台とも同じ番号をせっていする。相手を待つ間は画面中央の点が左右に動き、つうしんがつながるとカウントダウンのあとにたいせんが始まる</span>
+          <span class="text-normal">ふたりモードでは、2台とも同じ番号を設定する。相手を待つ間は画面中央の点が左右に動き、通信がつながるとカウントダウンのあとに対戦が始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">番号のせんたく中や相手を待っている間は、A＋Bボタンの同時おしでさいしょの画面にもどれる</span>
+          <span class="text-normal">番号の選択中や相手を待っている間は、A＋Bボタンの同時押しで最初の画面に戻れる</span>
+        </li>
+        <li>
+          <span class="text-easy">たいせん中は画面の一番下が自分、一番上が相手を表す。Aボタンで左、Bボタンで右にいどうし、A＋Bボタンの同時おしでミサイルをはっしゃする</span>
+          <span class="text-normal">対戦中は画面の一番下が自分、一番上が相手を表す。Aボタンで左、Bボタンで右に移動し、A＋Bボタンの同時押しでミサイルを発射する</span>
+        </li>
+        <li>
+          <span class="text-easy">ミサイルは1発ずつはっしゃでき、相手に当たるとライフが1つへる</span>
+          <span class="text-normal">ミサイルは1発ずつ発射でき、相手に当たるとライフが1つ減る</span>
+        </li>
+        <li>
+          <span class="text-easy">ライフはさいしょに3つあり、開始時やライフがへったときにひょうじされる。上の2だんが相手、下の2だんが自分のライフを表し、へったライフは3回てんめつして消える</span>
+          <span class="text-normal">ライフは最初に3つあり、開始時やライフが減ったときに表示される。上の2段が相手、下の2段が自分のライフを表し、減ったライフは3回点滅して消える</span>
+        </li>
+        <li>
+          <span class="text-easy">先に相手のライフを0にすると「カチ」とえがお、負けると「マケ」と悲しい顔、両方のライフが0になると「ヒキワケ」がひょうじされる</span>
+          <span class="text-normal">先に相手のライフを0にすると「カチ」と笑顔、負けると「マケ」と悲しい顔、両方のライフが0になると「ヒキワケ」が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ふたりモードでは、たいせん中に相手からのつうしんが6秒いじょうとぎれると、自分の勝ちとしてはんていされる</span>
+          <span class="text-normal">ふたりモードでは、対戦中に相手からの通信が6秒以上途切れると、自分の勝ちとして判定される</span>
+        </li>
+        <li>
+          <span class="text-easy">たいせんけっかがひょうじされたあと、自動でさいしょの画面にもどり、もう一度遊べる</span>
+          <span class="text-normal">対戦結果が表示されたあと、自動で最初の画面に戻り、もう一度遊べる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-4-gif"
+        src="img/202611_04.png"
+        alt="ひとりでもふたりでもドットシューターをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-4-gif',
+          'img/202611_04.gif',
+          'img/202611_04.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">むせんつうしんを使って、2台のmicro:bitがいちやミサイル、ライフのじょうほうを送り合うしくみを学ぶ</span>
+          <span class="text-normal">無線通信を使って、2台のmicro:bitが位置やミサイル、ライフの情報を送り合うしくみを学ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDのいちをたてと横の座標で考え、キャラクターやミサイルを動かすプログラミングのりかい</span>
+          <span class="text-normal">LEDの位置を縦と横の座標で考え、キャラクターやミサイルを動かすプログラミングの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">じょうけんぶんきやへんすうを使って、命中はんていや勝敗が決まるしくみを学ぶ</span>
+          <span class="text-normal">条件分岐や変数を使って、命中判定や勝敗が決まるしくみを学ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">ひとりで練習したり、友だちとたいせんしたりしながら、ルールを守って楽しむ活動</span>
+          <span class="text-normal">ひとりで練習したり、友だちと対戦したりしながら、ルールを守って楽しむ活動</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ライフの数を3つからぞうげんさせて、ゲームのむずかしさをへんこう</span>
+          <span class="text-normal">ライフの数を3つから増減させて、ゲームの難しさを変更</span>
+        </li>
+        <li>
+          <span class="text-easy">CPUがいどうする速さやミサイルをうつかんかくをかえて、強さを調整</span>
+          <span class="text-normal">CPUが移動する速さやミサイルを撃つ間隔を変えて、強さを調整</span>
+        </li>
+        <li>
+          <span class="text-easy">ミサイルを同時に2発いじょううてるようにして、ゲームをかいぞう</span>
+          <span class="text-normal">ミサイルを同時に2発以上撃てるようにして、ゲームを改造</span>
+        </li>
+        <li>
+          <span class="text-easy">ひとりモードで勝った回数をきろくし、画面にひょうじするきのうのついか</span>
+          <span class="text-normal">ひとりモードで勝った回数を記録し、画面に表示する機能の追加</span>
+        </li>
+        <li>
+          <span class="text-easy">ミサイルが命中したときに、音やLEDのアニメーションをついか</span>
+          <span class="text-normal">ミサイルが命中したときに、音やLEDのアニメーションを追加</span>
+        </li>
+        <li>
+          <span class="text-easy">むせんで送るじょうほうをへんこうして、つうしんがゲームの動きにどのようなえいきょうを与えるかじっけん</span>
+          <span class="text-normal">無線で送る情報を変更して、通信がゲームの動きにどのような影響を与えるか実験</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-ひとりでもふたりでもドットシューター.hex"
+      download
+      aria-labelledby="
+        sample4-title
+        sample4-btn
+      "
+    >
+      <span id="sample4-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-5" aria-labelledby="section-5-h">
+
+  <h2 id="section-5-h">
+    <span aria-hidden="true">🍠</span>
+    <span class="text-easy" id="sample5-title">
+      やきいもホカホカゲーム
+    </span>
+    <span class="text-normal">
+      焼きいもホカホカゲーム
+    </span>
+    <span class="meta">
+      — 総合学習（小学3年生〜中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、やきいもが一番おいしくやけるタイミングを見つけるゲームを楽しむことができます。やき時間によってLEDの明るさや湯気、ほのおのひょうじがかわり、Bボタンをおすタイミングで「生やけ」「ホカホカ」「こげた」の3つのけっかに分かれます。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、焼きいもが一番おいしく焼けるタイミングを見つけるゲームを楽しむことができます。焼き時間によってLEDの明るさや湯気、炎の表示が変わり、Bボタンを押すタイミングで「生焼け」「ホカホカ」「焦げた」の3つの結果に分かれます。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-5-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると、やく前のサツマイモが暗いLEDでひょうじされる</span>
+          <span class="text-normal">起動すると、焼く前のサツマイモが暗いLEDで表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">Bボタンをおすと、「3・2・1」のカウントダウンと開始マークがひょうじされ、ゲームがスタートする</span>
+          <span class="text-normal">Bボタンを押すと、「3・2・1」のカウントダウンと開始マークが表示され、ゲームがスタートする</span>
+        </li>
+        <li>
+          <span class="text-easy">やき始めてから2秒みまんは、暗いサツマイモがひょうじされる</span>
+          <span class="text-normal">焼き始めてから2秒未満は、暗いサツマイモが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">2秒いじょうになると、LEDが少し明るくなり、湯気が1本出たり消えたりする</span>
+          <span class="text-normal">2秒以上になると、LEDが少し明るくなり、湯気が1本出たり消えたりする</span>
+        </li>
+        <li>
+          <span class="text-easy">3秒いじょうになると、LEDが一番明るくなり、2本の湯気がゆらゆら動くホカホカのじょうたいになる</span>
+          <span class="text-normal">3秒以上になると、LEDが一番明るくなり、2本の湯気がゆらゆら動くホカホカの状態になる</span>
+        </li>
+        <li>
+          <span class="text-easy">5秒いじょうになると、ほのおがメラメラもえ、「！」がひょうじされるこげたじょうたいになる</span>
+          <span class="text-normal">5秒以上になると、炎がメラメラ燃え、「！」が表示される焦げた状態になる</span>
+        </li>
+        <li>
+          <span class="text-easy">食べごろだと思ったタイミングで、もう一度Bボタンをおすとやくのを止めてけっかがひょうじされる</span>
+          <span class="text-normal">食べごろだと思ったタイミングで、もう一度Bボタンを押すと焼くのを止めて結果が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">3秒みまんの場合は、生やけでしっぱいとなり、「△」と生やけのサツマイモがひょうじされる</span>
+          <span class="text-normal">3秒未満の場合は、生焼けで失敗となり、「△」と生焼けのサツマイモが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">3秒いじょう5秒みまんの場合は、ホカホカでせいこうとなり、「〇」と湯気の出るやきいも、さいごにハートがひょうじされる</span>
+          <span class="text-normal">3秒以上5秒未満の場合は、ホカホカで成功となり、「〇」と湯気の出る焼きいも、最後にハートが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">5秒いじょうの場合は、こげてしっぱいとなり、「×」とほのおの出るやきいも、「！」がひょうじされる</span>
+          <span class="text-normal">5秒以上の場合は、焦げて失敗となり、「×」と炎の出る焼きいも、「！」が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかがひょうじされたあと、自動でやく前のサツマイモにもどり、Bボタンでもう一度ちょうせんできる</span>
+          <span class="text-normal">結果が表示されたあと、自動で焼く前のサツマイモに戻り、Bボタンでもう一度挑戦できる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-5-gif"
+        src="img/202611_05.png"
+        alt="焼きいもホカホカゲームをmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-5-gif',
+          'img/202611_05.gif',
+          'img/202611_05.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ボタンをおすタイミングによってけっかがかわるプログラミングのたいけん</span>
+          <span class="text-normal">ボタンを押すタイミングによって結果が変わるプログラミングの体験</span>
+        </li>
+        <li>
+          <span class="text-easy">けいか時間をへんすうできろくし、時間を計るしくみのりかい</span>
+          <span class="text-normal">経過時間を変数で記録し、時間を計るしくみの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">やき時間によってけっかを分けるじょうけんぶんきの学習</span>
+          <span class="text-normal">焼き時間によって結果を分ける条件分岐の学習</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDの明るさやドット絵のへんかを使ったアニメーションひょうげんのたいけん</span>
+          <span class="text-normal">LEDの明るさやドット絵の変化を使ったアニメーション表現の体験</span>
+        </li>
+        <li>
+          <span class="text-easy">秋のみかくをテーマに、時間のかんかくやはんだん力を楽しく学ぶ活動</span>
+          <span class="text-normal">秋の味覚をテーマに、時間の感覚や判断力を楽しく学ぶ活動</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">ホカホカになる時間をへんこうして、ゲームのむずかしさを調整</span>
+          <span class="text-normal">ホカホカになる時間を変更して、ゲームの難しさを調整</span>
+        </li>
+        <li>
+          <span class="text-easy">食べごろの時間をランダムにして、毎回ちがうタイミングでやき上がるゲーム作り</span>
+          <span class="text-normal">食べごろの時間をランダムにして、毎回違うタイミングで焼き上がるゲーム作り</span>
+        </li>
+        <li>
+          <span class="text-easy">やきいものドット絵や湯気、ほのおのアニメーションをオリジナルにへんこう</span>
+          <span class="text-normal">焼きいものドット絵や湯気、炎のアニメーションをオリジナルに変更</span>
+        </li>
+        <li>
+          <span class="text-easy">けっかを4だんかいにふやして、やきかげんをより細かくはんていするきのうのついか</span>
+          <span class="text-normal">結果を4段階に増やして、焼き加減をより細かく判定する機能の追加</span>
+        </li>
+        <li>
+          <span class="text-easy">せいこうした回数をとくてんとしてきろくし、画面にひょうじするきのうのついか</span>
+          <span class="text-normal">成功した回数を得点として記録し、画面に表示する機能の追加</span>
+        </li>
+        <li>
+          <span class="text-easy">友だちと交代でちょうせんし、せいこう回数をきそうゲームへのアレンジ</span>
+          <span class="text-normal">友だちと交代で挑戦し、成功回数を競うゲームへのアレンジ</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-やきいもホカホカゲーム.hex"
+      download
+      aria-labelledby="
+        sample5-title
+        sample5-btn
+      "
+    >
+      <span id="sample5-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+<section id="section-6" aria-labelledby="section-6-h">
+
+  <h2 id="section-6-h">
+    <span aria-hidden="true">⚽</span>
+    <span class="text-easy" id="sample6-title">
+      にらみ合い！PKせん
+    </span>
+    <span class="text-normal">
+      にらみ合い！PK戦
+    </span>
+    <span class="meta">
+      — 体育（中学生）
+    </span>
+  </h2>
+
+  <p>
+    <span class="text-easy">
+      このプログラムでは、micro:bitを使って、サッカーのPKせんを楽しむことができます。1台でCPUとたいせんする「ひとりモード」と、2台のmicro:bitをむせんでつないで友だちとたいせんする「ふたりモード」があります。キッカーはシュートの方向とタイミングを考え、ゴールキーパーは左右に動いてボールを止め、とくてんをきそうゲームです。
+    </span>
+    <span class="text-normal">
+      このプログラムでは、micro:bitを使って、サッカーのPK戦を楽しむことができます。1台でCPUと対戦する「ひとりモード」と、2台のmicro:bitを無線でつないで友だちと対戦する「ふたりモード」があります。キッカーはシュートの方向とタイミングを考え、ゴールキーパーは左右に動いてボールを止め、得点を競うゲームです。
+    </span>
+  </p>
+
+  <div class="grid" role="group" aria-labelledby="section-6-h">
+    <div class="card">
+      <h3>使い方</h3>
+      <ol>
+        <li>
+          <span class="text-easy">起動すると「A」がひょうじされ、つづいて「ヒトリ」がカタカナのドット絵で横スクロールし、次に「B」と「フタリ」が同じようにひょうじされる</span>
+          <span class="text-normal">起動すると「A」が表示され、続いて「ヒトリ」がカタカナのドット絵で横スクロールし、次に「B」と「フタリ」が同じように表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">AボタンをおすとCPUとたいせんするひとりモード、Bボタンをおすと2台でたいせんするふたりモードがえらばれる</span>
+          <span class="text-normal">Aボタンを押すとCPUと対戦するひとりモード、Bボタンを押すと2台で対戦するふたりモードが選ばれる</span>
+        </li>
+        <li>
+          <span class="text-easy">ひとりモードではすぐにゲームが始まり、ふたりモードでは2台ともBボタンをおしてつうしん相手を待ち、せつぞくすると自動でゲームが始まる</span>
+          <span class="text-normal">ひとりモードではすぐにゲームが始まり、ふたりモードでは2台ともBボタンを押して通信相手を待ち、接続すると自動でゲームが始まる</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲームが始まると、キッカーまたはゴールキーパーのドット絵がひょうじされ、自分のやくわりがわかる</span>
+          <span class="text-normal">ゲームが始まると、キッカーまたはゴールキーパーのドット絵が表示され、自分の役割がわかる</span>
+        </li>
+        <li>
+          <span class="text-easy">キッカーのときは、画面の上に相手のゴールキーパー、中央にボール、下に5このLEDで表したタイミングゲージがひょうじされる</span>
+          <span class="text-normal">キッカーのときは、画面の上に相手のゴールキーパー、中央にボール、下に5個のLEDで表したタイミングゲージが表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">ゲージは1こから5こまでぞうげんをくり返し、てんとう数が多いほどシュートがせいこうしやすくなる。5こすべててんとうしているときはかならずわくないにとぶ</span>
+          <span class="text-normal">ゲージは1個から5個まで増減をくり返し、点灯数が多いほどシュートが成功しやすくなる。5個すべて点灯しているときは必ず枠内に飛ぶ</span>
+        </li>
+        <li>
+          <span class="text-easy">キッカーはAボタンで左、Bボタンで右、A＋B同時おしで中央にシュートする。時間せいげんはないため、すきなタイミングでうてる</span>
+          <span class="text-normal">キッカーはAボタンで左、Bボタンで右、A＋B同時押しで中央にシュートする。時間制限はないため、好きなタイミングで撃てる</span>
+        </li>
+        <li>
+          <span class="text-easy">ゴールキーパーのときは、画面の下に自分のキーパー、中央にボールがひょうじされ、タイミングゲージはひょうじされない</span>
+          <span class="text-normal">ゴールキーパーのときは、画面の下に自分のキーパー、中央にボールが表示され、タイミングゲージは表示されない</span>
+        </li>
+        <li>
+          <span class="text-easy">ゴールキーパーは毎回中央からスタートし、Aボタンで左、Bボタンで右、A＋B同時おしで中央にいどうする</span>
+          <span class="text-normal">ゴールキーパーは毎回中央からスタートし、Aボタンで左、Bボタンで右、A＋B同時押しで中央に移動する</span>
+        </li>
+        <li>
+          <span class="text-easy">キーパーは相手がシュートするまで何度でもいちをかえられ、シュートされたときのいちによってセーブできたかどうかが決まる</span>
+          <span class="text-normal">キーパーは相手がシュートするまで何度でも位置を変えられ、シュートされたときの位置によってセーブできたかどうかが決まる</span>
+        </li>
+        <li>
+          <span class="text-easy">シュートが決まると「ゴール」がひょうじされ、キーパーが止めると「セーブ」、しっぱいすると悲しい顔がひょうじされる</span>
+          <span class="text-normal">シュートが決まると「ゴール」が表示され、キーパーが止めると「セーブ」、失敗すると悲しい顔が表示される</span>
+        </li>
+        <li>
+          <span class="text-easy">1回のPKが終わると、上のだんに相手、下のだんに自分のとくてんけっかがLEDでひょうじされる。明るい点はせいこう、暗い点はしっぱいを表す</span>
+          <span class="text-normal">1回のPKが終わると、上の段に相手、下の段に自分の得点結果がLEDで表示される。明るい点は成功、暗い点は失敗を表す</span>
+        </li>
+        <li>
+          <span class="text-easy">キッカーとゴールキーパーをこうごに担当し、おたがいに5本ずつシュートしてとくてんをきそう。とちゅうでぎゃくてんできない点さになった場合は、その時点で勝敗が決まる</span>
+          <span class="text-normal">キッカーとゴールキーパーを交互に担当し、お互いに5本ずつシュートして得点を競う。途中で逆転できない点差になった場合は、その時点で勝敗が決まる</span>
+        </li>
+        <li>
+          <span class="text-easy">5本ずつ終えて同点の場合は「サドンデス」とひょうじされ、勝敗が決まるまでこうごにシュートをつづける</span>
+          <span class="text-normal">5本ずつ終えて同点の場合は「サドンデス」と表示され、勝敗が決まるまで交互にシュートを続ける</span>
+        </li>
+        <li>
+          <span class="text-easy">勝つと「カチ」とえがお、負けると「ザンネン」がひょうじされ、そのあとさいしょの画面にもどって何度でも遊べる</span>
+          <span class="text-normal">勝つと「カチ」と笑顔、負けると「ザンネン」が表示され、そのあと最初の画面に戻って何度でも遊べる</span>
+        </li>
+      </ol>
+
+      <img
+        id="section-6-gif"
+        src="img/202611_06.png"
+        alt="にらみ合い！PK戦をmicro:bitで動かしているようす"
+        width="320"
+        height="240"
+        style="display:block; margin-bottom:10px;"
+      >
+      <button
+        class="btn"
+        onclick="toggleGif(
+          'section-6-gif',
+          'img/202611_06.gif',
+          'img/202611_06.png',
+          this
+        )"
+        aria-label="アニメーションの再生・停止"
+      >
+        見る
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>ねらい</h3>
+      <ul>
+        <li>
+          <span class="text-easy">シュートの方向やタイミングを考え、はんだん力やはんしゃしんけいを使って遊ぶたいけん</span>
+          <span class="text-normal">シュートの方向やタイミングを考え、判断力や反射神経を使って遊ぶ体験</span>
+        </li>
+        <li>
+          <span class="text-easy">LEDのいちやてんとう数を使って、方向や時間のへんかを表すプログラミングのりかい</span>
+          <span class="text-normal">LEDの位置や点灯数を使って、方向や時間の変化を表すプログラミングの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">ボタンそうさによってキャラクターを左右や中央に動かすしくみの学習</span>
+          <span class="text-normal">ボタン操作によってキャラクターを左右や中央に動かすしくみの学習</span>
+        </li>
+        <li>
+          <span class="text-easy">じょうけんぶんきやらんすうを使って、シュートのせいこう率やCPUの動きを決めるしくみのりかい</span>
+          <span class="text-normal">条件分岐や乱数を使って、シュートの成功率やCPUの動きを決めるしくみの理解</span>
+        </li>
+        <li>
+          <span class="text-easy">むせんつうしんを使って、2台のmicro:bitがいちやシュートのじょうほうを送り合うしくみの学習</span>
+          <span class="text-normal">無線通信を使って、2台のmicro:bitが位置やシュートの情報を送り合うしくみの学習</span>
+        </li>
+        <li>
+          <span class="text-easy">とくてんを数えながら、PKせんの勝敗やサドンデスのルールを考える活動</span>
+          <span class="text-normal">得点を数えながら、PK戦の勝敗やサドンデスのルールを考える活動</span>
+        </li>
+      </ul>
+
+      <h3>チャレンジ</h3>
+      <ul>
+        <li>
+          <span class="text-easy">シュートがせいこうしやすいゲージのはんいをかえて、ゲームのむずかしさを調整</span>
+          <span class="text-normal">シュートが成功しやすいゲージの範囲を変えて、ゲームの難しさを調整</span>
+        </li>
+        <li>
+          <span class="text-easy">CPUがシュートするタイミングやキーパーの動きをかえて、強さを調整</span>
+          <span class="text-normal">CPUがシュートするタイミングやキーパーの動きを変えて、強さを調整</span>
+        </li>
+        <li>
+          <span class="text-easy">キーパーのいどうできるいちを3か所から5か所にふやすアレンジ</span>
+          <span class="text-normal">キーパーの移動できる位置を3か所から5か所に増やすアレンジ</span>
+        </li>
+        <li>
+          <span class="text-easy">シュートやセーブがせいこうしたときに音が鳴るきのうのついか</span>
+          <span class="text-normal">シュートやセーブが成功したときに音が鳴る機能の追加</span>
+        </li>
+        <li>
+          <span class="text-easy">ゴールキーパーやボールのドット絵をオリジナルのデザインにへんこう</span>
+          <span class="text-normal">ゴールキーパーやボールのドット絵をオリジナルのデザインに変更</span>
+        </li>
+        <li>
+          <span class="text-easy">勝利した回数をきろくし、連勝きろくをひょうじするきのうのついか</span>
+          <span class="text-normal">勝利した回数を記録し、連勝記録を表示する機能の追加</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <a
+      class="btn"
+      href="samples/microbit-にらみ合い！PKせん.hex"
+      download
+      aria-labelledby="
+        sample6-title
+        sample6-btn
+      "
+    >
+      <span id="sample6-btn">
+        サンプルコードをダウンロード
+      </span>
+    </a>
+  </p>
+</section>
+
+
+  <p class="foot">
+    本情報の内容 (添付文書、リンク先などを含む) は、
+    作成日時点でのものであり、
+    予告なく変更される場合があります。
+  </p>
+  </main>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+</body>
+</html>
